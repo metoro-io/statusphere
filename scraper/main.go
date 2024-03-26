@@ -2,14 +2,14 @@ package main
 
 import (
 	"context"
-	"github.com/metoro-io/metoro/mrs-hudson/scraper/internal/db"
-	"github.com/metoro-io/metoro/mrs-hudson/scraper/internal/scraper"
-	"github.com/metoro-io/metoro/mrs-hudson/scraper/internal/scraper/consumers"
-	"github.com/metoro-io/metoro/mrs-hudson/scraper/internal/scraper/consumers/dbconsumer"
-	"github.com/metoro-io/metoro/mrs-hudson/scraper/internal/scraper/poller"
-	"github.com/metoro-io/metoro/mrs-hudson/scraper/internal/scraper/providers"
-	"github.com/metoro-io/metoro/mrs-hudson/scraper/internal/scraper/providers/statusio"
-	"github.com/metoro-io/metoro/mrs-hudson/scraper/internal/scraper/urlgetter/dburlgetter"
+	"github.com/metoro-io/statusphere/scraper/internal/db"
+	"github.com/metoro-io/statusphere/scraper/internal/scraper"
+	"github.com/metoro-io/statusphere/scraper/internal/scraper/consumers"
+	"github.com/metoro-io/statusphere/scraper/internal/scraper/consumers/dbconsumer"
+	"github.com/metoro-io/statusphere/scraper/internal/scraper/poller"
+	"github.com/metoro-io/statusphere/scraper/internal/scraper/providers"
+	"github.com/metoro-io/statusphere/scraper/internal/scraper/providers/statusio"
+	"github.com/metoro-io/statusphere/scraper/internal/scraper/urlgetter/dburlgetter"
 	"go.uber.org/zap"
 	"net/http"
 )

@@ -2,9 +2,9 @@ package poller
 
 import (
 	"context"
-	"github.com/metoro-io/metoro/mrs-hudson/scraper/internal/scraper"
-	"github.com/metoro-io/metoro/mrs-hudson/scraper/internal/scraper/consumers"
-	"github.com/metoro-io/metoro/mrs-hudson/scraper/internal/scraper/urlgetter"
+	"github.com/metoro-io/statusphere/scraper/internal/scraper"
+	"github.com/metoro-io/statusphere/scraper/internal/scraper/consumers"
+	"github.com/metoro-io/statusphere/scraper/internal/scraper/urlgetter"
 	"github.com/patrickmn/go-cache"
 	"go.uber.org/zap"
 	"time"

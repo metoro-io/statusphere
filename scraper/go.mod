@@ -1,4 +1,4 @@
-module github.com/metoro-io/statusphere
+module github.com/metoro-io/statusphere/scraper
 
 go 1.22.1
 

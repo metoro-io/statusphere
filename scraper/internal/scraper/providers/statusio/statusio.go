@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/PuerkitoBio/goquery"
-	"github.com/metoro-io/metoro/mrs-hudson/scraper/api"
+	"github.com/metoro-io/statusphere/scraper/api"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 	"io"
@@ -56,7 +56,19 @@ func (s *StatusioProvider) scrapeStatusIoPageCurrent(ctx context.Context, url st
 		return nil, errors.Wrap(err, "failed to get the most recent historical incidentsHistoricalRecent")
 	}
 
-	return append(incidentsOngoing, incidentsHistoricalRecent...), nil
+	// De-dupe the incidents
+	incidents := append(incidentsOngoing, incidentsHistoricalRecent...)
+	incidentsDeDuped := make(map[string]api.Incident)
+	for _, incident := range incidents {
+		incidentsDeDuped[incident.DeepLink] = incident
+	}
+
+	incidents = []api.Incident{}
+	for _, incident := range incidentsDeDuped {
+		incidents = append(incidents, incident)
+	}
+
+	return incidents, nil
 }
 
 // scrapeStatusIoPageHistorical is a helper function that will attempt to scrape the status page using the status.io method
@@ -137,15 +149,15 @@ func (s *StatusioProvider) parseIncidents(url string, html string) ([]api.Incide
 		// Transform data into Incident and IncidentEvent structs (example)
 		for _, month := range pageStatus.Months {
 			for _, inc := range month.Incidents {
+				link := url + "/incidents/" + inc.Code
 				// Parse the timestamp, add logic to handle parsing
 				startTime, endTime, err := parseDateString(strconv.Itoa(month.Year), month.Month, inc.Timestamp)
 				if err != nil {
-					s.logger.Error("Error parsing time", zap.Error(err))
+					s.logger.Error("Error parsing time", zap.Error(err), zap.String("timestamp", inc.Timestamp), zap.String("deep_link", link))
 					return
 				}
 
 				// Example transformation, customize as needed
-				link := url + "/incidents/" + inc.Code
 				incident := api.Incident{
 					Title:       inc.Name,
 					Description: &inc.Message,

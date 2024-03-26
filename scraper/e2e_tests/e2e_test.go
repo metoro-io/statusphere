@@ -2,9 +2,9 @@ package e2e_tests
 
 import (
 	"context"
-	"github.com/metoro-io/metoro/mrs-hudson/scraper/internal/scraper"
-	"github.com/metoro-io/metoro/mrs-hudson/scraper/internal/scraper/providers"
-	"github.com/metoro-io/metoro/mrs-hudson/scraper/internal/scraper/providers/statusio"
+	"github.com/metoro-io/statusphere/scraper/internal/scraper"
+	"github.com/metoro-io/statusphere/scraper/internal/scraper/providers"
+	"github.com/metoro-io/statusphere/scraper/internal/scraper/providers/statusio"
 	"go.uber.org/zap"
 	"net/http"
 	"testing"
