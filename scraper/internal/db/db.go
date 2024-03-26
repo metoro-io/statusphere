@@ -17,7 +17,7 @@ import (
 	"time"
 )
 
-const schemaName = "mrs_hudson"
+const schemaName = "statusphere"
 
 type Config struct {
 	Host     string `envconfig:"POSTGRES_HOST"`
