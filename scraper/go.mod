@@ -1,4 +1,4 @@
-module github.com/metoro-io/metoro/mrs-hudson/scraper
+module github.com/metoro-io/statusphere
 
 go 1.22.1
 
