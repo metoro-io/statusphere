@@ -29,7 +29,7 @@ type Config struct {
 
 func getConfigFromEnvironment() (Config, error) {
 	var config Config
-	err := envconfig.Process("MRS_HUDSON", &config)
+	err := envconfig.Process("STATUSPHERE", &config)
 	return config, err
 }
 
