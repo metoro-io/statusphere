@@ -2,7 +2,6 @@
 <img src="./docs/static/statusphere-white.png" width="300" height="300" alt="Statusphere logo">
 </div>
 
-
 ![GitHub stars](https://img.shields.io/github/stars/metoro-io/statusphere?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/metoro-io/statusphere?style=social)
 ![GitHub issues](https://img.shields.io/github/issues/metoro-io/statusphere)
@@ -11,16 +10,14 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/metoro-io/statusphere)
 ![GitHub last commit](https://img.shields.io/github/last-commit/metoro-io/statusphere)
 
-![Workflow status](https://github.com/metoro-io/statusphere/actions/workflows/publish-scraper.yml/badge.svg)
-![Docker Pulls](https://img.shields.io/docker/pulls/metoro/statusphere-scraper)
-
-The open-source api-first status page aggregator. 
+The open-source api-first status page aggregator.
 
 If your looking for the official hosted version, head [here](https://metoro.io/statusphere).
 
 ## Architecture
 
 Statusphere is made up of 3 main components:
+
 1. The scrapers
 2. The database
 3. The api servers
