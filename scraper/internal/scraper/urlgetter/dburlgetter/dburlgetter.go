@@ -34,7 +34,7 @@ func (s *DBURLGetter) UpdateLastScrapedTimeHistorical(url string, time time.Time
 	if err != nil {
 		return errors.Wrap(err, "failed to update status page")
 	}
-	s.StatusPageCache.Set(url, statusPage, cache.DefaultExpiration)
+	s.StatusPageCache.Set(url, *statusPage, cache.DefaultExpiration)
 	return nil
 }
 
