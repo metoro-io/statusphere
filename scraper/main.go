@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	"github.com/metoro-io/statusphere/scraper/internal/db"
+	"github.com/metoro-io/statusphere/common/db"
 	"github.com/metoro-io/statusphere/scraper/internal/scraper"
 	"github.com/metoro-io/statusphere/scraper/internal/scraper/consumers"
 	"github.com/metoro-io/statusphere/scraper/internal/scraper/consumers/dbconsumer"

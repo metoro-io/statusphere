@@ -2,8 +2,8 @@ package scraper
 
 import (
 	"context"
-	"github.com/metoro-io/statusphere/scraper/api"
-	"github.com/metoro-io/statusphere/scraper/internal/scraper/utils"
+	"github.com/metoro-io/statusphere/common/api"
+	"github.com/metoro-io/statusphere/common/utils"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 )

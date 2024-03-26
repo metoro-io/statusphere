@@ -1,7 +1,7 @@
 package stdoutconsumer
 
 import (
-	"github.com/metoro-io/statusphere/scraper/api"
+	"github.com/metoro-io/statusphere/common/api"
 	"go.uber.org/zap"
 )
 

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"github.com/jackc/pgx/v5/pgconn"
 	"github.com/kelseyhightower/envconfig"
-	"github.com/metoro-io/statusphere/scraper/api"
+	"github.com/metoro-io/statusphere/common/api"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 	"gorm.io/driver/postgres"

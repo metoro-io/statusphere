@@ -2,7 +2,7 @@ package providers
 
 import (
 	"context"
-	"github.com/metoro-io/statusphere/scraper/api"
+	"github.com/metoro-io/statusphere/common/api"
 )
 
 type Provider interface {

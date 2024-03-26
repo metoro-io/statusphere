@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/PuerkitoBio/goquery"
-	"github.com/metoro-io/statusphere/scraper/api"
+	"github.com/metoro-io/statusphere/common/api"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 	"io"

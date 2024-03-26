@@ -2,8 +2,8 @@ package dburlgetter
 
 import (
 	"context"
-	"github.com/metoro-io/statusphere/scraper/api"
-	"github.com/metoro-io/statusphere/scraper/internal/db"
+	"github.com/metoro-io/statusphere/common/api"
+	"github.com/metoro-io/statusphere/common/db"
 	"github.com/patrickmn/go-cache"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"

@@ -2,8 +2,8 @@ package dbconsumer
 
 import (
 	"context"
-	"github.com/metoro-io/statusphere/scraper/api"
-	"github.com/metoro-io/statusphere/scraper/internal/db"
+	"github.com/metoro-io/statusphere/common/api"
+	"github.com/metoro-io/statusphere/common/db"
 	"go.uber.org/zap"
 )
 

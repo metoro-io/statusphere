@@ -2,7 +2,7 @@ package scraper
 
 import (
 	"context"
-	"github.com/metoro-io/statusphere/scraper/api"
+	"github.com/metoro-io/statusphere/common/api"
 	"github.com/metoro-io/statusphere/scraper/internal/scraper/providers"
 	"go.uber.org/zap"
 	"net/http"
