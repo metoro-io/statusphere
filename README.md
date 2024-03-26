@@ -10,7 +10,7 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/metoro-io/statusphere)
 ![GitHub last commit](https://img.shields.io/github/last-commit/metoro-io/statusphere)
 
-The open-source api-first status page aggregator.
+An open-source api-first status page aggregator.
 
 If your looking for the official hosted version, head [here](https://metoro.io/statusphere).
 
