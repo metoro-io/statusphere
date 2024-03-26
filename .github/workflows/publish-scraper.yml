@@ -1,5 +1,5 @@
 # Create a new release when a tag is pushed, create a docker image and push it to docker hub
-name: Publish Watson
+name: Publish Scraper
 on:
   push:
     tags:
