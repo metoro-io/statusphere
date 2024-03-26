@@ -1,5 +1,5 @@
 <div align="center">
-<img src="./docs/static/statusphere.png" width="300" height="300" alt="Statusphere logo">
+<img src="./docs/static/statusphere-white.png" width="300" height="300" alt="Statusphere logo">
 </div>
 
 
@@ -28,5 +28,5 @@ Statusphere is made up of 3 main components:
 They're orchestrated in the following way:
 
 <div align="center">
-<img src="./docs/static/statusphere-architecture.png" height="300" alt="Statusphere logo">
+<img src="./docs/static/statusphere-architecture-white.png" height="300" alt="Statusphere logo">
 </div>
