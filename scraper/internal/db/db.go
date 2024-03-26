@@ -103,6 +103,10 @@ func (d *DbClient) AutoMigrate(ctx context.Context) error {
 	if err != nil {
 		return errors.Wrap(err, "failed to auto-migrate status_page table")
 	}
+	err = d.SeedStatusPages()
+	if err != nil {
+		return errors.Wrap(err, "failed to seed status pages")
+	}
 
 	// Create the incidents table
 	err = d.db.Table(fmt.Sprintf(fmt.Sprintf("%s.%s", schemaName, incidentsTableName))).AutoMigrate(&api.Incident{})
@@ -165,6 +169,31 @@ func (d *DbClient) CreateOrUpdateIncidents(ctx context.Context, incidents []api.
 	).Create(&incidents)
 	if result.Error != nil {
 		return result.Error
+	}
+	return nil
+}
+
+var seedStatusPages = []api.StatusPage{
+	{
+		URL:  "https://status.github.com",
+		Name: "GitHub",
+	},
+	{
+		URL:  "https://status.redis.com",
+		Name: "Redis",
+	},
+}
+
+func (d *DbClient) SeedStatusPages() error {
+	for _, statusPage := range seedStatusPages {
+		if _, err := d.GetStatusPage(context.Background(), statusPage.URL); err != nil {
+			// Status page already exists
+			err := d.InsertStatusPage(context.Background(), statusPage)
+			if err != nil {
+				return errors.Wrap(err, "failed to seed status pages")
+			}
+			d.logger.Info("Seeded status page: %s", zap.String("url", statusPage.URL))
+		}
 	}
 	return nil
 }
