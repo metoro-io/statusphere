@@ -198,7 +198,7 @@ var seedStatusPages = []api.StatusPage{
 
 func (d *DbClient) SeedStatusPages() error {
 	for _, statusPage := range seedStatusPages {
-		if _, err := d.GetStatusPage(context.Background(), statusPage.URL); err != nil {
+		if page, err := d.GetStatusPage(context.Background(), statusPage.URL); err != nil || page == nil {
 			// Status page already exists
 			err := d.InsertStatusPage(context.Background(), statusPage)
 			if err != nil {
