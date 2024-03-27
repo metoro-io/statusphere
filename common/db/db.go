@@ -130,6 +130,9 @@ func (d *DbClient) GetStatusPage(ctx context.Context, url string) (*api.StatusPa
 	var statusPage api.StatusPage
 	result := d.db.Table(fmt.Sprintf(fmt.Sprintf("%s.%s", schemaName, statusPageTableName))).Where("url = ?", url).First(&statusPage)
 	if result.Error != nil {
+		if errors.Is(result.Error, gorm.ErrRecordNotFound) {
+			return nil, nil
+		}
 		return nil, result.Error
 	}
 	return &statusPage, nil
@@ -154,6 +157,15 @@ func (d *DbClient) InsertStatusPage(ctx context.Context, statusPage api.StatusPa
 func (d *DbClient) GetIncidents(ctx context.Context, statusPageUrl string) ([]api.Incident, error) {
 	var incidents []api.Incident
 	result := d.db.Table(fmt.Sprintf(fmt.Sprintf("%s.%s", schemaName, incidentsTableName))).Where("status_page_url = ?", statusPageUrl).Find(&incidents)
+	if result.Error != nil {
+		return nil, result.Error
+	}
+	return incidents, nil
+}
+
+func (d *DbClient) GetCurrentIncidents(ctx context.Context, statusPageUrl string) ([]api.Incident, error) {
+	var incidents []api.Incident
+	result := d.db.Table(fmt.Sprintf("%s.%s", schemaName, incidentsTableName)).Where("status_page_url = ? AND end_time IS NULL", statusPageUrl).Find(&incidents)
 	if result.Error != nil {
 		return nil, result.Error
 	}

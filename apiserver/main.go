@@ -28,6 +28,7 @@ func main() {
 	}
 
 	s := server.NewServer(logger, dbClient)
+	s.StartCaches(ctx)
 
 	go func() {
 		if err := s.Serve(); err != nil && !errors.Is(err, http.ErrServerClosed) {

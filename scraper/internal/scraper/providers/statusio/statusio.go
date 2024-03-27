@@ -159,12 +159,13 @@ func (s *StatusioProvider) parseIncidents(url string, html string) ([]api.Incide
 
 				// Example transformation, customize as needed
 				incident := api.Incident{
-					Title:       inc.Name,
-					Description: &inc.Message,
-					StartTime:   startTime,
-					EndTime:     endTime,
-					Impact:      api.Impact(inc.Impact),
-					DeepLink:    link,
+					Title:         inc.Name,
+					Description:   &inc.Message,
+					StartTime:     startTime,
+					EndTime:       endTime,
+					Impact:        api.Impact(inc.Impact),
+					DeepLink:      link,
+					StatusPageUrl: url,
 				}
 				incidents = append(incidents, incident)
 			}
@@ -220,6 +221,7 @@ func (s *StatusioProvider) parseCurrentIncidents(url string, html string) ([]api
 		deepLink := selection.Find(".incident-title a").First().AttrOr("href", "")
 		deepLink = url + deepLink
 		incident.DeepLink = deepLink
+		incident.StatusPageUrl = url
 		var minTime *time.Time = nil
 
 		selection.Find(".update").Each(func(i int, sel *goquery.Selection) {

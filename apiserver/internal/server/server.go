@@ -6,20 +6,27 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/metoro-io/statusphere/common/db"
 	"github.com/metoro-io/statusphere/common/utils"
+	"github.com/patrickmn/go-cache"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 	"time"
 )
 
 type Server struct {
-	logger   *zap.Logger
-	dbClient *db.DbClient
+	logger               *zap.Logger
+	dbClient             *db.DbClient
+	statusPageCache      *cache.Cache
+	incidentCache        *cache.Cache
+	currentIncidentCache *cache.Cache
 }
 
 func NewServer(logger *zap.Logger, dbClient *db.DbClient) *Server {
 	return &Server{
-		logger:   logger,
-		dbClient: dbClient,
+		logger:               logger,
+		dbClient:             dbClient,
+		statusPageCache:      cache.New(15*time.Minute, 15*time.Minute),
+		incidentCache:        cache.New(1*time.Minute, 1*time.Minute),
+		currentIncidentCache: cache.New(1*time.Minute, 1*time.Minute),
 	}
 }
 
@@ -37,6 +44,9 @@ func (s *Server) Serve() error {
 	apiV1 := r.Group("/api/v1")
 	{
 		apiV1.Use(addNoIndexHeader())
+		apiV1.GET("/statusPages", s.statusPages)
+		apiV1.GET("/incidents", s.incidents)
+		apiV1.GET("/currentStatus", s.currentStatus)
 	}
 
 	s.addFrontendRoutes(r)

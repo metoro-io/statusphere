@@ -46,7 +46,7 @@ type Incident struct {
 	Components    []string           `gorm:"column:components;type:jsonb"`
 	Events        IncidentEventArray `gorm:"column:events;type:jsonb"`
 	StartTime     time.Time          `gorm:"secondarykey"`
-	EndTime       *time.Time
+	EndTime       *time.Time         `gorm:"secondarykey"`
 	Description   *string
 	DeepLink      string `gorm:"primarykey"`
 	Impact        Impact `gorm:"secondarykey"`
