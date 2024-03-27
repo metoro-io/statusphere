@@ -11,16 +11,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Go
-        uses: actions/setup-go@v4
-        with:
-          go-version: '^1.22.1'
-      - name: Build
-        env:
-          CGO_ENABLED: 0
-        run: |
-          cd apiserver
-          go build
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
