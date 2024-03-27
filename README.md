@@ -1,6 +1,7 @@
 <div align="center">
 <img src="./docs/static/statusphere-white.png" width="300" height="300" alt="Statusphere logo">
 </div>
+<br/>
 
 <div align="center">
 
