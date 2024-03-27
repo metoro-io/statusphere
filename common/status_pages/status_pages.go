@@ -223,4 +223,64 @@ var StatusPages = []api.StatusPage{
 		URL:  "https://www.dreamhoststatus.com",
 		Name: "DreamHost",
 	},
+	{
+		URL:  "https://www.dynstatus.com",
+		Name: "Dyn",
+	},
+	{
+		URL:  "https://status.theendlessweb.com",
+		Name: "Endless Group",
+	},
+	{
+		URL:  "https://status.expo.io",
+		Name: "Expo",
+	},
+	{
+		URL:  "https://fluccs.status.io",
+		Name: "Fluccs",
+	},
+	{
+		URL:  "https://status.getflywheel.com",
+		Name: "Flywheel",
+	},
+	{
+		URL:  "https://status.formassembly.com",
+		Name: "FormAssembly",
+	},
+	{
+		URL:  "https://status.fragnet.net",
+		Name: "Fragnet Networks",
+	},
+	{
+		URL:  "https://status.freistilbox.com",
+		Name: "Freistilbox",
+	},
+	{
+		URL:  "https://status.gandi.net",
+		Name: "Gandi",
+	},
+	{
+		URL:  "https://status.getresponse.com",
+		Name: "GetResponse",
+	},
+	{
+		URL:  "https://status.gitlabhost.com",
+		Name: "GitlabHost",
+	},
+	{
+		URL:  "https://www.godaddy.com/system-status",
+		Name: "GoDaddy",
+	},
+	{
+		URL:  "https://status.happyfox.com",
+		Name: "HappyFox",
+	},
+	{
+		URL:  "https://hawkhoststatus.com",
+		Name: "Hawk Host",
+	},
+	{
+		URL:  "https://status.hostedgraphite.com",
+		Name: "Hosted Graphite",
+	},
 }
