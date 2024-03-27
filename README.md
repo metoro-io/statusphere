@@ -17,7 +17,21 @@
 
 An open-source api-first status page aggregator.
 
-If your looking for the official hosted version, head [here](https://metoro.io/statusphere).
+If you're looking for the official hosted version, head [here](https://metoro.io/statusphere).
+
+Read more about the project at the launch blog post [here](https://metoro.io/blog/statusphere).
+
+## Usage
+
+Warning: This will spin up a local instance of the statusphere stack which will automatically scrape the status pages of
+the services listed in the `status_pages.go` file.
+
+```bash
+docker-compose up
+
+# The api server will be available at http://localhost:8080
+curl http://localhost:8080/api/v1/statusPages/count
+```
 
 ## Architecture
 
@@ -32,15 +46,3 @@ They're orchestrated in the following way:
 <div align="center">
 <img src="./docs/static/statusphere-architecture-white.png" height="300" alt="Statusphere logo">
 </div>
-
-## Usage
-
-Warning: This will spin up a local instance of the statusphere stack which will automatically scrape the status pages of
-the services listed in the `status_pages.go` file.
-
-```bash
-docker-compose up
-
-# The api server will be available at http://localhost:8080
-curl http://localhost:8080/api/v1/statusPages/count
-```
