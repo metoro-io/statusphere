@@ -44,6 +44,14 @@ func (s *StatusioProvider) ScrapeStatusPageCurrent(ctx context.Context, url stri
 // page using the status.io method
 // If the status.io method fails, it will return an error
 func (s *StatusioProvider) scrapeStatusIoPageCurrent(ctx context.Context, url string) ([]api.Incident, error) {
+	isStatusIoPage, err := s.isStatusIoPage(url)
+	if err != nil {
+		return nil, errors.Wrap(err, "failed to determine if the page is a status.io page")
+	}
+	if !isStatusIoPage {
+		return nil, errors.New("page is not a status.io page")
+	}
+
 	// Get the current ongoing incidents
 	incidentsOngoing, err := s.getOngoingIncidents(url)
 	if err != nil {
@@ -74,6 +82,14 @@ func (s *StatusioProvider) scrapeStatusIoPageCurrent(ctx context.Context, url st
 // scrapeStatusIoPageHistorical is a helper function that will attempt to scrape the status page using the status.io method
 // If the status.io method fails, it will return an error
 func (s *StatusioProvider) scrapeStatusIoPageHistorical(ctx context.Context, url string) ([]api.Incident, error) {
+	isStatusIoPage, err := s.isStatusIoPage(url)
+	if err != nil {
+		return nil, errors.Wrap(err, "failed to determine if the page is a status.io page")
+	}
+	if !isStatusIoPage {
+		return nil, errors.New("page is not a status.io page")
+	}
+
 	var incidents []api.Incident
 
 	// Get the last 40 quarters of incidents == 10 years
@@ -251,6 +267,35 @@ func (s *StatusioProvider) parseCurrentIncidents(url string, html string) ([]api
 		incidents = append(incidents, incident)
 	})
 	return incidents, nil
+}
+
+// We determine if a page is a status.io page by checking if there is a /history page and
+// that history page contains the data-react-class='HistoryIndex' attribute
+func (s *StatusioProvider) isStatusIoPage(url string) (bool, error) {
+	// Get the history page
+	historyUrl := url + "/history"
+	history, err := s.httpClient.Get(historyUrl)
+	if err != nil {
+		return false, errors.Wrap(err, "failed to make the get request to the history page")
+	}
+
+	// Pull out the HTML from the response
+	historyHtml, err := io.ReadAll(history.Body)
+	if err != nil {
+		return false, errors.Wrap(err, "failed to read the history page response body")
+	}
+
+	doc, err := goquery.NewDocumentFromReader(strings.NewReader(string(historyHtml)))
+	if err != nil {
+		return false, errors.Wrap(err, "failed to parse the history page html")
+	}
+
+	// Find the script tag with the JSON data
+	found := false
+	doc.Find("div[data-react-class='HistoryIndex']").Each(func(i int, selection *goquery.Selection) {
+		found = true
+	})
+	return found, nil
 }
 
 // We need to parse strings in this format

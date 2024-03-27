@@ -67,13 +67,15 @@ func (p *Poller) pollInner() error {
 			p.logger.Info("scraping", zap.String("url", url))
 			defer p.logger.Info("finished scraping", zap.String("url", url))
 			p.currentlyExecutingScrapes.Set(url, true, cache.NoExpiration)
-			defer func(urlGetter urlgetter.URLGetter, url string, time time.Time) {
-				_ = urlGetter.UpdateLastScrapedTime(url, time)
-			}(p.urlGetter, url, time.Now())
 			defer p.currentlyExecutingScrapes.Delete(url)
 			err := p.executeScrape(url)
+			successfullyScraped := err == nil
+			defer func(urlGetter urlgetter.URLGetter, url string, time time.Time) {
+				_ = urlGetter.UpdateLastScrapedTime(url, time, successfullyScraped)
+			}(p.urlGetter, url, time.Now())
 			if err != nil {
 				p.logger.Error("failed to scrape", zap.Error(err), zap.String("url", url))
+				return
 			}
 		}(url)
 	}

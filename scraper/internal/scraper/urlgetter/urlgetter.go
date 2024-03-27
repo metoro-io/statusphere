@@ -14,7 +14,7 @@ type URLGetter interface {
 	GetHistoricalUrlsToScrape() ([]string, error)
 
 	// UpdateLastScrapedTime updates the last scraped time for the given URL
-	UpdateLastScrapedTime(url string, time time.Time) error
+	UpdateLastScrapedTime(url string, time time.Time, scraped bool) error
 
 	// UpdateLastScrapedTimeHistorical updates the last scraped time for the given URL for historical scraping
 	UpdateLastScrapedTimeHistorical(url string, time time.Time) error

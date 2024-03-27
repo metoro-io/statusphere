@@ -6,6 +6,7 @@ import (
 	"github.com/jackc/pgx/v5/pgconn"
 	"github.com/kelseyhightower/envconfig"
 	"github.com/metoro-io/statusphere/common/api"
+	"github.com/metoro-io/statusphere/common/status_pages"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 	"gorm.io/driver/postgres"
@@ -185,19 +186,8 @@ func (d *DbClient) CreateOrUpdateIncidents(ctx context.Context, incidents []api.
 	return nil
 }
 
-var seedStatusPages = []api.StatusPage{
-	{
-		URL:  "https://status.github.com",
-		Name: "GitHub",
-	},
-	{
-		URL:  "https://status.redis.com",
-		Name: "Redis",
-	},
-}
-
 func (d *DbClient) SeedStatusPages() error {
-	for _, statusPage := range seedStatusPages {
+	for _, statusPage := range status_pages.StatusPages {
 		if page, err := d.GetStatusPage(context.Background(), statusPage.URL); err != nil || page == nil {
 			// Status page already exists
 			err := d.InsertStatusPage(context.Background(), statusPage)

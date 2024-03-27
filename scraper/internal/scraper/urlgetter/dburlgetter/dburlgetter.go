@@ -38,12 +38,15 @@ func (s *DBURLGetter) UpdateLastScrapedTimeHistorical(url string, time time.Time
 	return nil
 }
 
-func (s *DBURLGetter) UpdateLastScrapedTime(url string, time time.Time) error {
+func (s *DBURLGetter) UpdateLastScrapedTime(url string, time time.Time, scraped bool) error {
 	statusPage, err := s.dbClient.GetStatusPage(context.Background(), url)
 	if err != nil {
 		return errors.Wrap(err, "failed to get status page")
 	}
 	statusPage.LastCurrentlyScraped = time
+	if !statusPage.IsIndexed && scraped {
+		statusPage.IsIndexed = true
+	}
 	err = s.dbClient.UpdateStatusPage(context.Background(), *statusPage)
 	if err != nil {
 		return errors.Wrap(err, "failed to update status page")

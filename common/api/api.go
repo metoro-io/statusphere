@@ -73,6 +73,8 @@ type StatusPage struct {
 	// Used to determine if we should run a scrape for this status page
 	LastHistoricallyScraped time.Time
 	LastCurrentlyScraped    time.Time
+	// IsIndexed is used to determine if the status page has ever been indexed in the search engine successfully
+	IsIndexed bool
 }
 
 func NewStatusPage(name string, url string) StatusPage {
