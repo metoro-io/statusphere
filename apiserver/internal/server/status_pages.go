@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-type StatusPageResponse struct {
+type StatusPagesResponse struct {
 	StatusPages []api.StatusPage `json:"statusPages"`
 }
 
@@ -16,5 +16,5 @@ func (s *Server) statusPages(context *gin.Context) {
 		statusPages = append(statusPages, statusPage.Object.(api.StatusPage))
 	}
 
-	context.JSON(http.StatusOK, StatusPageResponse{StatusPages: statusPages})
+	context.JSON(http.StatusOK, StatusPagesResponse{StatusPages: statusPages})
 }

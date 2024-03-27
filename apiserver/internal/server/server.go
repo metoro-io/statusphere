@@ -44,6 +44,7 @@ func (s *Server) Serve() error {
 	apiV1 := r.Group("/api/v1")
 	{
 		apiV1.Use(addNoIndexHeader())
+		apiV1.GET("/statusPage", s.statusPage)
 		apiV1.GET("/statusPages", s.statusPages)
 		apiV1.GET("/incidents", s.incidents)
 		apiV1.GET("/currentStatus", s.currentStatus)
