@@ -1,9 +1,10 @@
 "use client"
 
+import {Search} from "@/components/Search";
 import {Header} from "@/components/header";
 import {Footer} from "@/components/footer";
 import {Meteors} from "@/components/mainsite/Meteors";
-import {Search} from "@/components/Search";
+
 
 function MainContent() {
     return (
@@ -16,13 +17,10 @@ function MainContent() {
 }
 
 export default function Home() {
-    return (
-        <>
-            <Header/>
-            <Meteors number={20}/>
-            <MainContent/>
-            <Footer/>
-        </>
-
-    );
+    return <>
+        <Header/>
+        <Meteors number={20}/>
+        <MainContent/>
+        <Footer/>
+    </>
 }

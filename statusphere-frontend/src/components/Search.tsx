@@ -7,20 +7,17 @@ import {Command, CommandEmpty, CommandGroup, CommandInput, CommandItem} from "@/
 import {CaretSortIcon, CheckIcon} from "@radix-ui/react-icons";
 import axios from "@/utils/axios";
 import {cn} from "@/components/ui/lib/utils";
+import {StatusPage} from "@/model/StatusPage";
+import {useRouter} from "next/navigation";
 
-interface StatusPage {
-    Name: string;
-    URL: string;
-    LastHistoricallyScraped: string;
-    LastCurrentlyScraped: string;
-    IsIndexed: boolean;
-}
+
 
 export function Search() {
     const [company, setCompany] = useState<string>("");
     const [prefix, setPrefix] = useState<string>("");
     const [companyList, setCompanyList] = useState<StatusPage[]>([]);
     const [open, setOpen] = useState(false);
+    const router = useRouter();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -42,6 +39,9 @@ export function Search() {
         };
         fetchData();
     }, [prefix]);
+
+    const handleClick = () => {
+    }
 
     return (
         <>
@@ -97,7 +97,9 @@ export function Search() {
                 <div>
                     <Button
                         className="w-full"
-                        onClick={() => console.log("submitted!")}
+                        onClick={() => {
+                            router.push('/status/' + company)
+                        }}
                         disabled={company === ""}
                     >
                         Search
