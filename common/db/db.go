@@ -46,8 +46,8 @@ func NewDbClientFromEnvironment(lg *zap.Logger) (*DbClient, error) {
 	}
 
 	// Check to see if the database exists in postgres
-	dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s sslmode=disable",
-		config.Host, config.Port, config.User, config.Password)
+	dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
+		config.Host, config.Port, config.User, config.Password, config.Database)
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		return nil, errors.Wrap(err, "failed to connect to postgres")

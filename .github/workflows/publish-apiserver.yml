@@ -39,7 +39,7 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v4
         with:
-          context: apiserver
+          context: ./
           file: ./apiserver/Dockerfile
           push: true
           tags: |
