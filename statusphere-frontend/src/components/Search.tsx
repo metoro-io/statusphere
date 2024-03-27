@@ -54,16 +54,16 @@ export function Search() {
                                 variant="outline"
                                 role="combobox"
                                 aria-expanded={open}
-                                className="w-full justify-between"
+                                className="w-full justify-between bg-white shadow-white"
                             >
                                 {company}
 
-                                <div className={"flex w-full justify-end"}>
+                                <div className={"flex w-full justify-end "}>
                                     <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50"/>
                                 </div>
                             </Button>
                         </PopoverTrigger>
-                        <PopoverContent className="w-full p-0 popover-content-width-same-as-its-trigger">
+                        <PopoverContent className="w-full p-0 popover-content-width-same-as-its-trigger bg-white">
                             <Command className={"w-full"}>
                                 <CommandInput onValueChange={(a) => {
                                     setPrefix(a)
@@ -96,7 +96,7 @@ export function Search() {
                     </Popover>
                 <div>
                     <Button
-                        className="w-full"
+                        className="w-full bg-white shadow-white border"
                         onClick={() => {
                             router.push('/status/' + company)
                         }}

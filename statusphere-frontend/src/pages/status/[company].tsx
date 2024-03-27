@@ -16,7 +16,7 @@ export default function Status() {
     const [lastStatusScrapeTime, setLastStatusScrapeTime] = useState("")
     const [incidents, setIncidents] = useState([])
     const router = useRouter()
-    const companyName = router.query.company
+    const companyName  = router.query.company!! as string
 
     useEffect(() => {
         const getStatusPageInfo = async () => {

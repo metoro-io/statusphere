@@ -6,9 +6,9 @@ const Layout = ({children}) => {
     return (
         <>
             <Header/>
-            <Meteors number={20}></Meteors>
-            <div>
-                <main>{children}</main>
+            <Meteors number={20}/>
+            <div className={"z-10"}>
+                {children}
             </div>
             <Footer/>
         </>

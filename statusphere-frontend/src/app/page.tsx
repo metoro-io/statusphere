@@ -8,7 +8,7 @@ import {Meteors} from "@/components/mainsite/Meteors";
 
 function MainContent() {
     return (
-        <div className={"flex justify-center w-full"}>
+        <div className={"flex justify-center w-full z-10"}>
             <div className={"sm:w-[80vw] lg:w-[40vw]"}>
                 <Search/>
             </div>

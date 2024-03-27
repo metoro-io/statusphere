@@ -5,7 +5,7 @@ import React from "react";
 export const Meteors = ({ number }: { number?: number }) => {
     const meteors = new Array(number || 20).fill(true);
     return (
-        <div className={"w-full h-full"}>
+        <div className={"w-full h-full absolute z-0"}>
             {meteors.map((el, idx) => (
                 <span
                     key={"meteor" + idx}
