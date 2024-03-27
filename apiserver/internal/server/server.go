@@ -47,6 +47,8 @@ func (s *Server) Serve() error {
 		apiV1.GET("/statusPages", s.statusPages)
 		apiV1.GET("/incidents", s.incidents)
 		apiV1.GET("/currentStatus", s.currentStatus)
+		apiV1.GET("/statusPages/search", s.statusPageSearch)
+		apiV1.GET("/statusPages/count", s.statusPageCount)
 	}
 
 	s.addFrontendRoutes(r)
