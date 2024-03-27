@@ -67,7 +67,7 @@ func (s *Server) addFrontendRoutes(r *gin.Engine) {
 func handleCors() gin.HandlerFunc {
 	corsConfig := cors.DefaultConfig()
 	// Development cors
-	corsConfig.AllowOrigins = []string{"http://localhost:3000"}
+	corsConfig.AllowOrigins = []string{"http://localhost:3000", "https://metoro.io"}
 	handlerFunc := cors.New(corsConfig)
 	return handlerFunc
 }
