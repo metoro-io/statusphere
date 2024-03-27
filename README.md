@@ -19,7 +19,7 @@ An open-source api-first status page aggregator.
 
 If you're looking for the official hosted version, head [here](https://metoro.io/statusphere).
 
-Read more about the project at the launch blog post [here](https://metoro.io/blog/statusphere).
+Read more about the project at the [launch blog post](https://metoro.io/blog/statusphere).
 
 ## Usage
 
@@ -27,6 +27,7 @@ Warning: This will spin up a local instance of the statusphere stack which will 
 the services listed in the `status_pages.go` file.
 
 ```bash
+# From the root of the repository
 docker-compose up
 
 # The api server will be available at http://localhost:8080
@@ -46,3 +47,20 @@ They're orchestrated in the following way:
 <div align="center">
 <img src="./docs/static/statusphere-architecture-white.png" height="300" alt="Statusphere logo">
 </div>
+
+
+## Scraping mechanism
+
+Each scraper periodically polls the database to get a list of status pages to scrape. 
+After the time interval has passed, the scraper will scrape the status page and update the database with the new status.
+
+### Parsing status pages
+
+When a scraper scrapes a status page, it attempts to parse the page using `providers` in a cascading manner.
+Each provider is responsible for parsing a specific type of status page. For example, the status.io provider is responsible for parsing status pages that are built using the status.io platform.
+If a provider is unable to parse the status page it will return an error, and the next provider in the list will be attempted.
+
+
+## Contributing
+
+We're actively welcoming contributions to Statusphere! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) file for more information on how to get started.
