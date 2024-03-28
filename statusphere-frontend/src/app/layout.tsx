@@ -2,6 +2,9 @@ import type {Metadata} from "next";
 import {Inter, Lexend} from "next/font/google";
 import '@/index.css'
 import {clsx} from "clsx";
+import {PHProvider} from "@/app/providers";
+import PostHogPageView from "@/app/PostHogPageView";
+import {Suspense} from "react";
 
 const inter = Inter({
     subsets: ['latin'],
@@ -34,7 +37,15 @@ export default function RootLayout({
                 lexend.variable,
             )}
         >
-        <body className={"flex h-full flex-col"}>{children}</body>
+        <PHProvider>
+            <body className={"flex h-full flex-col"}>
+            <Suspense>
+                <PostHogPageView/>
+            </Suspense>
+            {children}
+            </body>
+        </PHProvider>
+
         </html>
     );
 }

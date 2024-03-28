@@ -18,6 +18,8 @@ function getBadgeColour(impact: string) {
             return "bg-yellow-400";
         case "major":
             return "bg-red-400";
+        case "critical":
+            return "bg-red-700";
         case "maintenance":
             return "bg-blue-400";
         default:
