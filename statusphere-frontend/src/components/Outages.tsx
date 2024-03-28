@@ -5,11 +5,26 @@ import {StatusPage} from "@/model/StatusPage";
 import {calculateDuration, convertToSimpleDate} from "@/utils/datetime";
 import {ReadMore} from "@/components/ReadMore";
 import {Card, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
+import {Badge} from "@/components/ui/badge";
 
 interface OutagesProps {
     statusPageDetails: StatusPage;
 }
+function getBadgeColour(impact: string) {
+    switch (impact) {
+        case "none":
+            return "bg-green-400";
+        case "minor":
+            return "bg-yellow-400";
+        case "major":
+            return "bg-red-400";
+        case "maintenance":
+            return "bg-blue-400";
+        default:
+            return "bg-gray-400";
+    }
 
+}
 export function Outages(props: OutagesProps) {
     const [incidents, setIncidents] = useState<Incident[]>([]);
 
@@ -76,7 +91,9 @@ export function Outages(props: OutagesProps) {
                 <TableRow>
                     <TableCell>{convertToSimpleDate(incident.startTime)}</TableCell>
                     <TableCell><a href={incident.deepLink}> {incident.title} </a></TableCell>
-                    <TableCell>{incident.impact}</TableCell>
+                    <TableCell>
+                        <Badge className={getBadgeColour(incident.impact)}>{incident.impact}</Badge>
+                    </TableCell>
                     <TableCell>{calculateDuration(incident.startTime, incident.endTime)}</TableCell>
                     {window.innerWidth > 500 && <TableCell className="text-left">
                         <ReadMore text={incident.description}/>
