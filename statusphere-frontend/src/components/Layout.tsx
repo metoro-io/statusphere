@@ -4,14 +4,13 @@ import {Meteors} from "@/components/mainsite/Meteors";
 
 const Layout = ({children}) => {
     return (
-        <>
+        <div className={"w-[100vw]"}>
             <Header/>
-            <Meteors number={20}/>
+
             <div className={"z-10"}>
                 {children}
             </div>
-            <Footer/>
-        </>
+        </div>
     );
 };
 export default Layout;

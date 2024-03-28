@@ -4,6 +4,7 @@ import axios from "@/utils/axios";
 import {StatusPage} from "@/model/StatusPage";
 import {calculateDuration, convertToSimpleDate} from "@/utils/datetime";
 import {ReadMore} from "@/components/ReadMore";
+import {Card, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
 
 interface OutagesProps {
     statusPageDetails: StatusPage;
@@ -29,9 +30,23 @@ export function Outages(props: OutagesProps) {
     }, [props.statusPageDetails]);
 
     if (!props.statusPageDetails.isIndexed) {
-        return <div>Incidents are not indexed for this status page,
-            you can view the official status page in: <a
-                href={props.statusPageDetails.url}> Official {props.statusPageDetails.name} status page</a>
+        return <div>
+            <Card className={"bg-white"}>
+                <CardHeader className={"items-left"}>
+                    <CardTitle>
+                        <h3 className="scroll-m-20 text-xl font-semibold tracking-tight">
+                            Incidents are not currently indexed for {props.statusPageDetails.name}
+                        </h3>
+
+                    </CardTitle>
+                    <CardDescription>
+                        <p className="leading-7 [&:not(:first-child)]:mt-6">
+                            You can view the official status page at: <a
+                            href={props.statusPageDetails.url}> {props.statusPageDetails.name} status page</a></p>
+                    </CardDescription>
+                </CardHeader>
+            </Card>
+
         </div>
     }
 
@@ -39,7 +54,7 @@ export function Outages(props: OutagesProps) {
         return <div>No incidents found</div>
     }
 
-    return <>
+    return <div className={"mt-4"}>
         <h2 className="scroll-m-20 border-b pb-2 text-2xl font-semibold first:mt-0 text-center">
             Past {props.statusPageDetails.name} Incidents
         </h2>
@@ -53,7 +68,7 @@ export function Outages(props: OutagesProps) {
                 <TableHead className={"max-w-[300px]"}>Incident Deep Link</TableHead>
                 <TableHead>Impact</TableHead>
                 <TableHead className="text-left">Duration</TableHead>
-                <TableHead className="text-left">Description</TableHead>
+                {window.innerWidth > 500 && <TableHead>Description</TableHead>}
             </TableRow>
         </TableHeader>
         <TableBody>
@@ -63,16 +78,14 @@ export function Outages(props: OutagesProps) {
                     <TableCell><a href={incident.deepLink}> {incident.title} </a></TableCell>
                     <TableCell>{incident.impact}</TableCell>
                     <TableCell>{calculateDuration(incident.startTime, incident.endTime)}</TableCell>
-                    <TableCell className="text-left">
+                    {window.innerWidth > 500 && <TableCell className="text-left">
                         <ReadMore text={incident.description}/>
-                    </TableCell>
-                    <TableCell className="text-left">
-                    </TableCell>
+                    </TableCell>}
                 </TableRow>
             ))}
         </TableBody>
     </Table>
-        </>;
+        </div>;
 }
 
 

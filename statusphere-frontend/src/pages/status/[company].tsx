@@ -44,8 +44,9 @@ export default function CompanyStatusPage() {
     }
 
     return (
-        <div className={"flex justify-center w-full"}>
-            <div className={"sm:w-[90vw] lg:w-[80vw] z-10 space-y-8"}>
+        <div className={"flex justify-center w-full z-10"}>
+            <div className={"w-[90vw] lg:w-[80vw] space-y-8 flex justify-center"}>
+                <div>
                 {isError ?
                     <RecommendCompany input={companyName}/>
                     :
@@ -59,6 +60,7 @@ export default function CompanyStatusPage() {
                         <Outages statusPageDetails={statusPageDetails}/>
                     </>
                 }
+                </div>
             </div>
         </div>)
 }
