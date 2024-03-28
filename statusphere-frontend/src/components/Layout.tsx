@@ -1,14 +1,15 @@
 import {Header} from "@/components/header";
-import {Footer} from "@/components/footer";
-import {Meteors} from "@/components/mainsite/Meteors";
+import {ReactNode} from "react";
 
-const Layout = ({children}) => {
+interface LayoutProps {
+    children: ReactNode;
+}
+const Layout = (props: LayoutProps) => {
     return (
         <div className={"w-[100vw]"}>
             <Header/>
-
             <div className={"z-10"}>
-                {children}
+                {props.children}
             </div>
         </div>
     );
