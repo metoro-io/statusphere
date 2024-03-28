@@ -1,5 +1,5 @@
 <div align="center">
-<img src="./docs/static/statusphere-white.png" width="300" height="300" alt="Statusphere logo">
+<img src="./docs/static/statusphere-white-wide.png" height="300" alt="Statusphere logo">
 </div>
 <br/>
 
