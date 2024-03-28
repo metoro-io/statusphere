@@ -1996,7 +1996,7 @@ var StatusPages = []api.StatusPage{
 		URL:  "https://status.adobe.com",
 		Name: "Adobe",
 	}, {
-		URL:  "https://www.redditstatus.com/",
+		URL:  "https://www.redditstatus.com",
 		Name: "Reddit",
 	},
 }
