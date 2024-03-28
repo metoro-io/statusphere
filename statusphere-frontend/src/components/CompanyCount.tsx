@@ -28,7 +28,7 @@ export function CompanyCount() {
                 } else {
                     clearInterval(interval);
                 }
-            }, 10);
+            }, 5);
         });
     }, []);
 
