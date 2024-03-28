@@ -164,9 +164,11 @@ func (d *DbClient) GetIncidents(ctx context.Context, statusPageUrl string) ([]ap
 	return incidents, nil
 }
 
+// Current incidents are incidents that have not ended and have a start time in the last two weeks
+// The two week cutiff is not ideal but some incidents don't have a specified end time
 func (d *DbClient) GetCurrentIncidents(ctx context.Context, statusPageUrl string) ([]api.Incident, error) {
 	var incidents []api.Incident
-	result := d.db.Table(fmt.Sprintf("%s.%s", schemaName, incidentsTableName)).Where("status_page_url = ? AND end_time IS NULL", statusPageUrl).Find(&incidents)
+	result := d.db.Table(fmt.Sprintf("%s.%s", schemaName, incidentsTableName)).Where("status_page_url = ? AND start_time > ?", statusPageUrl, time.Now().Add(-14*24*time.Hour)).Find(&incidents)
 	if result.Error != nil {
 		return nil, result.Error
 	}
