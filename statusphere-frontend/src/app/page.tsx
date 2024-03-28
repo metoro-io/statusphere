@@ -12,14 +12,18 @@ import statusphere from "../../public/static/images/statusphere.png";
 
 function MainContent() {
     return (
-        <div className={"flex justify-center w-full z-10 m-4"}>
-            <div className={"sm:w-[80vw] lg:w-[40vw]"}>
+        <div className={"flex justify-center h-full w-[100w] z-10 m-4"}>
+            <div className={" h-full lg:w-[40vw] w-[100w]"}>
+                <div className={" h-max flex justify-center"}>
+                <div className={"flex justify-center w-[30vh] h-[30vh] relative"}>
                 <Image
                     src={statusphere}
-                    width={500}
-                    height={500}
+                    layout='fill'
+                    objectFit='contain'
                     alt="Picture of the author"
                 />
+                </div>
+                </div>
                 <CompanyCount/>
                 <Search/>
             </div>
@@ -32,6 +36,6 @@ export default function Home() {
         <Header/>
         <Meteors number={10}/>
         <MainContent/>
-        <Footer/>
+        {/*<Footer/>*/}
     </>
 }

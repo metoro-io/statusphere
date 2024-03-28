@@ -41,7 +41,7 @@ export function Search() {
 
     return (
         <>
-            <div className="flex w-full items-center space-x-2 mt-4">
+            <div className="flex w-full justify-center space-x-2 mt-8">
                 <Popover open={open} onOpenChange={(a) => {
                     setOpen(a)
                 }}>

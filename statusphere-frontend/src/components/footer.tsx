@@ -8,7 +8,7 @@ import React from "react";
 
 export function Footer() {
     return (
-        <footer>
+        <footer className={"mt-8"}>
             <Container>
                 <div className="py-16">
                     <Image className={"mx-auto h-10 w-auto"} src={icon} alt="Metoro" width={0} height={0}/>

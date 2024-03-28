@@ -32,9 +32,11 @@ export function CompanyCount() {
         });
     }, []);
 
-    return <div className="scroll-m-20 text-2xl tracking-tight text-center">
+    return <div className="flex justify-center">
+        <div className="text-2xl tracking-tight">
         Service status for
         <b className="text-[#00243c]"> {currentCount.current}</b> companies!
-    </div>
+        </div>
+        </div>
 
 }
