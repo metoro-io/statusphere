@@ -1,11 +1,11 @@
 interface Incident {
-    "Title": string
-    "Components": any,
-    "Events": any,
-    "StartTime": string,
-    "EndTime": string,
-    "Description": string
-    "DeepLink": string,
-    "Impact": string,
-    "StatusPageUrl": string
+    title: string
+    components: any,
+    events: any,
+    startTime: string,
+    endTime: string,
+    description: string
+    deepLink: string,
+    impact: string,
+    statusPageUrl: string
 }

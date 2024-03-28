@@ -1,6 +1,6 @@
 import type {Metadata} from "next";
 import {Inter, Lexend} from "next/font/google";
-import '@/styles/global.css'
+import '@/index.css'
 import {clsx} from "clsx";
 
 const inter = Inter({

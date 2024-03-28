@@ -1,6 +1,8 @@
 export enum Status {
     UP =  'UP',
-    DOWN = 'DOWN'
+    DOWN = 'DOWN',
+    DEGRADED = "DEGRADED",
+    UNKNOWN = 'UNKNOWN'
 }
 
 

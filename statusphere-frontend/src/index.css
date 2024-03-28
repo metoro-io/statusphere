@@ -4,6 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+    @apply overflow-x-hidden;
+}
+
+a {
+    @apply underline text-blue-600 hover:text-blue-800
+}
 
 @layer base {
     :root {
@@ -77,15 +84,17 @@
 }
 
 
-@layer base {
-    * {
-        @apply border-border;
-    }
 
 
-    body {
-        @apply bg-background text-foreground;
-        text-rendering: optimizeLegibility;
-        font-family: 'Geist Variable';
-    }
-}
+/*@layer base {*/
+/*    !** {*!*/
+/*    !*    !*@apply border-border;*!*!*/
+/*    !*}*!*/
+
+
+/*    body {*/
+/*        @apply bg-background text-foreground;*/
+/*        text-rendering: optimizeLegibility;*/
+/*        font-family: 'Geist Variable';*/
+/*    }*/
+/*}*/

@@ -4,17 +4,16 @@ interface RecommendCompanyProps {
 }
 
 export function RecommendCompany(props: RecommendCompanyProps) {
-    return <div className={"flex justify-center w-full"}>
-        <div className={"sm:w-[80vw] lg:w-[60vw]"}>
-            <Card className={"bg-sky-400"}>
+    return <Card className={"bg-white"}>
                 <CardHeader className={"items-left"}>
                     <CardTitle>
                         <h3 className="scroll-m-20 text-xl font-semibold tracking-tight">
                             We currently don't have status updates for {props.input}
                         </h3>
+                        <p className="leading-7 [&:not(:first-child)]:mt-6">
+                            To add a company status page, please make a pull request in <a href={"https://github.com/metoro-io/statusphere"}>Statusphere repository</a>.
+                        </p>
                     </CardTitle>
                 </CardHeader>
             </Card>
-        </div>
-    </div>
 }

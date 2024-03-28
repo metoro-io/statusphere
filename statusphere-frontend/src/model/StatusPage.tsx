@@ -1,7 +1,7 @@
 export interface StatusPage {
-    Name: string;
-    URL: string;
-    LastHistoricallyScraped: string;
-    LastCurrentlyScraped: string;
-    IsIndexed: boolean;
+    name: string;
+    url: string;
+    lastHistoricallyScraped: string;
+    lastCurrentlyScraped: string;
+    isIndexed: boolean;
 }

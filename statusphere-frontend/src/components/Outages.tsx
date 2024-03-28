@@ -1,91 +1,79 @@
 import {Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
+import {useEffect, useState} from "react";
+import axios from "@/utils/axios";
+import {StatusPage} from "@/model/StatusPage";
+import {calculateDuration, convertToSimpleDate} from "@/utils/datetime";
 
 interface OutagesProps {
-    displayName: string;
-    incidents: Incident[];
-    statusPageUrl: string;
+    statusPageDetails: StatusPage;
 }
 
 export function Outages(props: OutagesProps) {
-    const convertToLink = (url: string, display: string) => {
-        return <a
-            style={{color: 'green'}}
-            href={url}>{display}</a>;
+    const [incidents, setIncidents] = useState<Incident[]>([]);
+
+    useEffect(() => {
+        const getIncidents = async () => {
+            try {
+                const response = await axios.get(
+                    '/api/v1/incidents?statusPageUrl=' + props.statusPageDetails.url
+                );
+                setIncidents(response.data.incidents)
+            } catch (err) {
+                console.log(err);
+            }
+        };
+        if (props.statusPageDetails.isIndexed) {
+            getIncidents();
+        }
+    }, [props.statusPageDetails]);
+
+    if (!props.statusPageDetails.isIndexed) {
+        return <div>Incidents are not indexed for this status page,
+            you can view the official status page in: <a
+                href={props.statusPageDetails.url}> Official {props.statusPageDetails.name} status page</a>
+        </div>
     }
 
-    return (
-        <div>
-            <Table>
-                <TableCaption> Source:
-                    {convertToLink(props.statusPageUrl, " Official " +  props.displayName + " status page")}
-                </TableCaption>
-                <TableHeader>
-                    <TableRow>
-                        <TableHead className="w-[100px]">Start Time (UTC)</TableHead>
-                        <TableHead>End Time</TableHead>
-                        <TableHead>Impact</TableHead>
-                        <TableHead className="text-left">Duration</TableHead>
-                        <TableHead className="text-left">Description</TableHead>
-                        <TableHead className="text-left">Incident Page</TableHead>
-                    </TableRow>
-                </TableHeader>
-                <TableBody>
-                    {props.incidents.map((incident) => (
-                        <TableRow>
-                            <TableCell>{convertSimpleDate(incident.StartTime)}</TableCell>
-                            <TableCell>{incident.EndTime}</TableCell>
-                            <TableCell>{incident.Impact}</TableCell>
-                            <TableCell>{calculateDuration(incident.StartTime, incident.EndTime)}</TableCell>
-                            <TableCell className="text-left">{incident.Description}</TableCell>
-                            <TableCell className="text-left">{convertToLink(incident.DeepLink, "here")}</TableCell>
+    if (incidents === undefined || incidents.length === 0) {
+        return <div>No incidents found</div>
+    }
 
-                        </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </div>
-    );
+    return <>
+        <h2 className="scroll-m-20 border-b pb-2 text-2xl font-semibold first:mt-0 text-center">
+            Past {props.statusPageDetails.name} Outages
+        </h2>
+    <Table className={"bg-white"}>
+        <TableCaption> Source:
+            <a href={props.statusPageDetails.url}> Official {props.statusPageDetails.name} status page</a>
+        </TableCaption>
+        <TableHeader>
+            <TableRow>
+                <TableHead className="w-[100px]">Start Time (UTC)</TableHead>
+                <TableHead>Title</TableHead>
+                <TableHead>Impact</TableHead>
+                <TableHead className="text-left">Duration</TableHead>
+                <TableHead className="text-left">Description</TableHead>
+                <TableHead className="text-left">Incident Page</TableHead>
+            </TableRow>
+        </TableHeader>
+        <TableBody>
+            {incidents.map((incident) => (
+                <TableRow>
+                    <TableCell>{convertToSimpleDate(incident.startTime)}</TableCell>
+                    <TableCell>{incident.title}</TableCell>
+                    <TableCell>{incident.impact}</TableCell>
+                    <TableCell>{calculateDuration(incident.startTime, incident.endTime)}</TableCell>
+                    <TableCell className="text-left">
+                        {incident.description}
+                    </TableCell>
+                    <TableCell className="text-left">
+                        <a href={incident.deepLink}> here </a>
+                    </TableCell>
+                </TableRow>
+            ))}
+        </TableBody>
+    </Table>
+        </>;
 }
 
-const calculateDuration = (startTime: string, endTime: string): string => {
-    // Parse the start and end times
-    const start = new Date(startTime);
-    const end = new Date(endTime);
-
-    // Calculate the difference in milliseconds
-    const difference = end.getTime() - start.getTime();
-
-    // Convert milliseconds to hours, minutes, and seconds
-    const hours = Math.floor(difference / (1000 * 60 * 60));
-    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-    // Build the duration string conditionally
-    let durationParts = [];
-    if (hours > 0) {
-        const plural = hours === 1 ? "" : "s";
-        durationParts.push(`${hours} hour${plural}`);
-    }
-    if (minutes > 0) {
-        const plural = minutes === 1 ? "" : "s";
-        durationParts.push(`${minutes} minute${plural}`);
-    }
-    if (seconds > 0 || durationParts.length === 0) {
-        durationParts.push(`${seconds} seconds`);
-    }
-    return durationParts.join(", ");
-};
-
-const convertSimpleDate = (isoDateTime: string): string => {
-    const date = new Date(isoDateTime);
-
-    const year = date.getFullYear();
-    // Months in JavaScript are 0-indexed, so add 1 for the correct month number
-    const month = (date.getMonth() + 1).toString().padStart(2, '0');
-    const day = date.getDate().toString().padStart(2, '0');
-    const hours = date.getHours().toString().padStart(2, '0');
-    const minutes = date.getMinutes().toString().padStart(2, '0');
-
-    return `${year}-${month}-${day} ${hours}:${minutes}`;
-};
 

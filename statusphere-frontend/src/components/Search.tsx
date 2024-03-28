@@ -11,7 +11,6 @@ import {StatusPage} from "@/model/StatusPage";
 import {useRouter} from "next/navigation";
 
 
-
 export function Search() {
     const [company, setCompany] = useState<string>("");
     const [prefix, setPrefix] = useState<string>("");
@@ -40,63 +39,53 @@ export function Search() {
         fetchData();
     }, [prefix]);
 
-    const handleClick = () => {
-    }
-
     return (
         <>
-            <div className="flex w-full items-center space-x-2">
-                    <Popover open={open} onOpenChange={(a) => {
-                        setOpen(a)
-                    }}>
-                        <PopoverTrigger asChild>
-                            <Button
-                                variant="outline"
-                                role="combobox"
-                                aria-expanded={open}
-                                className="w-full justify-between bg-white shadow-white"
-                            >
-                                {company}
-
-                                <div className={"flex w-full justify-end "}>
-                                    <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50"/>
-                                </div>
-                            </Button>
-                        </PopoverTrigger>
-                        <PopoverContent className="w-full p-0 popover-content-width-same-as-its-trigger bg-white">
-                            <Command className={"w-full"}>
-                                <CommandInput onValueChange={(a) => {
-                                    setPrefix(a)
-                                }} placeholder="Search company..."
-                                              className="h-9"/>
-                                <CommandEmpty>No company found.</CommandEmpty>
-                                <CommandGroup>
-                                    {companyList.map((details) => (
-                                        <CommandItem
-                                            className={"w-full"}
-                                            key={details.Name}
-                                            value={details.Name}
-                                            onSelect={(currentValue) => {
-                                                setCompany(currentValue)
-                                                setOpen(false)
-                                            }}
-                                        >
-                                            {details.Name}
-                                            <CheckIcon
-                                                className={cn(
-                                                    "ml-auto h-4 w-4",
-                                                    company === details.Name ? "opacity-100" : "opacity-0"
-                                                )}
-                                            />
-                                        </CommandItem>
-                                    ))}
-                                </CommandGroup>
-                            </Command>
-                        </PopoverContent>
-                    </Popover>
+            <div className="flex w-full items-center space-x-2 mt-4">
+                <Popover open={open} onOpenChange={(a) => {
+                    setOpen(a)
+                }}>
+                    <PopoverTrigger asChild>
+                        <Button
+                            variant="outline"
+                            role="combobox"
+                            aria-expanded={open}
+                            className="w-full justify-between bg-white shadow-white text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+                        >
+                            {company}
+                            <div className={"flex w-full justify-end "}>
+                                <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50"/>
+                            </div>
+                        </Button>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-full p-0 popover-content-width-same-as-its-trigger bg-white">
+                        <Command className={"w-full"}>
+                            <CommandInput onValueChange={(a) => {
+                                setPrefix(a)
+                            }}
+                                          placeholder="Search company..."/>
+                            <CommandEmpty>No company found.</CommandEmpty>
+                            <CommandGroup>
+                                {companyList.map((details) => (
+                                    <CommandItem
+                                        className={"w-full text-slate-700 hover:bg-slate-100 hover:text-slate-900"}
+                                        key={details.name}
+                                        value={details.name}
+                                        onSelect={(currentValue) => {
+                                            setCompany(currentValue)
+                                            setOpen(false)
+                                        }}
+                                    >
+                                        {details.name}
+                                    </CommandItem>
+                                ))}
+                            </CommandGroup>
+                        </Command>
+                    </PopoverContent>
+                </Popover>
                 <div>
                     <Button
-                        className="w-full bg-white shadow-white border"
+                        className="w-full bg-white shadow-white border text-slate-700 hover:bg-slate-100 hover:text-slate-900"
                         onClick={() => {
                             router.push('/status/' + company)
                         }}
