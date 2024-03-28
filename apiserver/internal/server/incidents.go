@@ -26,6 +26,7 @@ func (s *Server) incidents(context *gin.Context) {
 		return
 	}
 
+	// Check to see that the status page is known to statusphere and is indexed
 	statusPage, found := s.statusPageCache.Get(statusPageUrl)
 	if !found {
 		context.JSON(http.StatusNotFound, gin.H{"error": "status page not known to statusphere"})
