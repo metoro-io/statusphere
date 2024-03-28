@@ -20,6 +20,10 @@ export function Search() {
 
     useEffect(() => {
         const fetchData = async () => {
+            if (prefix.length === 0) {
+                setCompanyList([]);
+                return;
+            }
             try {
                 const response = await axios.get(
                     '/api/v1/statusPages/search' + ((prefix.length === 0) ? "" :
@@ -67,11 +71,11 @@ export function Search() {
                             <CommandGroup>
                                 {companyList.map((details) => (
                                     <CommandItem
-                                        className={"w-full text-slate-700 hover:bg-slate-100 hover:text-slate-900"}
+                                        className={"w-full aria-selected:bg-slate-100 aria-selected:text-slate-900 text-slate-700 hover:bg-slate-100 hover:text-slate-900"}
                                         key={details.name}
                                         value={details.name}
                                         onSelect={(currentValue) => {
-                                            setCompany(currentValue)
+                                            setCompany(details.name)
                                             setOpen(false)
                                         }}
                                     >

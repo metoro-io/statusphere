@@ -55,7 +55,7 @@ export function Outages(props: OutagesProps) {
     }
 
     return <div className={"mt-4"}>
-        <h2 className="scroll-m-20 border-b pb-2 text-2xl font-semibold first:mt-0 text-center">
+        <h2 className="scroll-m-20 border-b pb-2 text-2xl font-semibold first:mt-0">
             Past {props.statusPageDetails.name} Incidents
         </h2>
     <Table className={"bg-white"}>
