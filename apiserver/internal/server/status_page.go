@@ -30,7 +30,7 @@ func (s *Server) statusPage(context *gin.Context) {
 	if statusPageUrl != "" {
 		statusPage, found := s.statusPageCache.Get(statusPageUrl)
 		if !found {
-			context.JSON(http.StatusNotFound, gin.H{"error": "status page not indexed"})
+			context.JSON(http.StatusNotFound, gin.H{"error": "status page not known to statusphere"})
 			return
 		}
 		context.JSON(http.StatusOK, StatusPageResponse{StatusPage: statusPage.(api.StatusPage)})
@@ -44,6 +44,6 @@ func (s *Server) statusPage(context *gin.Context) {
 				return
 			}
 		}
-		context.JSON(http.StatusNotFound, gin.H{"error": "status page not indexed"})
+		context.JSON(http.StatusNotFound, gin.H{"error": "status page not known to statusphere"})
 	}
 }

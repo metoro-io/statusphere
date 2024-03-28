@@ -28,9 +28,9 @@ func (sla IncidentEventArray) Value() (driver.Value, error) {
 }
 
 type IncidentEvent struct {
-	Title       string
-	Description string
-	Time        time.Time
+	Title       string    `json:"title"`
+	Description string    `json:"description"`
+	Time        time.Time `json:"time"`
 }
 
 func NewIncidentEvent(title string, description string, time time.Time) IncidentEvent {
@@ -42,15 +42,15 @@ func NewIncidentEvent(title string, description string, time time.Time) Incident
 }
 
 type Incident struct {
-	Title         string
-	Components    []string           `gorm:"column:components;type:jsonb"`
-	Events        IncidentEventArray `gorm:"column:events;type:jsonb"`
-	StartTime     time.Time          `gorm:"secondarykey"`
-	EndTime       *time.Time         `gorm:"secondarykey"`
-	Description   *string
-	DeepLink      string `gorm:"primarykey"`
-	Impact        Impact `gorm:"secondarykey"`
-	StatusPageUrl string `gorm:"secondarykey"`
+	Title         string             `json:"title"`
+	Components    []string           `gorm:"column:components;type:jsonb" json:"components"`
+	Events        IncidentEventArray `gorm:"column:events;type:jsonb" json:"events"`
+	StartTime     time.Time          `gorm:"secondarykey" json:"startTime"`
+	EndTime       *time.Time         `gorm:"secondarykey" json:"endTime"`
+	Description   *string            `json:"description"`
+	DeepLink      string             `gorm:"primarykey" json:"deepLink"`
+	Impact        Impact             `gorm:"secondarykey" json:"impact"`
+	StatusPageUrl string             `gorm:"secondarykey" json:"statusPageUrl"`
 }
 
 func NewIncident(title string, components []string, events []IncidentEvent, startTime time.Time, endTime *time.Time, description *string, deepLink string, impact Impact, statusPageUrl string) Incident {
@@ -68,13 +68,13 @@ func NewIncident(title string, components []string, events []IncidentEvent, star
 }
 
 type StatusPage struct {
-	Name string `gorm:"secondarykey"`
-	URL  string `gorm:"primarykey"`
+	Name string `gorm:"secondarykey" json:"name"`
+	URL  string `gorm:"primarykey" json:"url"`
 	// Used to determine if we should run a scrape for this status page
-	LastHistoricallyScraped time.Time
-	LastCurrentlyScraped    time.Time
+	LastHistoricallyScraped time.Time `json:"lastHistoricallyScraped"`
+	LastCurrentlyScraped    time.Time `json:"lastCurrentlyScraped"`
 	// IsIndexed is used to determine if the status page has ever been indexed in the search engine successfully
-	IsIndexed bool
+	IsIndexed bool `json:"isIndexed"`
 }
 
 func NewStatusPage(name string, url string) StatusPage {

@@ -12,6 +12,7 @@ import (
 
 type IncidentsResponse struct {
 	Incidents []api.Incident `json:"incidents"`
+	IsIndexed bool           `json:"isIndexed"`
 }
 
 // incidents is a handler for the /incidents endpoint.
@@ -21,6 +22,23 @@ func (s *Server) incidents(context *gin.Context) {
 	statusPageUrl := context.Query("statusPageUrl")
 	if statusPageUrl == "" {
 		context.JSON(http.StatusBadRequest, gin.H{"error": "statusPageUrl is required"})
+		return
+	}
+
+	statusPage, found := s.statusPageCache.Get(statusPageUrl)
+	if !found {
+		context.JSON(http.StatusNotFound, gin.H{"error": "status page not known to statusphere"})
+		return
+	}
+
+	statusPageCasted, ok := statusPage.(api.StatusPage)
+	if !ok {
+		context.JSON(http.StatusInternalServerError, gin.H{"error": "failed to cast status page"})
+		return
+	}
+
+	if !statusPageCasted.IsIndexed {
+		context.JSON(http.StatusOK, IncidentsResponse{Incidents: []api.Incident{}, IsIndexed: false})
 		return
 	}
 
@@ -44,7 +62,7 @@ func (s *Server) incidents(context *gin.Context) {
 		return
 	}
 	if !found {
-		context.JSON(http.StatusNotFound, gin.H{"error": "status page not indexed"})
+		context.JSON(http.StatusNotFound, gin.H{"error": "status page not known to statusphere"})
 		return
 	}
 

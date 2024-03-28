@@ -37,6 +37,23 @@ func (s *Server) currentStatus(context *gin.Context) {
 		return
 	}
 
+	statusPageInterface, found := s.statusPageCache.Get(statusPageUrl)
+	if !found {
+		context.JSON(http.StatusNotFound, gin.H{"error": "status page not known to statusphere"})
+		return
+	}
+
+	statusPageInterfaceCasted, ok := statusPageInterface.(api.StatusPage)
+	if !ok {
+		context.JSON(http.StatusInternalServerError, gin.H{"error": "failed to cast status page to api.StatusPage"})
+		return
+	}
+
+	if !statusPageInterfaceCasted.IsIndexed {
+		context.JSON(http.StatusOK, CurrentStatusResponse{Status: StatusUnknown, IsIndexed: false})
+		return
+	}
+
 	// Attempt to get the incidents from the cache
 	incidents, found, err := s.getCurrentIncidentsFromCache(ctx, statusPageUrl)
 	if err != nil {
@@ -68,26 +85,6 @@ func (s *Server) currentStatus(context *gin.Context) {
 	s.currentIncidentCache.Set(statusPageUrl, incidents, cache.DefaultExpiration)
 	if len(incidents) > 0 {
 		context.JSON(http.StatusOK, CurrentStatusResponse{Status: StatusDegraded, IsIndexed: true})
-		return
-	}
-	// Is the status page indexed?
-	// If not, return unknown
-	// If it is, return up
-
-	statusPageInterface, found := s.statusPageCache.Get(statusPageUrl)
-	if !found {
-		context.JSON(http.StatusNotFound, gin.H{"error": "status page not known to statusphere"})
-		return
-	}
-
-	statusPageInterfaceCasted, ok := statusPageInterface.(api.StatusPage)
-	if !ok {
-		context.JSON(http.StatusInternalServerError, gin.H{"error": "failed to cast status page to api.StatusPage"})
-		return
-	}
-
-	if !statusPageInterfaceCasted.IsIndexed {
-		context.JSON(http.StatusOK, CurrentStatusResponse{Status: StatusUnknown, IsIndexed: false})
 		return
 	}
 
