@@ -11,7 +11,7 @@ export const ReadMore = ({text}: ReadMoreProps) => {
 
     return (
         <p>
-            {subText}...
+            {isExpanded ? text : subText + '...'}
             <span
                 className='text-gray-400 underline ml-2'
                 role="button"
