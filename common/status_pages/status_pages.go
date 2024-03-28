@@ -77,7 +77,7 @@ var StatusPages = []api.StatusPage{
 	},
 	{
 		URL:  "https://status.openai.com",
-		Name: "OPEN",
+		Name: "OpenAi",
 	},
 	{
 		URL:  "https://status.adobe.com",

@@ -21,6 +21,12 @@ If you're looking for the official hosted version, head [here](https://metoro.io
 
 Read more about the project at the [launch blog post](https://metoro.io/blog/statusphere).
 
+## API
+
+Statusphere is API first, it has a frontend that consumes the API, but the API is the main focus of the project.
+The api endpoints are here:
+
+
 ## Usage
 
 Warning: This will spin up a local instance of the statusphere stack which will automatically scrape the status pages of
