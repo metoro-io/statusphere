@@ -4,139 +4,139 @@ import "github.com/metoro-io/statusphere/common/api"
 
 var StatusPages = []api.StatusPage{
 	{
-		URL:  "https://status.appveyor.com/",
+		URL:  "https://status.appveyor.com",
 		Name: "AppVeyor",
 	}, {
-		URL:  "https://status.aviator.co/",
+		URL:  "https://status.aviator.co",
 		Name: "Aviator",
 	}, {
-		URL:  "https://status.bitrise.io/",
+		URL:  "https://status.bitrise.io",
 		Name: "Bitrise",
 	}, {
-		URL:  "https://status.circleci.com/",
+		URL:  "https://status.circleci.com",
 		Name: "Circle CI",
 	}, {
-		URL:  "https://status.cloudmqtt.com/",
+		URL:  "https://status.cloudmqtt.com",
 		Name: "CloudMQTT",
 	}, {
-		URL:  "http://status.codefresh.io/",
+		URL:  "http://status.codefresh.io",
 		Name: "codefresh",
 	}, {
-		URL:  "http://codeship.statuspage.io/",
+		URL:  "http://codeship.statuspage.io",
 		Name: "codeship",
 	}, {
-		URL:  "https://currents.instatus.com/",
+		URL:  "https://currents.instatus.com",
 		Name: "Currents",
 	}, {
-		URL:  "https://status.digitalpigeon.com/",
+		URL:  "https://status.digitalpigeon.com",
 		Name: "Digital Pigeon",
 	}, {
 		URL:  "https://status.gathercontent.com/#",
 		Name: "GatherContent",
 	}, {
-		URL:  "https://status.harness.io/",
+		URL:  "https://status.harness.io",
 		Name: "harness",
 	}, {
-		URL:  "https://status.hasura.io/",
+		URL:  "https://status.hasura.io",
 		Name: "hasura",
 	}, {
-		URL:  "https://status.jellyfish.co/",
+		URL:  "https://status.jellyfish.co",
 		Name: "jellyfish",
 	}, {
-		URL:  "https://status.jenkins.io/",
+		URL:  "https://status.jenkins.io",
 		Name: "jenkins",
 	}, {
-		URL:  "https://status.nintex.com/",
+		URL:  "https://status.nintex.com",
 		Name: "nintex",
 	}, {
-		URL:  "https://status.keypup.io/",
+		URL:  "https://status.keypup.io",
 		Name: "keypup",
 	}, {
-		URL:  "https://status.maestroqa.com/",
+		URL:  "https://status.maestroqa.com",
 		Name: "maestroqa",
 	}, {
-		URL:  "https://status.lingk.io/",
+		URL:  "https://status.lingk.io",
 		Name: "lingk",
 	}, {
-		URL:  "https://status.octopus.com/",
+		URL:  "https://status.octopus.com",
 		Name: "octopus",
 	}, {
-		URL:  "https://pdq.statuspage.io/",
+		URL:  "https://pdq.statuspage.io",
 		Name: "pdq",
 	}, {
-		URL:  "https://permit-io.instatus.com/",
+		URL:  "https://permit-io.instatus.com",
 		Name: "permit-io",
 	}, {
-		URL:  "https://prefect.status.io/",
+		URL:  "https://prefect.status.io",
 		Name: "prefect",
 	}, {
-		URL:  "https://status.telerik.com/",
+		URL:  "https://status.telerik.com",
 		Name: "progress-telerik",
 	}, {
-		URL:  "https://status.pulumi.com/",
+		URL:  "https://status.pulumi.com",
 		Name: "pulumi",
 	}, {
-		URL:  "http://status.semaphoreci.com/",
+		URL:  "http://status.semaphoreci.com",
 		Name: "semaphore",
 	}, {
-		URL:  "https://status.servicerocket.com/",
+		URL:  "https://status.servicerocket.com",
 		Name: "servicerocket",
 	}, {
-		URL:  "https://app-status.sharegate.com/",
+		URL:  "https://app-status.sharegate.com",
 		Name: "sharegate",
 	}, {
-		URL:  "https://simplyq.statuspage.io/",
+		URL:  "https://simplyq.statuspage.io",
 		Name: "simplyq",
 	}, {
-		URL:  "https://status.sleuth.io/",
+		URL:  "https://status.sleuth.io",
 		Name: "sleuth",
 	}, {
-		URL:  "https://spacelift.statuspage.io/",
+		URL:  "https://spacelift.statuspage.io",
 		Name: "spacelift",
 	}, {
-		URL:  "https://status.subsplash.com/",
+		URL:  "https://status.subsplash.com",
 		Name: "subsplash",
 	}, {
-		URL:  "https://status.temporal.io/",
+		URL:  "https://status.temporal.io",
 		Name: "temporal",
 	}, {
-		URL:  "https://status.thruinc.com/",
+		URL:  "https://status.thruinc.com",
 		Name: "thru",
 	}, {
 		URL:  "https://rootly.com/teams/layerci/status-pages/webapp-io-status-page/public",
 		Name: "webappio",
 	}, {
-		URL:  "https://xporter.statuspage.io/",
+		URL:  "https://xporter.statuspage.io",
 		Name: "xporter",
 	}, {
-		URL:  "https://status.acquia.com/",
+		URL:  "https://status.acquia.com",
 		Name: "acquia",
 	}, {
-		URL:  "https://status.actionstep.com/",
+		URL:  "https://status.actionstep.com",
 		Name: "actionstep",
 	}, {
-		URL:  "https://status.adalo.com/",
+		URL:  "https://status.adalo.com",
 		Name: "adalo",
 	}, {
-		URL:  "https://status.connect.adaptavist.com/",
+		URL:  "https://status.connect.adaptavist.com",
 		Name: "adaptavist-cloud-apps",
 	}, {
-		URL:  "https://edgedns.status.akamai.com/",
+		URL:  "https://edgedns.status.akamai.com",
 		Name: "akamai-edge-dns",
 	}, {
-		URL:  "https://status.alibabacloud.com/",
+		URL:  "https://status.alibabacloud.com",
 		Name: "alibaba-cloud",
 	}, {
-		URL:  "https://status.alphavps.com/",
+		URL:  "https://status.alphavps.com",
 		Name: "alphavps",
 	}, {
-		URL:  "https://status.aws.amazon.com/",
+		URL:  "https://status.aws.amazon.com",
 		Name: "amazon-web-services",
 	}, {
-		URL:  "https://status.apaleo.com/",
+		URL:  "https://status.apaleo.com",
 		Name: "apaleo",
 	}, {
-		URL:  "https://status.apigee.com/",
+		URL:  "https://status.apigee.com",
 		Name: "apigee",
 	}, {
 		URL:  "https://www.appian.com/trust/status",
@@ -148,31 +148,31 @@ var StatusPages = []api.StatusPage{
 		URL:  "https://developer.apple.com/system-status",
 		Name: "apple-developer",
 	}, {
-		URL:  "https://status.appsflyer.com/",
+		URL:  "https://status.appsflyer.com",
 		Name: "appsflyer",
 	}, {
-		URL:  "https://status.aquasec.com/",
+		URL:  "https://status.aquasec.com",
 		Name: "aqua",
 	}, {
-		URL:  "https://status.arista.io/",
+		URL:  "https://status.arista.io",
 		Name: "arista-cloudvision",
 	}, {
-		URL:  "https://status.armor.com/",
+		URL:  "https://status.armor.com",
 		Name: "armor",
 	}, {
-		URL:  "https://status.aspex.be/",
+		URL:  "https://status.aspex.be",
 		Name: "aspex",
 	}, {
-		URL:  "https://athennian.statuspage.io/",
+		URL:  "https://athennian.statuspage.io",
 		Name: "athennian",
 	}, {
-		URL:  "https://status.avanan.com/",
+		URL:  "https://status.avanan.com",
 		Name: "avanan",
 	}, {
-		URL:  "https://status.avayacloud.com/",
+		URL:  "https://status.avayacloud.com",
 		Name: "avaya-cloud",
 	}, {
-		URL:  "https://status.axcient.com/",
+		URL:  "https://status.axcient.com",
 		Name: "axcient",
 	}, {
 		URL:  "https://status.axiom.co/#",
@@ -181,31 +181,31 @@ var StatusPages = []api.StatusPage{
 		URL:  "https://azure.microsoft.com/en-us/status",
 		Name: "azure",
 	}, {
-		URL:  "https://status.balena.io/",
+		URL:  "https://status.balena.io",
 		Name: "balena",
 	}, {
-		URL:  "http://status.bandwidth.com/",
+		URL:  "http://status.bandwidth.com",
 		Name: "bandwidth",
 	}, {
-		URL:  "https://www.bexio-status.com/",
+		URL:  "https://www.bexio-status.com",
 		Name: "bexio",
 	}, {
-		URL:  "https://status.bittitan.com/",
+		URL:  "https://status.bittitan.com",
 		Name: "bittitan",
 	}, {
-		URL:  "https://status.bizzabo.com/",
+		URL:  "https://status.bizzabo.com",
 		Name: "bizzabo",
 	}, {
-		URL:  "https://status.blend.com/",
+		URL:  "https://status.blend.com",
 		Name: "blend",
 	}, {
-		URL:  "http://status.bluejeans.com/",
+		URL:  "http://status.bluejeans.com",
 		Name: "bluejeans",
 	}, {
-		URL:  "https://status.bluejeans.com/",
+		URL:  "https://status.bluejeans.com",
 		Name: "blue-jeans-network",
 	}, {
-		URL:  "https://status.brivo.com/",
+		URL:  "https://status.brivo.com",
 		Name: "brivo",
 	}, {
 		URL:  "https://status.broadcom.com/services/cloud-secure-web-gateway",
@@ -214,16 +214,16 @@ var StatusPages = []api.StatusPage{
 		URL:  "https://status.broadcom.com/services/arcot",
 		Name: "broadcom-arcot",
 	}, {
-		URL:  "https://cdd.status.broadcom.com/",
+		URL:  "https://cdd.status.broadcom.com",
 		Name: "broadcom-continuous-delivery-director",
 	}, {
-		URL:  "https://dx.status.broadcom.com/",
+		URL:  "https://dx.status.broadcom.com",
 		Name: "broadcom-dx-saas",
 	}, {
 		URL:  "https://status.broadcom.com/services/edge-secure-web-gateway",
 		Name: "broadcom-edge-secure-web-gateway",
 	}, {
-		URL:  "https://layer7.status.broadcom.com/",
+		URL:  "https://layer7.status.broadcom.com",
 		Name: "broadcom-layer7-api-management",
 	}, {
 		URL:  "https://status.broadcom.com/services/rally",
@@ -232,1396 +232,1396 @@ var StatusPages = []api.StatusPage{
 		URL:  "https://status.broadcom.com/services/symantec-endpoint-security-enterprise",
 		Name: "broadcom-symantec-endpoint-security-enterprise",
 	}, {
-		URL:  "https://status.bunny.net/",
+		URL:  "https://status.bunny.net",
 		Name: "bunny",
 	}, {
-		URL:  "https://trust.calix.com/",
+		URL:  "https://trust.calix.com",
 		Name: "calix",
 	}, {
-		URL:  "https://status.casewarecloud.com/",
+		URL:  "https://status.casewarecloud.com",
 		Name: "caseware-cloud",
 	}, {
-		URL:  "https://status.catalystcloud.nz/",
+		URL:  "https://status.catalystcloud.nz",
 		Name: "catalyst-cloud",
 	}, {
-		URL:  "https://status.ceros.com/",
+		URL:  "https://status.ceros.com",
 		Name: "ceros",
 	}, {
-		URL:  "https://status.chromatic.com/",
+		URL:  "https://status.chromatic.com",
 		Name: "chromatic",
 	}, {
-		URL:  "https://status.ciscoiot.com/",
+		URL:  "https://status.ciscoiot.com",
 		Name: "cisco-iot",
 	}, {
-		URL:  "https://status.amp.cisco.com/",
+		URL:  "https://status.amp.cisco.com",
 		Name: "cisco-secure-endpoint",
 	}, {
-		URL:  "https://status.umbrella.com/",
+		URL:  "https://status.umbrella.com",
 		Name: "cisco-umbrella",
 	}, {
-		URL:  "https://status.cloud.com/",
+		URL:  "https://status.cloud.com",
 		Name: "citrix-cloud",
 	}, {
-		URL:  "http://status.cloud66.com/",
+		URL:  "http://status.cloud66.com",
 		Name: "cloud-66",
 	}, {
-		URL:  "https://status.connect.cloudblue.com/",
+		URL:  "https://status.connect.cloudblue.com",
 		Name: "cloudblue-connect",
 	}, {
-		URL:  "https://trust.cloudcheckr.com/",
+		URL:  "https://trust.cloudcheckr.com",
 		Name: "cloudcheckr",
 	}, {
-		URL:  "https://status.cloudera.com/",
+		URL:  "https://status.cloudera.com",
 		Name: "cloudera",
 	}, {
-		URL:  "https://status.cloudfanatic.net/",
+		URL:  "https://status.cloudfanatic.net",
 		Name: "cloudfanatic",
 	}, {
-		URL:  "https://status.cloudsigma.com/",
+		URL:  "https://status.cloudsigma.com",
 		Name: "cloudsigma",
 	}, {
-		URL:  "http://status.cloudways.com/",
+		URL:  "http://status.cloudways.com",
 		Name: "cloudways",
 	}, {
-		URL:  "https://status.cockroachlabs.cloud/",
+		URL:  "https://status.cockroachlabs.cloud",
 		Name: "cockroach-labs",
 	}, {
-		URL:  "https://status.cocoapods.org/",
+		URL:  "https://status.cocoapods.org",
 		Name: "cocoapods",
 	}, {
-		URL:  "https://status.confluent.cloud/",
+		URL:  "https://status.confluent.cloud",
 		Name: "confluent",
 	}, {
-		URL:  "https://status.coreweave.com/",
+		URL:  "https://status.coreweave.com",
 		Name: "coreweave",
 	}, {
-		URL:  "https://status.cloud.coveo.com/",
+		URL:  "https://status.cloud.coveo.com",
 		Name: "coveo-cloud",
 	}, {
-		URL:  "https://status.cradlepoint.com/",
+		URL:  "https://status.cradlepoint.com",
 		Name: "cradlepoint",
 	}, {
-		URL:  "https://status.current-rms.com/",
+		URL:  "https://status.current-rms.com",
 		Name: "current-rms",
 	}, {
-		URL:  "https://status.databox.com/",
+		URL:  "https://status.databox.com",
 		Name: "databox",
 	}, {
-		URL:  "https://status.datarobot.com/",
+		URL:  "https://status.datarobot.com",
 		Name: "datarobot",
 	}, {
-		URL:  "https://status.getdbt.com/",
+		URL:  "https://status.getdbt.com",
 		Name: "dbt-cloud",
 	}, {
-		URL:  "http://www.dediservestatus.com/",
+		URL:  "http://www.dediservestatus.com",
 		Name: "dediserve",
 	}, {
-		URL:  "https://status.boomi.com/",
+		URL:  "https://status.boomi.com",
 		Name: "dell-boomi",
 	}, {
-		URL:  "https://status.digitalocean.com/",
+		URL:  "https://status.digitalocean.com",
 		Name: "digitalocean",
 	}, {
-		URL:  "https://status.divio.com/",
+		URL:  "https://status.divio.com",
 		Name: "divio",
 	}, {
-		URL:  "https://dnsstatus.com/",
+		URL:  "https://dnsstatus.com",
 		Name: "dns-made-easy",
 	}, {
-		URL:  "https://docevent.instatus.com/",
+		URL:  "https://docevent.instatus.com",
 		Name: "docevent",
 	}, {
-		URL:  "https://status.dogado.de/",
+		URL:  "https://status.dogado.de",
 		Name: "dogado",
 	}, {
-		URL:  "https://status.doit.com/",
+		URL:  "https://status.doit.com",
 		Name: "doit",
 	}, {
-		URL:  "https://status.dongee.com/",
+		URL:  "https://status.dongee.com",
 		Name: "dongee",
 	}, {
-		URL:  "https://www.dopplerstatus.com/",
+		URL:  "https://www.dopplerstatus.com",
 		Name: "doppler",
 	}, {
-		URL:  "https://status.drchrono.com/",
+		URL:  "https://status.drchrono.com",
 		Name: "drchrono",
 	}, {
-		URL:  "https://status.drmtoday.com/",
+		URL:  "https://status.drmtoday.com",
 		Name: "drmtoday",
 	}, {
-		URL:  "https://status.dronedeploy.com/",
+		URL:  "https://status.dronedeploy.com",
 		Name: "dronedeploy",
 	}, {
-		URL:  "https://www.dynstatus.com/",
+		URL:  "https://www.dynstatus.com",
 		Name: "dyn",
 	}, {
-		URL:  "http://status.dynamixcloud.com/",
+		URL:  "http://status.dynamixcloud.com",
 		Name: "dynamix-cloud",
 	}, {
-		URL:  "https://dynatrace.status.io/",
+		URL:  "https://dynatrace.status.io",
 		Name: "dynatrace",
 	}, {
-		URL:  "https://status.ecostruxureit.com/",
+		URL:  "https://status.ecostruxureit.com",
 		Name: "ecostruxure-it",
 	}, {
-		URL:  "https://status.egnyte.com/",
+		URL:  "https://status.egnyte.com",
 		Name: "egnyte",
 	}, {
-		URL:  "https://ukstatus.ek.co/",
+		URL:  "https://ukstatus.ek.co",
 		Name: "ekco",
 	}, {
-		URL:  "https://status.elastic.io/",
+		URL:  "https://status.elastic.io",
 		Name: "elasticio",
 	}, {
-		URL:  "https://status.elluciancloud.com/",
+		URL:  "https://status.elluciancloud.com",
 		Name: "ellucian",
 	}, {
-		URL:  "https://status.emnify.com/",
+		URL:  "https://status.emnify.com",
 		Name: "emnify",
 	}, {
-		URL:  "http://status.empist.com/",
+		URL:  "http://status.empist.com",
 		Name: "empist",
 	}, {
-		URL:  "https://engineyard.statuspage.io/",
+		URL:  "https://engineyard.statuspage.io",
 		Name: "engine-yard",
 	}, {
-		URL:  "https://www.trustesker.com/",
+		URL:  "https://www.trustesker.com",
 		Name: "esker",
 	}, {
-		URL:  "https://statut.eurafibre.fr/",
+		URL:  "https://statut.eurafibre.fr",
 		Name: "eurafibre",
 	}, {
-		URL:  "https://exoscalestatus.com/",
+		URL:  "https://exoscalestatus.com",
 		Name: "exoscale",
 	}, {
-		URL:  "https://www.f5cloudstatus.com/",
+		URL:  "https://www.f5cloudstatus.com",
 		Name: "f5",
 	}, {
-		URL:  "http://status.filestack.com/",
+		URL:  "http://status.filestack.com",
 		Name: "filepicker",
 	}, {
-		URL:  "https://status.firebase.google.com/",
+		URL:  "https://status.firebase.google.com",
 		Name: "firebase",
 	}, {
-		URL:  "https://flagsmith.statuspage.io/",
+		URL:  "https://flagsmith.statuspage.io",
 		Name: "flagsmith",
 	}, {
-		URL:  "https://status.flatfile.io/",
+		URL:  "https://status.flatfile.io",
 		Name: "flatfile",
 	}, {
-		URL:  "https://status.flow.swiss/",
+		URL:  "https://status.flow.swiss",
 		Name: "flow-swiss",
 	}, {
-		URL:  "https://status.fly.io/",
+		URL:  "https://status.fly.io",
 		Name: "flyio",
 	}, {
-		URL:  "https://forticlient-status.forticloud.com/",
+		URL:  "https://forticlient-status.forticloud.com",
 		Name: "forticlient-cloud",
 	}, {
-		URL:  "https://status.fortiweb-cloud.com/",
+		URL:  "https://status.fortiweb-cloud.com",
 		Name: "fortiweb-cloud",
 	}, {
-		URL:  "https://status.freshbooks.com/",
+		URL:  "https://status.freshbooks.com",
 		Name: "freshbooks",
 	}, {
-		URL:  "https://crmstatus.freshworks.com/",
+		URL:  "https://crmstatus.freshworks.com",
 		Name: "freshworks-crm",
 	}, {
-		URL:  "https://status.frontify.com/",
+		URL:  "https://status.frontify.com",
 		Name: "frontify",
 	}, {
 		URL:  "https://status.gathercontent.com/#",
 		Name: "gathercontent",
 	}, {
-		URL:  "https://statuspage.gcorelabs.com/",
+		URL:  "https://statuspage.gcorelabs.com",
 		Name: "g-core-labs",
 	}, {
-		URL:  "https://status.mypurecloud.com/",
+		URL:  "https://status.mypurecloud.com",
 		Name: "genesys-cloud",
 	}, {
-		URL:  "https://status.gitlabhost.com/",
+		URL:  "https://status.gitlabhost.com",
 		Name: "gitlabhost",
 	}, {
-		URL:  "https://status.glesys.com/",
+		URL:  "https://status.glesys.com",
 		Name: "glesys",
 	}, {
-		URL:  "https://status.cloud.google.com/",
+		URL:  "https://status.cloud.google.com",
 		Name: "google-cloud",
 	}, {
 		URL:  "https://status.cloud.google.com/maps-platform",
 		Name: "google-maps-platform",
 	}, {
-		URL:  "https://status.g-portal.com/",
+		URL:  "https://status.g-portal.com",
 		Name: "gportal",
 	}, {
-		URL:  "https://status.granicusops.com/",
+		URL:  "https://status.granicusops.com",
 		Name: "granicus",
 	}, {
-		URL:  "https://status.grncld.net/",
+		URL:  "https://status.grncld.net",
 		Name: "green-cloud-technologies",
 	}, {
-		URL:  "https://status.guidewire.com/",
+		URL:  "https://status.guidewire.com",
 		Name: "guidewire",
 	}, {
-		URL:  "https://status.hashicorp.com/",
+		URL:  "https://status.hashicorp.com",
 		Name: "hashicorp",
 	}, {
-		URL:  "https://www.heartstatus.uk/",
+		URL:  "https://www.heartstatus.uk",
 		Name: "heart-internet",
 	}, {
-		URL:  "https://status.heroku.com/",
+		URL:  "https://status.heroku.com",
 		Name: "heroku",
 	}, {
-		URL:  "https://status.hetzner.com/",
+		URL:  "https://status.hetzner.com",
 		Name: "hetzner",
 	}, {
-		URL:  "https://status.hevodata.com/",
+		URL:  "https://status.hevodata.com",
 		Name: "hevo",
 	}, {
-		URL:  "https://status.hivebrite.com/",
+		URL:  "https://status.hivebrite.com",
 		Name: "hivebrite",
 	}, {
-		URL:  "https://status.hostifi.com/",
+		URL:  "https://status.hostifi.com",
 		Name: "hostifi",
 	}, {
-		URL:  "https://www.hostpapastatus.com/",
+		URL:  "https://www.hostpapastatus.com",
 		Name: "hostpapa",
 	}, {
-		URL:  "https://status.aspera.io/",
+		URL:  "https://status.aspera.io",
 		Name: "ibm-aspera",
 	}, {
 		URL:  "https://cloud.ibm.com/status?selected=status",
 		Name: "ibm-cloud",
 	}, {
-		URL:  "https://status.infoblox.com/",
+		URL:  "https://status.infoblox.com",
 		Name: "infoblox",
 	}, {
-		URL:  "https://status.ingage.jp/",
+		URL:  "https://status.ingage.jp",
 		Name: "ingage",
 	}, {
-		URL:  "https://status.inspera.no/",
+		URL:  "https://status.inspera.no",
 		Name: "inspera",
 	}, {
-		URL:  "https://status.ionos.cloud/",
+		URL:  "https://status.ionos.cloud",
 		Name: "ionos-cloud",
 	}, {
 		URL:  "https://www.iscorp.com/outage-status",
 		Name: "iscorp",
 	}, {
-		URL:  "https://status.ivanticloud.com/",
+		URL:  "https://status.ivanticloud.com",
 		Name: "ivanti-cloud",
 	}, {
-		URL:  "https://status.jamasoftware.com/",
+		URL:  "https://status.jamasoftware.com",
 		Name: "jama-software",
 	}, {
-		URL:  "https://status.jitpack.io/",
+		URL:  "https://status.jitpack.io",
 		Name: "jitpack",
 	}, {
-		URL:  "http://status.juicefs.io/",
+		URL:  "http://status.juicefs.io",
 		Name: "juicefs",
 	}, {
-		URL:  "https://status.k6.io/",
+		URL:  "https://status.k6.io",
 		Name: "k6",
 	}, {
-		URL:  "https://status.keypup.io/",
+		URL:  "https://status.keypup.io",
 		Name: "keypup",
 	}, {
-		URL:  "https://status.kinghost.net.br/",
+		URL:  "https://status.kinghost.net.br",
 		Name: "kinghost",
 	}, {
-		URL:  "https://status.kualo.com/",
+		URL:  "https://status.kualo.com",
 		Name: "kualo",
 	}, {
-		URL:  "https://status.layerstack.com/",
+		URL:  "https://status.layerstack.com",
 		Name: "layerstack",
 	}, {
-		URL:  "https://www.leasewebstatus.com/",
+		URL:  "https://www.leasewebstatus.com",
 		Name: "leaseweb",
 	}, {
-		URL:  "http://status.lifesizecloud.com/",
+		URL:  "http://status.lifesizecloud.com",
 		Name: "lifesize-cloud",
 	}, {
-		URL:  "https://status.lightstep.com/",
+		URL:  "https://status.lightstep.com",
 		Name: "lightstep",
 	}, {
-		URL:  "https://status.lingk.io/",
+		URL:  "https://status.lingk.io",
 		Name: "lingk",
 	}, {
-		URL:  "https://status.linode.com/",
+		URL:  "https://status.linode.com",
 		Name: "linode",
 	}, {
-		URL:  "https://status.liveramp.com/",
+		URL:  "https://status.liveramp.com",
 		Name: "liveramp",
 	}, {
-		URL:  "https://status.logz.io/",
+		URL:  "https://status.logz.io",
 		Name: "logz",
 	}, {
-		URL:  "https://status.loopup.com/",
+		URL:  "https://status.loopup.com",
 		Name: "loopup",
 	}, {
-		URL:  "https://status.lotame.com/",
+		URL:  "https://status.lotame.com",
 		Name: "lotame",
 	}, {
-		URL:  "https://status.lumaserv.com/",
+		URL:  "https://status.lumaserv.com",
 		Name: "lumaserv",
 	}, {
-		URL:  "https://status.magemojo.com/",
+		URL:  "https://status.magemojo.com",
 		Name: "magemojo",
 	}, {
-		URL:  "https://status.magnusbox.com/",
+		URL:  "https://status.magnusbox.com",
 		Name: "magnus-box",
 	}, {
-		URL:  "https://status.matillion.com/",
+		URL:  "https://status.matillion.com",
 		Name: "matillion",
 	}, {
-		URL:  "https://status.mavenlink.com/",
+		URL:  "https://status.mavenlink.com",
 		Name: "mavenlink-",
 	}, {
 		URL:  "https://oneview.mitel.com/s/trust",
 		Name: "micloud-connect",
 	}, {
-		URL:  "https://neonstatus.com/",
+		URL:  "https://neonstatus.com",
 		Name: "neon",
 	}, {
-		URL:  "https://status.services.cloud.netapp.com/",
+		URL:  "https://status.services.cloud.netapp.com",
 		Name: "netapp",
 	}, {
-		URL:  "https://trust.netfortris.com/",
+		URL:  "https://trust.netfortris.com",
 		Name: "netfortris",
 	}, {
-		URL:  "https://netlifystatus.com/",
+		URL:  "https://netlifystatus.com",
 		Name: "netlify",
 	}, {
-		URL:  "https://trust.netskope.com/",
+		URL:  "https://trust.netskope.com",
 		Name: "netskope",
 	}, {
-		URL:  "https://ngenix.statuspage.io/",
+		URL:  "https://ngenix.statuspage.io",
 		Name: "ngenix",
 	}, {
-		URL:  "https://status.nhost.io/",
+		URL:  "https://status.nhost.io",
 		Name: "nhost",
 	}, {
-		URL:  "https://status.cloud.coop/",
+		URL:  "https://status.cloud.coop",
 		Name: "nisc-cloud",
 	}, {
-		URL:  "https://ns1status.com/",
+		URL:  "https://ns1status.com",
 		Name: "ns1",
 	}, {
-		URL:  "https://status.nutanix.com/",
+		URL:  "https://status.nutanix.com",
 		Name: "nutanix",
 	}, {
-		URL:  "https://status.nylas.com/",
+		URL:  "https://status.nylas.com",
 		Name: "nylas",
 	}, {
-		URL:  "https://sorry.opencrm.co.uk/",
+		URL:  "https://sorry.opencrm.co.uk",
 		Name: "opencrm",
 	}, {
-		URL:  "https://www.opensrsstatus.com/",
+		URL:  "https://www.opensrsstatus.com",
 		Name: "opensrs",
 	}, {
-		URL:  "https://status.openvpn.com/",
+		URL:  "https://status.openvpn.com",
 		Name: "openvpn",
 	}, {
-		URL:  "https://ocistatus.oraclecloud.com/",
+		URL:  "https://ocistatus.oraclecloud.com",
 		Name: "oracle-cloud",
 	}, {
-		URL:  "https://status.otava.com/",
+		URL:  "https://status.otava.com",
 		Name: "otava",
 	}, {
-		URL:  "https://status.us.ovhcloud.com/",
+		URL:  "https://status.us.ovhcloud.com",
 		Name: "ovhcloud",
 	}, {
-		URL:  "http://status.packet.net/",
+		URL:  "http://status.packet.net",
 		Name: "packet",
 	}, {
-		URL:  "https://status.paperspace.com/",
+		URL:  "https://status.paperspace.com",
 		Name: "paperspace",
 	}, {
-		URL:  "https://status.perimeterx.com/",
+		URL:  "https://status.perimeterx.com",
 		Name: "perimeterx",
 	}, {
-		URL:  "https://status.pingplotter.cloud/",
+		URL:  "https://status.pingplotter.cloud",
 		Name: "pingplotter-cloud",
 	}, {
-		URL:  "https://status.platform9.com/",
+		URL:  "https://status.platform9.com",
 		Name: "platform9",
 	}, {
-		URL:  "https://status.platform.sh/",
+		URL:  "https://status.platform.sh",
 		Name: "platformsh",
 	}, {
-		URL:  "https://status.playfab.com/",
+		URL:  "https://status.playfab.com",
 		Name: "playfab",
 	}, {
-		URL:  "https://status.playvox.com/",
+		URL:  "https://status.playvox.com",
 		Name: "playvox",
 	}, {
-		URL:  "https://status.plumvoice.com/",
+		URL:  "https://status.plumvoice.com",
 		Name: "plum-voice",
 	}, {
-		URL:  "https://status.plusserver.com/",
+		URL:  "https://status.plusserver.com",
 		Name: "plusserver",
 	}, {
-		URL:  "https://status.practicefusion.com/",
+		URL:  "https://status.practicefusion.com",
 		Name: "practice-fusion",
 	}, {
-		URL:  "https://status.presslabs.com/",
+		URL:  "https://status.presslabs.com",
 		Name: "presslabs",
 	}, {
-		URL:  "https://status.kofaxcloud.com/",
+		URL:  "https://status.kofaxcloud.com",
 		Name: "printix",
 	}, {
-		URL:  "https://status.prismacloud.com/",
+		URL:  "https://status.prismacloud.com",
 		Name: "prisma-cloud",
 	}, {
-		URL:  "http://status.pubnub.com/",
+		URL:  "http://status.pubnub.com",
 		Name: "pubnub",
 	}, {
-		URL:  "https://status.qlikcloud.com/",
+		URL:  "https://status.qlikcloud.com",
 		Name: "qlik",
 	}, {
-		URL:  "https://status.quay.io/",
+		URL:  "https://status.quay.io",
 		Name: "quay",
 	}, {
-		URL:  "https://status.racknerd.com/",
+		URL:  "https://status.racknerd.com",
 		Name: "racknerd",
 	}, {
-		URL:  "https://status.apps.rackspace.com/",
+		URL:  "https://status.apps.rackspace.com",
 		Name: "rackspace",
 	}, {
-		URL:  "https://cwaf.status.radwarecloud.com/",
+		URL:  "https://cwaf.status.radwarecloud.com",
 		Name: "radware-cloud-waf",
 	}, {
-		URL:  "https://railway.instatus.com/",
+		URL:  "https://railway.instatus.com",
 		Name: "railway",
 	}, {
-		URL:  "https://status.redcanary.com/",
+		URL:  "https://status.redcanary.com",
 		Name: "red-canary",
 	}, {
-		URL:  "https://status.redhat.com/",
+		URL:  "https://status.redhat.com",
 		Name: "red-hat",
 	}, {
 		URL:  "https://status.redisgreen.net/services/1",
 		Name: "redisgreen",
 	}, {
-		URL:  "https://status.render.com/",
+		URL:  "https://status.render.com",
 		Name: "render",
 	}, {
-		URL:  "http://status.reviewtrackers.com/",
+		URL:  "http://status.reviewtrackers.com",
 		Name: "reviewtrackers",
 	}, {
-		URL:  "https://status.ringover.com/",
+		URL:  "https://status.ringover.com",
 		Name: "ringover",
 	}, {
-		URL:  "https://status.rivery.io/",
+		URL:  "https://status.rivery.io",
 		Name: "rivery",
 	}, {
-		URL:  "https://www.roamstatus.com/",
+		URL:  "https://www.roamstatus.com",
 		Name: "roam",
 	}, {
 		URL:  "https://cspreporter.nl/storingen",
 		Name: "rout-it",
 	}, {
-		URL:  "https://status.rubrik.com/",
+		URL:  "https://status.rubrik.com",
 		Name: "rubrik",
 	}, {
-		URL:  "https://status.sailpoint.com/",
+		URL:  "https://status.sailpoint.com",
 		Name: "sailpoint",
 	}, {
-		URL:  "https://status.support.sap.com/",
+		URL:  "https://status.support.sap.com",
 		Name: "sap-for-me--sap-one-support-launchpad",
 	}, {
-		URL:  "https://status.scaleway.com/",
+		URL:  "https://status.scaleway.com",
 		Name: "Scaleway",
 	}, {
-		URL:  "https://scalingostatus.com/",
+		URL:  "https://scalingostatus.com",
 		Name: "Scalingo",
 	}, {
-		URL:  "https://status.cloud.scorm.com/",
+		URL:  "https://status.cloud.scorm.com",
 		Name: "SCORM Cloud",
 	}, {
-		URL:  "https://status.scoutdns.com/",
+		URL:  "https://status.scoutdns.com",
 		Name: "ScoutDNS",
 	}, {
-		URL:  "https://status.section.io/",
+		URL:  "https://status.section.io",
 		Name: "Section",
 	}, {
-		URL:  "https://serveboltstatus.com/",
+		URL:  "https://serveboltstatus.com",
 		Name: "Servebolt",
 	}, {
-		URL:  "https://status.mysau.com.au/",
+		URL:  "https://status.mysau.com.au",
 		Name: "Servers Australia",
 	}, {
-		URL:  "https://sgtest1.statuspage.io/",
+		URL:  "https://sgtest1.statuspage.io",
 		Name: "SG Test",
 	}, {
-		URL:  "https://status.sherweb.com/",
+		URL:  "https://status.sherweb.com",
 		Name: "Sherweb",
 	}, {
-		URL:  "https://status.shockbyte.com/",
+		URL:  "https://status.shockbyte.com",
 		Name: "Shockbyte",
 	}, {
-		URL:  "https://status.eu0.signalfx.com/",
+		URL:  "https://status.eu0.signalfx.com",
 		Name: "SignalFx EU0",
 	}, {
-		URL:  "https://status.us0.signalfx.com/",
+		URL:  "https://status.us0.signalfx.com",
 		Name: "SignalFx US0",
 	}, {
-		URL:  "https://status.us1.signalfx.com/",
+		URL:  "https://status.us1.signalfx.com",
 		Name: "SignalFx US1",
 	}, {
-		URL:  "https://status.simplyhosting.com/",
+		URL:  "https://status.simplyhosting.com",
 		Name: "Simply Hosting & Servers",
 	}, {
-		URL:  "https://status.skykick.com/",
+		URL:  "https://status.skykick.com",
 		Name: "SkyKick",
 	}, {
-		URL:  "https://status.skysilk.com/",
+		URL:  "https://status.skysilk.com",
 		Name: "SkySilk",
 	}, {
-		URL:  "https://status.smugmug.com/",
+		URL:  "https://status.smugmug.com",
 		Name: "SmugMug",
 	}, {
-		URL:  "https://trust.snaplogic.com/",
+		URL:  "https://trust.snaplogic.com",
 		Name: "SnapLogic",
 	}, {
-		URL:  "https://status.snapsheetclaims.com/",
+		URL:  "https://status.snapsheetclaims.com",
 		Name: "Snapsheet",
 	}, {
-		URL:  "https://status.loggly.com/",
+		URL:  "https://status.loggly.com",
 		Name: "SolarWinds Loggly",
 	}, {
-		URL:  "https://status.soracom.com/",
+		URL:  "https://status.soracom.com",
 		Name: "Soracom",
 	}, {
-		URL:  "https://status.spiceworks.com/",
+		URL:  "https://status.spiceworks.com",
 		Name: "Spiceworks",
 	}, {
-		URL:  "https://status.spscommerce.com/",
+		URL:  "https://status.spscommerce.com",
 		Name: "SPS Commerce",
 	}, {
-		URL:  "https://status.stackpath.com/",
+		URL:  "https://status.stackpath.com",
 		Name: "StackPath",
 	}, {
-		URL:  "https://status.storj.io/",
+		URL:  "https://status.storj.io",
 		Name: "Storj",
 	}, {
-		URL:  "https://status.sugarsync.com/",
+		URL:  "https://status.sugarsync.com",
 		Name: "SugarSync",
 	}, {
-		URL:  "http://status.us1.sumologic.com/",
+		URL:  "http://status.us1.sumologic.com",
 		Name: "Sumo Logic US1",
 	}, {
-		URL:  "https://status.taloflow.ai/",
+		URL:  "https://status.taloflow.ai",
 		Name: "Taloflow",
 	}, {
-		URL:  "https://status.teradici.com/",
+		URL:  "https://status.teradici.com",
 		Name: "Teradici",
 	}, {
-		URL:  "https://www.teraswitchstatus.com/",
+		URL:  "https://www.teraswitchstatus.com",
 		Name: "TeraSwitch",
 	}, {
-		URL:  "https://status.thousandeyes.com/",
+		URL:  "https://status.thousandeyes.com",
 		Name: "ThousandEyes",
 	}, {
-		URL:  "https://status.cloud.tibco.com/",
+		URL:  "https://status.cloud.tibco.com",
 		Name: "TIBCO",
 	}, {
-		URL:  "https://status.flood.io/",
+		URL:  "https://status.flood.io",
 		Name: "Tricentis Flood",
 	}, {
-		URL:  "https://status.trifacta.com/",
+		URL:  "https://status.trifacta.com",
 		Name: "Trifacta",
 	}, {
-		URL:  "https://status.trinetcloud.com/",
+		URL:  "https://status.trinetcloud.com",
 		Name: "TriNet",
 	}, {
-		URL:  "https://status.ubidots.com/",
+		URL:  "https://status.ubidots.com",
 		Name: "Ubidots",
 	}, {
-		URL:  "http://status.ujet.co/",
+		URL:  "http://status.ujet.co",
 		Name: "UJET",
 	}, {
-		URL:  "https://status.ultradns.com/",
+		URL:  "https://status.ultradns.com",
 		Name: "UltraDNS",
 	}, {
-		URL:  "https://status.umbraco.io/",
+		URL:  "https://status.umbraco.io",
 		Name: "Umbraco Cloud",
 	}, {
-		URL:  "https://status.uniflowonline.com/",
+		URL:  "https://status.uniflowonline.com",
 		Name: "uniFLOW Online",
 	}, {
-		URL:  "https://status.united-hoster.de/",
+		URL:  "https://status.united-hoster.de",
 		Name: "United Hoster GmbH",
 	}, {
-		URL:  "https://status.upcloud.com/",
+		URL:  "https://status.upcloud.com",
 		Name: "UpCloud",
 	}, {
-		URL:  "https://status.uploadcare.com/",
+		URL:  "https://status.uploadcare.com",
 		Name: "Uploadcare",
 	}, {
-		URL:  "https://status.velocityhost.com.au/",
+		URL:  "https://status.velocityhost.com.au",
 		Name: "Velocity Host",
 	}, {
-		URL:  "https://www.vercel-status.com/",
+		URL:  "https://www.vercel-status.com",
 		Name: "Vercel",
 	}, {
-		URL:  "https://status.vetspire.com/",
+		URL:  "https://status.vetspire.com",
 		Name: "Vetspire",
 	}, {
-		URL:  "https://status.vgrid.nz/",
+		URL:  "https://status.vgrid.nz",
 		Name: "vGRID Cloud Services",
 	}, {
-		URL:  "https://status.vmware-services.io/",
+		URL:  "https://status.vmware-services.io",
 		Name: "VMWare Cloud Services",
 	}, {
-		URL:  "https://status.voltage.cloud/",
+		URL:  "https://status.voltage.cloud",
 		Name: "Voltage",
 	}, {
 		URL:  "https://businesssupport.vonage.com/trust",
 		Name: "Vonage Business",
 	}, {
-		URL:  "https://status.voximplant.com/",
+		URL:  "https://status.voximplant.com",
 		Name: "Voximplant",
 	}, {
-		URL:  "https://status.vpsserver.com/",
+		URL:  "https://status.vpsserver.com",
 		Name: "VPSServer",
 	}, {
-		URL:  "https://status.vultr.com/",
+		URL:  "https://status.vultr.com",
 		Name: "Vultr",
 	}, {
-		URL:  "https://status.walkme.com/",
+		URL:  "https://status.walkme.com",
 		Name: "Walkme",
 	}, {
-		URL:  "https://status.wasabi.com/",
+		URL:  "https://status.wasabi.com",
 		Name: "Wasabi",
 	}, {
-		URL:  "https://webdam-status.bynder.com/",
+		URL:  "https://webdam-status.bynder.com",
 		Name: "Webdam",
 	}, {
-		URL:  "https://status.webshare.io/",
+		URL:  "https://status.webshare.io",
 		Name: "Webshare",
 	}, {
-		URL:  "https://status.wiz.io/",
+		URL:  "https://status.wiz.io",
 		Name: "Wiz",
 	}, {
-		URL:  "https://status.workiva.com/",
+		URL:  "https://status.workiva.com",
 		Name: "Workiva",
 	}, {
 		URL:  "https://status.cloud.yandex.com/dashboard",
 		Name: "Yandex Cloud",
 	}, {
-		URL:  "https://status.yasoon.com/",
+		URL:  "https://status.yasoon.com",
 		Name: "yasoon",
 	}, {
-		URL:  "https://status.zenqms.com/",
+		URL:  "https://status.zenqms.com",
 		Name: "ZenQMS",
 	}, {
 		URL:  "https://trust.zscaler.com/cloud-status",
 		Name: "Zscaler Cloud",
 	}, {
-		URL:  "https://status.aiven.io/",
+		URL:  "https://status.aiven.io",
 		Name: "Aiven",
 	}, {
-		URL:  "https://status.algolia.com/",
+		URL:  "https://status.algolia.com",
 		Name: "Algolia",
 	}, {
-		URL:  "http://status.apollographql.com/",
+		URL:  "http://status.apollographql.com",
 		Name: "Apollo",
 	}, {
-		URL:  "https://status.basedash.com/",
+		URL:  "https://status.basedash.com",
 		Name: "Basedash",
 	}, {
-		URL:  "https://status.bonsai.io/",
+		URL:  "https://status.bonsai.io",
 		Name: "Bonsai Elasticsearch",
 	}, {
-		URL:  "https://status.cockroachlabs.cloud/",
+		URL:  "https://status.cockroachlabs.cloud",
 		Name: "Cockroach Labs",
 	}, {
 		URL:  "https://www.collibra.com/us/en/status-dashboard",
 		Name: "Collibra",
 	}, {
-		URL:  "https://cloud-status.elastic.co/",
+		URL:  "https://cloud-status.elastic.co",
 		Name: "Elastic Cloud",
 	}, {
-		URL:  "https://status.fauna.com/",
+		URL:  "https://status.fauna.com",
 		Name: "Fauna",
 	}, {
-		URL:  "https://status.fivetran.com/",
+		URL:  "https://status.fivetran.com",
 		Name: "Fivetran",
 	}, {
-		URL:  "https://grafanalabs.statuspage.io/",
+		URL:  "https://grafanalabs.statuspage.io",
 		Name: "Grafana",
 	}, {
-		URL:  "http://status.graphenedb.com/",
+		URL:  "http://status.graphenedb.com",
 		Name: "GrapheneDB",
 	}, {
-		URL:  "https://status.influxdata.com/",
+		URL:  "https://status.influxdata.com",
 		Name: "InfluxData",
 	}, {
-		URL:  "https://status.instaclustr.com/",
+		URL:  "https://status.instaclustr.com",
 		Name: "Instaclustr",
 	}, {
-		URL:  "https://status.iron.io/",
+		URL:  "https://status.iron.io",
 		Name: "Iron.io",
 	}, {
-		URL:  "https://status.keypup.io/",
+		URL:  "https://status.keypup.io",
 		Name: "Keypup",
 	}, {
-		URL:  "http://status.memcachier.com/",
+		URL:  "http://status.memcachier.com",
 		Name: "Memcachier",
 	}, {
-		URL:  "https://status.modeanalytics.com/",
+		URL:  "https://status.modeanalytics.com",
 		Name: "Mode",
 	}, {
-		URL:  "http://status.cloud.mongodb.com/",
+		URL:  "http://status.cloud.mongodb.com",
 		Name: "MongoDB",
 	}, {
-		URL:  "https://status.neo4j.io/",
+		URL:  "https://status.neo4j.io",
 		Name: "Neo4j Aura",
 	}, {
-		URL:  "https://neonstatus.com/",
+		URL:  "https://neonstatus.com",
 		Name: "Neon",
 	}, {
-		URL:  "https://status.northflank.com/",
+		URL:  "https://status.northflank.com",
 		Name: "Northflank",
 	}, {
-		URL:  "http://status.objectrocket.com/",
+		URL:  "http://status.objectrocket.com",
 		Name: "ObjectRocket",
 	}, {
-		URL:  "https://status.opencorporates.com/",
+		URL:  "https://status.opencorporates.com",
 		Name: "OpenCorporates",
 	}, {
-		URL:  "https://status.pgmustard.com/",
+		URL:  "https://status.pgmustard.com",
 		Name: "pgMustard",
 	}, {
-		URL:  "https://status.pinecone.io/",
+		URL:  "https://status.pinecone.io",
 		Name: "Pinecone",
 	}, {
-		URL:  "https://www.planetscalestatus.com/",
+		URL:  "https://www.planetscalestatus.com",
 		Name: "PlanetScale",
 	}, {
-		URL:  "https://popsqlstatus.com/",
+		URL:  "https://popsqlstatus.com",
 		Name: "PopSQL",
 	}, {
-		URL:  "https://status.redis.com/",
+		URL:  "https://status.redis.com",
 		Name: "Redis",
 	}, {
-		URL:  "http://status.redistogo.com/",
+		URL:  "http://status.redistogo.com",
 		Name: "RedisToGo",
 	}, {
-		URL:  "http://status.searchly.com/",
+		URL:  "http://status.searchly.com",
 		Name: "Searchly",
 	}, {
-		URL:  "https://status.snowflake.com/",
+		URL:  "https://status.snowflake.com",
 		Name: "Snowflake",
 	}, {
-		URL:  "https://status.stacker.app/",
+		URL:  "https://status.stacker.app",
 		Name: "Stacker",
 	}, {
-		URL:  "https://status.stitchdata.com/",
+		URL:  "https://status.stitchdata.com",
 		Name: "Stitch Data",
 	}, {
-		URL:  "https://status.supabase.com/",
+		URL:  "https://status.supabase.com",
 		Name: "Supabase",
 	}, {
-		URL:  "http://status.swiftype.com/",
+		URL:  "http://status.swiftype.com",
 		Name: "Swiftype",
 	}, {
-		URL:  "https://trust.talend.com/",
+		URL:  "https://trust.talend.com",
 		Name: "Talend",
 	}, {
-		URL:  "https://status.timescale.com/",
+		URL:  "https://status.timescale.com",
 		Name: "Timescale",
 	}, {
 		URL:  "https://timezonedb.com/status",
 		Name: "TimezoneDB",
 	}, {
-		URL:  "https://status.upstash.com/",
+		URL:  "https://status.upstash.com",
 		Name: "Upstash",
 	}, {
 		URL:  "https://status.zilliz.com/uptime",
 		Name: "illiz",
 	}, {
-		URL:  "https://edgedns.status.akamai.com/",
+		URL:  "https://edgedns.status.akamai.com",
 		Name: "Akamai Edge DNS",
 	}, {
-		URL:  "https://status.api.video/",
+		URL:  "https://status.api.video",
 		Name: "api.video",
 	}, {
-		URL:  "https://status.brandfetch.io/",
+		URL:  "https://status.brandfetch.io",
 		Name: "Brandfetch",
 	}, {
-		URL:  "https://status.bunny.net/",
+		URL:  "https://status.bunny.net",
 		Name: "Bunny",
 	}, {
 		URL:  "https://client.cdn77.com/support/status",
 		Name: "CDN77",
 	}, {
-		URL:  "https://status.cdnjs.com/",
+		URL:  "https://status.cdnjs.com",
 		Name: "Cdnjs",
 	}, {
-		URL:  "https://status.clearlyip.com/",
+		URL:  "https://status.clearlyip.com",
 		Name: "ClearlyIP",
 	}, {
-		URL:  "https://www.cloudflarestatus.com/",
+		URL:  "https://www.cloudflarestatus.com",
 		Name: "Cloudflare",
 	}, {
-		URL:  "https://status.digitalpigeon.com/",
+		URL:  "https://status.digitalpigeon.com",
 		Name: "Digital Pigeon",
 	}, {
-		URL:  "https://status.dracoon.com/",
+		URL:  "https://status.dracoon.com",
 		Name: "DRACOON",
 	}, {
-		URL:  "https://status.edg.io/",
+		URL:  "https://status.edg.io",
 		Name: "Edgio",
 	}, {
-		URL:  "https://status.fasterize.com/",
+		URL:  "https://status.fasterize.com",
 		Name: "Fasterize",
 	}, {
-		URL:  "https://www.fastlystatus.com/",
+		URL:  "https://www.fastlystatus.com",
 		Name: "Fastly",
 	}, {
-		URL:  "https://status.files.com/",
+		URL:  "https://status.files.com",
 		Name: "Files",
 	}, {
-		URL:  "https://status.fortawesome.com/",
+		URL:  "https://status.fortawesome.com",
 		Name: "Font Awesome",
 	}, {
-		URL:  "https://status.graphcdn.io/",
+		URL:  "https://status.graphcdn.io",
 		Name: "GraphCDN",
 	}, {
-		URL:  "https://status.hygraph.com/",
+		URL:  "https://status.hygraph.com",
 		Name: "Hygraph",
 	}, {
-		URL:  "https://statuspage.imagekit.io/",
+		URL:  "https://statuspage.imagekit.io",
 		Name: "ImageKit",
 	}, {
-		URL:  "https://status.imgix.com/",
+		URL:  "https://status.imgix.com",
 		Name: "imgix",
 	}, {
-		URL:  "https://status.internetx.com/",
+		URL:  "https://status.internetx.com",
 		Name: "InterNetX",
 	}, {
-		URL:  "https://status.iristel.com/",
+		URL:  "https://status.iristel.com",
 		Name: "Iristel",
 	}, {
-		URL:  "https://trust.jitterbit.com/",
+		URL:  "https://trust.jitterbit.com",
 		Name: "Jitterbit",
 	}, {
-		URL:  "https://status.jsdelivr.com/",
+		URL:  "https://status.jsdelivr.com",
 		Name: "JSDelivr",
 	}, {
-		URL:  "https://status.keycdn.com/",
+		URL:  "https://status.keycdn.com",
 		Name: "KeyCDN",
 	}, {
-		URL:  "https://status.littledata.io/",
+		URL:  "https://status.littledata.io",
 		Name: "Littledata",
 	}, {
-		URL:  "https://status.m247.com/",
+		URL:  "https://status.m247.com",
 		Name: "M247",
 	}, {
-		URL:  "https://status.mist.com/",
+		URL:  "https://status.mist.com",
 		Name: "Mist",
 	}, {
-		URL:  "https://trust.netskope.com/",
+		URL:  "https://trust.netskope.com",
 		Name: "Netskope",
 	}, {
-		URL:  "https://ngenix.statuspage.io/",
+		URL:  "https://ngenix.statuspage.io",
 		Name: "NGENIX",
 	}, {
-		URL:  "https://status.teleport.sh/",
+		URL:  "https://status.teleport.sh",
 		Name: "Teleport",
 	}, {
-		URL:  "https://status.twingate.com/",
+		URL:  "https://status.twingate.com",
 		Name: "Twingate",
 	}, {
-		URL:  "https://status.uniflowonline.com/",
+		URL:  "https://status.uniflowonline.com",
 		Name: "uniFLOW Online",
 	}, {
-		URL:  "https://status.upcloud.com/",
+		URL:  "https://status.upcloud.com",
 		Name: "UpCloud",
 	}, {
-		URL:  "https://status.uploadcare.com/",
+		URL:  "https://status.uploadcare.com",
 		Name: "Uploadcare",
 	}, {
 		URL:  "https://status.verizondigitalmedia.com/#network-status",
 		Name: "Verizon Digital Media",
 	}, {
-		URL:  "https://wetransfer.statuspage.io/",
+		URL:  "https://wetransfer.statuspage.io",
 		Name: "WeTransfer",
 	}, {
-		URL:  "https://status.alchemy.com/",
+		URL:  "https://status.alchemy.com",
 		Name: "Alchemy",
 	}, {
-		URL:  "https://status.b2c2.com/",
+		URL:  "https://status.b2c2.com",
 		Name: "B2C2",
 	}, {
-		URL:  "https://bitfinex.statuspage.io/",
+		URL:  "https://bitfinex.statuspage.io",
 		Name: "Bitfinex",
 	}, {
-		URL:  "https://status.bitgo.com/",
+		URL:  "https://status.bitgo.com",
 		Name: "BitGo",
 	}, {
-		URL:  "https://status.bitmex.com/",
+		URL:  "https://status.bitmex.com",
 		Name: "BitMEX",
 	}, {
-		URL:  "https://status.bitpanda.com/",
+		URL:  "https://status.bitpanda.com",
 		Name: "Bitpanda",
 	}, {
-		URL:  "https://status.bitso.com/",
+		URL:  "https://status.bitso.com",
 		Name: "Bitso",
 	}, {
-		URL:  "https://www.blockchain-status.com/",
+		URL:  "https://www.blockchain-status.com",
 		Name: "Blockchain",
 	}, {
-		URL:  "https://status.blockchair.com/",
+		URL:  "https://status.blockchair.com",
 		Name: "Blockchair",
 	}, {
-		URL:  "https://status.block.io/",
+		URL:  "https://status.block.io",
 		Name: "Block.io",
 	}, {
-		URL:  "https://status.bloom.co/",
+		URL:  "https://status.bloom.co",
 		Name: "Bloom",
 	}, {
-		URL:  "https://status.brave.com/",
+		URL:  "https://status.brave.com",
 		Name: "Brave",
 	}, {
-		URL:  "https://status.cex.io/",
+		URL:  "https://status.cex.io",
 		Name: "CEX.IO",
 	}, {
-		URL:  "https://status.chainalysis.com/",
+		URL:  "https://status.chainalysis.com",
 		Name: "Chainalysis",
 	}, {
-		URL:  "https://status.circle.com/",
+		URL:  "https://status.circle.com",
 		Name: "Circle",
 	}, {
-		URL:  "https://status.cloudnovi.com/",
+		URL:  "https://status.cloudnovi.com",
 		Name: "Cloudnovi",
 	}, {
-		URL:  "https://status.coinapi.io/",
+		URL:  "https://status.coinapi.io",
 		Name: "CoinAPI.io",
 	}, {
-		URL:  "https://coinbase.statuspage.io/",
+		URL:  "https://coinbase.statuspage.io",
 		Name: "Coinbase",
 	}, {
-		URL:  "https://status.commerce.coinbase.com/",
+		URL:  "https://status.commerce.coinbase.com",
 		Name: "Coinbase Commerce",
 	}, {
-		URL:  "https://status.prime.coinbase.com/",
+		URL:  "https://status.prime.coinbase.com",
 		Name: "Coinbase Prime",
 	}, {
-		URL:  "https://status.pro.coinbase.com/",
+		URL:  "https://status.pro.coinbase.com",
 		Name: "Coinbase Pro",
 	}, {
-		URL:  "https://status.coingate.com/",
+		URL:  "https://status.coingate.com",
 		Name: "CoinGate",
 	}, {
-		URL:  "https://status.coingecko.com/",
+		URL:  "https://status.coingecko.com",
 		Name: "CoinGecko",
 	}, {
-		URL:  "https://status.coinjar.com/",
+		URL:  "https://status.coinjar.com",
 		Name: "CoinJar",
 	}, {
-		URL:  "https://status.coinlist.co/",
+		URL:  "https://status.coinlist.co",
 		Name: "CoinList",
 	}, {
-		URL:  "https://status.coinmarketcap.com/",
+		URL:  "https://status.coinmarketcap.com",
 		Name: "CoinMarketCap",
 	}, {
-		URL:  "https://status.coinmarketcap.com/",
+		URL:  "https://status.coinmarketcap.com",
 		Name: "Coins.ph",
 	}, {
-		URL:  "https://status.crypto.com/",
+		URL:  "https://status.crypto.com",
 		Name: "Crypto.com",
 	}, {
-		URL:  "https://status.cryptopro.app/",
+		URL:  "https://status.cryptopro.app",
 		Name: "Crypto Pro",
 	}, {
-		URL:  "https://www.enjinstatus.com/",
+		URL:  "https://www.enjinstatus.com",
 		Name: "Enjin",
 	}, {
-		URL:  "https://etherscan.freshstatus.io/",
+		URL:  "https://etherscan.freshstatus.io",
 		Name: "Etherscan",
 	}, {
-		URL:  "https://status.etoro.com/",
+		URL:  "https://status.etoro.com",
 		Name: "eToro",
 	}, {
-		URL:  "https://status.filecoin.io/",
+		URL:  "https://status.filecoin.io",
 		Name: "Filecoin",
 	}, {
-		URL:  "https://status.fireblocks.com/",
+		URL:  "https://status.fireblocks.com",
 		Name: "Fireblocks",
 	}, {
-		URL:  "https://status.gemini.com/",
+		URL:  "https://status.gemini.com",
 		Name: "Gemini",
 	}, {
-		URL:  "https://status.hedera.com/",
+		URL:  "https://status.hedera.com",
 		Name: "Hedera",
 	}, {
-		URL:  "http://status.helium.com/",
+		URL:  "http://status.helium.com",
 		Name: "Helium",
 	}, {
-		URL:  "https://status.hummingbot.io/",
+		URL:  "https://status.hummingbot.io",
 		Name: "Hummingbot",
 	}, {
-		URL:  "https://status.infura.io/",
+		URL:  "https://status.infura.io",
 		Name: "Infura",
 	}, {
-		URL:  "https://status.kraken.com/",
+		URL:  "https://status.kraken.com",
 		Name: "Kraken",
 	}, {
-		URL:  "https://status.ledger.com/",
+		URL:  "https://status.ledger.com",
 		Name: "Ledger",
 	}, {
-		URL:  "https://status.lmax.com/",
+		URL:  "https://status.lmax.com",
 		Name: "LMAX",
 	}, {
-		URL:  "https://status.luno.com/",
+		URL:  "https://status.luno.com",
 		Name: "Luno",
 	}, {
-		URL:  "https://status.mnemonichq.com/",
+		URL:  "https://status.mnemonichq.com",
 		Name: "Mnemonic",
 	}, {
-		URL:  "https://status.nbatopshot.com/",
+		URL:  "https://status.nbatopshot.com",
 		Name: "NBA Top Shot",
 	}, {
-		URL:  "https://status.opennode.co/",
+		URL:  "https://status.opennode.co",
 		Name: "OpenNode",
 	}, {
-		URL:  "https://status.opensea.io/",
+		URL:  "https://status.opensea.io",
 		Name: "OpenSea",
 	}, {
-		URL:  "https://status.optimism.io/",
+		URL:  "https://status.optimism.io",
 		Name: "Optimism",
 	}, {
-		URL:  "https://status.osl.com/",
+		URL:  "https://status.osl.com",
 		Name: "OSL Singapore",
 	}, {
-		URL:  "https://status.paribu.com/",
+		URL:  "https://status.paribu.com",
 		Name: "Paribu",
 	}, {
-		URL:  "https://status.primexbt.com/",
+		URL:  "https://status.primexbt.com",
 		Name: "PrimeXBT",
 	}, {
-		URL:  "https://status.purse.io/",
+		URL:  "https://status.purse.io",
 		Name: "Purse.io",
 	}, {
-		URL:  "https://status.quadency.com/",
+		URL:  "https://status.quadency.com",
 		Name: "Quadency",
 	}, {
-		URL:  "https://status.quicknode.com/",
+		URL:  "https://status.quicknode.com",
 		Name: "QuickNode",
 	}, {
-		URL:  "https://status.remitano.com/",
+		URL:  "https://status.remitano.com",
 		Name: "Remitano",
 	}, {
-		URL:  "https://status.shakepay.com/",
+		URL:  "https://status.shakepay.com",
 		Name: "Shakepay",
 	}, {
-		URL:  "https://status.solana.com/",
+		URL:  "https://status.solana.com",
 		Name: "Solana",
 	}, {
-		URL:  "https://status.thegraph.com/",
+		URL:  "https://status.thegraph.com",
 		Name: "The Graph",
 	}, {
-		URL:  "https://status.uphold.com/",
+		URL:  "https://status.uphold.com",
 		Name: "Uphold",
 	}, {
-		URL:  "https://status.zerohash.com/",
+		URL:  "https://status.zerohash.com",
 		Name: "Zero Hash",
 	}, {
-		URL:  "https://status.appwrite.io/",
+		URL:  "https://status.appwrite.io",
 		Name: "appwrite",
 	}, {
-		URL:  "https://anchorhost.statuspage.io/",
+		URL:  "https://anchorhost.statuspage.io",
 		Name: "anchor-host",
 	}, {
-		URL:  "https://automatticstatus.com/",
+		URL:  "https://automatticstatus.com",
 		Name: "automattic",
 	}, {
-		URL:  "http://status.binarylane.com.au/",
+		URL:  "http://status.binarylane.com.au",
 		Name: "binary-lane",
 	}, {
 		URL:  "http://stats.pingdom.com/tdmmfmbt03rn",
 		Name: "campuspress",
 	}, {
-		URL:  "https://status.catalystcloud.nz/",
+		URL:  "https://status.catalystcloud.nz",
 		Name: "catalyst-cloud",
 	}, {
-		URL:  "https://status.cloudsigma.com/",
+		URL:  "https://status.cloudsigma.com",
 		Name: "cloudsigma",
 	}, {
-		URL:  "https://status.convertapi.com/",
+		URL:  "https://status.convertapi.com",
 		Name: "convertapi",
 	}, {
-		URL:  "https://status.courier.com/",
+		URL:  "https://status.courier.com",
 		Name: "courier",
 	}, {
-		URL:  "https://status.crucial.com.au/",
+		URL:  "https://status.crucial.com.au",
 		Name: "crucial-hosting",
 	}, {
-		URL:  "http://www.dediservestatus.com/",
+		URL:  "http://www.dediservestatus.com",
 		Name: "dediserve",
 	}, {
-		URL:  "https://dhostingstatus.com/",
+		URL:  "https://dhostingstatus.com",
 		Name: "dhosting",
 	}, {
-		URL:  "https://www.dpstatus.com/",
+		URL:  "https://www.dpstatus.com",
 		Name: "digital-pacific",
 	}, {
-		URL:  "https://status.dogado.de/",
+		URL:  "https://status.dogado.de",
 		Name: "dogado",
 	}, {
-		URL:  "https://status.dongee.com/",
+		URL:  "https://status.dongee.com",
 		Name: "dongee",
 	}, {
-		URL:  "https://www.dreamhoststatus.com/",
+		URL:  "https://www.dreamhoststatus.com",
 		Name: "dreamhost",
 	}, {
-		URL:  "https://www.dynstatus.com/",
+		URL:  "https://www.dynstatus.com",
 		Name: "dyn",
 	}, {
-		URL:  "https://status.theendlessweb.com/",
+		URL:  "https://status.theendlessweb.com",
 		Name: "endless-group",
 	}, {
-		URL:  "https://status.expo.io/",
+		URL:  "https://status.expo.io",
 		Name: "expo",
 	}, {
-		URL:  "https://fluccs.status.io/",
+		URL:  "https://fluccs.status.io",
 		Name: "fluccs",
 	}, {
-		URL:  "https://status.getflywheel.com/",
+		URL:  "https://status.getflywheel.com",
 		Name: "flywheel",
 	}, {
-		URL:  "https://status.formassembly.com/",
+		URL:  "https://status.formassembly.com",
 		Name: "formassembly",
 	}, {
-		URL:  "https://status.fragnet.net/",
+		URL:  "https://status.fragnet.net",
 		Name: "fragnet-networks",
 	}, {
-		URL:  "https://status.freistilbox.com/",
+		URL:  "https://status.freistilbox.com",
 		Name: "freistilbox",
 	}, {
-		URL:  "https://status.gandi.net/",
+		URL:  "https://status.gandi.net",
 		Name: "gandi",
 	}, {
-		URL:  "https://status.getresponse.com/",
+		URL:  "https://status.getresponse.com",
 		Name: "getresponse",
 	}, {
-		URL:  "https://status.gitlabhost.com/",
+		URL:  "https://status.gitlabhost.com",
 		Name: "gitlabhost",
 	}, {
 		URL:  "https://www.godaddy.com/system-status",
 		Name: "godaddy",
 	}, {
-		URL:  "https://status.happyfox.com/",
+		URL:  "https://status.happyfox.com",
 		Name: "happyfox",
 	}, {
-		URL:  "https://hawkhoststatus.com/",
+		URL:  "https://hawkhoststatus.com",
 		Name: "hawk-host",
 	}, {
-		URL:  "https://status.hostedgraphite.com/",
+		URL:  "https://status.hostedgraphite.com",
 		Name: "hosted-graphite",
 	}, {
-		URL:  "https://status.hostpress.de/",
+		URL:  "https://status.hostpress.de",
 		Name: "HostPress",
 	}, {
-		URL:  "https://status.hostry.com/",
+		URL:  "https://status.hostry.com",
 		Name: "Hostry",
 	}, {
-		URL:  "https://status.inmotionhosting.com/",
+		URL:  "https://status.inmotionhosting.com",
 		Name: "InMotion Hosting",
 	}, {
-		URL:  "https://www.ionos-status.de/",
+		URL:  "https://www.ionos-status.de",
 		Name: "IONOS",
 	}, {
-		URL:  "http://status.joomag.com/",
+		URL:  "http://status.joomag.com",
 		Name: "Joomag",
 	}, {
-		URL:  "https://jostleap.statuspage.io/",
+		URL:  "https://jostleap.statuspage.io",
 		Name: "Jostle AP",
 	}, {
-		URL:  "https://status.kinsta.com/",
+		URL:  "https://status.kinsta.com",
 		Name: "Kinsta",
 	}, {
-		URL:  "https://status.kualo.com/",
+		URL:  "https://status.kualo.com",
 		Name: "Kualo",
 	}, {
-		URL:  "https://status.liquidweb.com/",
+		URL:  "https://status.liquidweb.com",
 		Name: "Liquid Web",
 	}, {
-		URL:  "https://status.lumaserv.com/",
+		URL:  "https://status.lumaserv.com",
 		Name: "LUMASERV",
 	}, {
-		URL:  "https://status.magemojo.com/",
+		URL:  "https://status.magemojo.com",
 		Name: "MageMojo",
 	}, {
-		URL:  "https://status.moodle.com/",
+		URL:  "https://status.moodle.com",
 		Name: "Moodle",
 	}, {
 		URL:  "https://www.namecheap.com/status-updates",
 		Name: "Namecheap",
 	}, {
-		URL:  "https://status.nexcess.net/",
+		URL:  "https://status.nexcess.net",
 		Name: "Nexcess",
 	}, {
-		URL:  "https://status.one.com/",
+		URL:  "https://status.one.com",
 		Name: "One",
 	}, {
-		URL:  "https://status.panoply.io/",
+		URL:  "https://status.panoply.io",
 		Name: "Panoply",
 	}, {
-		URL:  "https://status.pantheon.io/",
+		URL:  "https://status.pantheon.io",
 		Name: "Pantheon",
 	}, {
-		URL:  "https://status.plox.host/",
+		URL:  "https://status.plox.host",
 		Name: "PloxHost",
 	}, {
-		URL:  "https://status.plusserver.com/",
+		URL:  "https://status.plusserver.com",
 		Name: "PlusServer",
 	}, {
-		URL:  "https://status.presslabs.com/",
+		URL:  "https://status.presslabs.com",
 		Name: "Presslabs",
 	}, {
-		URL:  "https://status.prismic.io/",
+		URL:  "https://status.prismic.io",
 		Name: "Prismic",
 	}, {
-		URL:  "https://status.publit.io/",
+		URL:  "https://status.publit.io",
 		Name: "Publitio",
 	}, {
-		URL:  "https://status.quadranet.com/",
+		URL:  "https://status.quadranet.com",
 		Name: "QuadraNet",
 	}, {
-		URL:  "https://qualifio.status.io/",
+		URL:  "https://qualifio.status.io",
 		Name: "Qualifio",
 	}, {
-		URL:  "https://status.apps.rackspace.com/",
+		URL:  "https://status.apps.rackspace.com",
 		Name: "Rackspace Cloud Office",
 	}, {
-		URL:  "https://status.rackspeed.de/",
+		URL:  "https://status.rackspeed.de",
 		Name: "rackSPEED",
 	}, {
-		URL:  "https://status.rechargepayments.com/",
+		URL:  "https://status.rechargepayments.com",
 		Name: "ReCharge",
 	}, {
-		URL:  "https://status.register.it/",
+		URL:  "https://status.register.it",
 		Name: "Register.it",
 	}, {
-		URL:  "https://status.rocket.net/",
+		URL:  "https://status.rocket.net",
 		Name: "Rocket.net",
 	}, {
-		URL:  "https://status.rosehosting.com/",
+		URL:  "https://status.rosehosting.com",
 		Name: "RoseHosting",
 	}, {
-		URL:  "https://status.section.io/",
+		URL:  "https://status.section.io",
 		Name: "Section",
 	}, {
-		URL:  "https://serveboltstatus.com/",
+		URL:  "https://serveboltstatus.com",
 		Name: "Servebolt",
 	}, {
-		URL:  "https://status.goshippo.com/",
+		URL:  "https://status.goshippo.com",
 		Name: "Shippo",
 	}, {
-		URL:  "https://status.shockbyte.com/",
+		URL:  "https://status.shockbyte.com",
 		Name: "Shockbyte",
 	}, {
-		URL:  "https://status.shockhosting.net/",
+		URL:  "https://status.shockhosting.net",
 		Name: "Shock Hosting",
 	}, {
-		URL:  "https://www.shopifystatus.com/",
+		URL:  "https://www.shopifystatus.com",
 		Name: "Shopify",
 	}, {
-		URL:  "https://status.simplyhosting.com/",
+		URL:  "https://status.simplyhosting.com",
 		Name: "Simply Hosting & Servers",
 	}, {
-		URL:  "https://status.squarespace.com/",
+		URL:  "https://status.squarespace.com",
 		Name: "Squarespace",
 	}, {
-		URL:  "https://summithosting.statuskeeper.io/",
+		URL:  "https://summithosting.statuskeeper.io",
 		Name: "Summit Hosting",
 	}, {
-		URL:  "https://status.umbrellar.com/",
+		URL:  "https://status.umbrellar.com",
 		Name: "Umbrellar",
 	}, {
-		URL:  "https://status.velocityhost.com.au/",
+		URL:  "https://status.velocityhost.com.au",
 		Name: "Velocity Host",
 	}, {
-		URL:  "https://status.vultr.com/",
+		URL:  "https://status.vultr.com",
 		Name: "Vultr",
 	}, {
-		URL:  "https://status.webcentral.au/",
+		URL:  "https://status.webcentral.au",
 		Name: "Webcentral",
 	}, {
-		URL:  "https://status.webscrapingapi.com/",
+		URL:  "https://status.webscrapingapi.com",
 		Name: "WebScrapingAPI",
 	}, {
-		URL:  "https://wpenginestatus.com/",
+		URL:  "https://wpenginestatus.com",
 		Name: "WP Engine",
 	}, {
-		URL:  "https://status.docebo.com/",
+		URL:  "https://status.docebo.com",
 		Name: "Docebo",
 	}, {
-		URL:  "https://status.lunar.app/",
+		URL:  "https://status.lunar.app",
 		Name: "Lunar",
 	}, {
 		URL:  "https://portal.office.com/servicestatus",
 		Name: "Microsoft",
 	}, {
-		URL:  "https://www.google.com/appsstatus/dashboard/",
+		URL:  "https://www.google.com/appsstatus/dashboard",
 		Name: "Google",
 	}, {
-		URL:  "https://status.axioshq.com/",
+		URL:  "https://status.axioshq.com",
 		Name: "Axios",
 	}, {
 		URL:  "https://status.enterprisemessaging-starhub.com/?start_date=2023-12-02",
 		Name: "StarHub",
 	}, {
-		URL:  "https://status.minnstate.edu/",
+		URL:  "https://status.minnstate.edu",
 		Name: "State of Minnesota",
 	}, {
-		URL:  "https://status.quiltmc.org/",
+		URL:  "https://status.quiltmc.org",
 		Name: "Quilt",
 	}, {
 		URL:  "https://support.altosoftware.co.uk/hc/en-gb/articles/16715261983633-Alto-Service-Status",
 		Name: "Alto Pharmacy",
 	}, {
-		URL:  "http://status.sapiensia.com/",
+		URL:  "http://status.sapiensia.com",
 		Name: "Sapiens",
 	}, {
-		URL:  "https://status.mulesoft.com/",
+		URL:  "https://status.mulesoft.com",
 		Name: "MuleSoft",
 	}, {
-		URL:  "http://status.stealth.net.au/",
+		URL:  "http://status.stealth.net.au",
 		Name: "Stealth",
 	}, {
-		URL:  "https://status.sse.cisco.com/",
+		URL:  "https://status.sse.cisco.com",
 		Name: "Cisco Systems",
 	}, {
-		URL:  "https://status.amsoil.com/",
+		URL:  "https://status.amsoil.com",
 		Name: "AMSOIL INC.",
 	}, {
 		URL:  "https://portal.office.com/servicestatus",
 		Name: "Microsoft ",
 	}, {
-		URL:  "https://status.okta.com/",
+		URL:  "https://status.okta.com",
 		Name: "Okta",
 	}, {
-		URL:  "https://status.amp.cisco.com/",
+		URL:  "https://status.amp.cisco.com",
 		Name: "Cisco",
 	}, {
 		URL:  "https://docs.servicenow.com/bundle/washingtondc-platform-user-interface/page/build/service-portal/concept/service-status-widget.html",
 		Name: "ServiceNow",
 	}, {
-		URL:  "https://status.openai.com/",
+		URL:  "https://status.openai.com",
 		Name: "OPEN",
 	}, {
-		URL:  "https://status.adobe.com/",
+		URL:  "https://status.adobe.com",
 		Name: "Adobe",
 	}, {
-		URL:  "https://status.cloud.yandex.com/",
+		URL:  "https://status.cloud.yandex.com",
 		Name: "Yandex",
 	}, {
-		URL:  "https://status.redis.com/",
+		URL:  "https://status.redis.com",
 		Name: "Redis",
 	}, {
 		URL:  "https://uptime.com/trendyol.com",
@@ -1630,37 +1630,37 @@ var StatusPages = []api.StatusPage{
 		URL:  "https://portal.office.com/servicestatus",
 		Name: "Microsoft",
 	}, {
-		URL:  "https://status.weendeavor.com/",
+		URL:  "https://status.weendeavor.com",
 		Name: "Endeavor",
 	}, {
 		URL:  "https://statusgator.com/services/securityscorecard",
 		Name: "SecurityScorecard",
 	}, {
-		URL:  "https://status.booksy.com/",
+		URL:  "https://status.booksy.com",
 		Name: "Booksy",
 	}, {
 		URL:  "https://portal.office.com/servicestatus",
 		Name: "Microsoft",
 	}, {
-		URL:  "https://status.exact.com/",
+		URL:  "https://status.exact.com",
 		Name: "Exact",
 	}, {
-		URL:  "https://status.trellix.com/",
+		URL:  "https://status.trellix.com",
 		Name: "Trellix",
 	}, {
-		URL:  "https://thg.statuspal.io/",
+		URL:  "https://thg.statuspal.io",
 		Name: "THG",
 	}, {
 		URL:  "https://portal.office.com/servicestatus",
 		Name: "Microsoft",
 	}, {
-		URL:  "https://status.cloudera.com/",
+		URL:  "https://status.cloudera.com",
 		Name: "Cloudera",
 	}, {
-		URL:  "https://status.upwork.com/",
+		URL:  "https://status.upwork.com",
 		Name: "Upwork",
 	}, {
-		URL:  "https://status.trustedhealth.com/",
+		URL:  "https://status.trustedhealth.com",
 		Name: "Trusted Health",
 	}, {
 		URL:  "https://statusgator.com/services/sonatype",
@@ -1669,58 +1669,58 @@ var StatusPages = []api.StatusPage{
 		URL:  "https://issitedownrightnow.com/status/bancolombia.com",
 		Name: "Bancolombia",
 	}, {
-		URL:  "https://status.verisk.com/",
+		URL:  "https://status.verisk.com",
 		Name: "Verisk",
 	}, {
-		URL:  "https://status.salesforce.com/",
+		URL:  "https://status.salesforce.com",
 		Name: "salesforce.com",
 	}, {
-		URL:  "https://degreed.statuspage.io/",
+		URL:  "https://degreed.statuspage.io",
 		Name: "Degreed",
 	}, {
-		URL:  "https://status.connectwise.com/",
+		URL:  "https://status.connectwise.com",
 		Name: "ConnectWise",
 	}, {
-		URL:  "https://status.cohesity.com/",
+		URL:  "https://status.cohesity.com",
 		Name: "Cohesity",
 	}, {
-		URL:  "https://www.opengovstatus.com/",
+		URL:  "https://www.opengovstatus.com",
 		Name: "OpenGov Inc.",
 	}, {
 		URL:  "https://www.isitdownrightnow.com/laredoute.fr.html",
 		Name: "La Redoute",
 	}, {
-		URL:  "https://status.redhat.com/",
+		URL:  "https://status.redhat.com",
 		Name: "Red Hat",
 	}, {
 		URL:  "https://www.isitdownrightnow.com/cargurus.com.html",
 		Name: "CarGurus",
 	}, {
-		URL:  "https://status.payscale.com/",
+		URL:  "https://status.payscale.com",
 		Name: "Payscale",
 	}, {
-		URL:  "https://status.amp.cisco.com/",
+		URL:  "https://status.amp.cisco.com",
 		Name: "Cisco",
 	}, {
-		URL:  "https://iridiumwhere.com/status/",
+		URL:  "https://iridiumwhere.com/status",
 		Name: "Iridium",
 	}, {
-		URL:  "https://status.redis.com/",
+		URL:  "https://status.redis.com",
 		Name: "Redis",
 	}, {
-		URL:  "https://status.appen.com/",
+		URL:  "https://status.appen.com",
 		Name: "Appen",
 	}, {
-		URL:  "https://status.axway.com/",
+		URL:  "https://status.axway.com",
 		Name: "Axway",
 	}, {
 		URL:  "https://issitedownrightnow.com/status/pinelabs.com",
 		Name: "Pine Labs",
 	}, {
-		URL:  "https://statuspage.openground.bentley.com/",
+		URL:  "https://statuspage.openground.bentley.com",
 		Name: "Bentley Systems",
 	}, {
-		URL:  "https://status.matrix.org/",
+		URL:  "https://status.matrix.org",
 		Name: "Matrix",
 	}, {
 		URL:  "https://www.saashub.com/atos-status",
@@ -1729,34 +1729,34 @@ var StatusPages = []api.StatusPage{
 		URL:  "https://portal.office.com/servicestatus",
 		Name: "Microsoft",
 	}, {
-		URL:  "https://status.brex.com/",
+		URL:  "https://status.brex.com",
 		Name: "Brex",
 	}, {
-		URL:  "https://status.snowflake.com/",
+		URL:  "https://status.snowflake.com",
 		Name: "Snowflake",
 	}, {
 		URL:  "https://cloud.ibm.com/status",
 		Name: "IBM",
 	}, {
-		URL:  "https://status.salesforce.com/",
+		URL:  "https://status.salesforce.com",
 		Name: "Salesforce",
 	}, {
 		URL:  "https://statusgator.com/services/docker",
 		Name: "Docker, Inc",
 	}, {
-		URL:  "https://status.me.sap.com/",
+		URL:  "https://status.me.sap.com",
 		Name: "SAP",
 	}, {
-		URL:  "https://www.githubstatus.com/",
+		URL:  "https://www.githubstatus.com",
 		Name: "GitHub",
 	}, {
-		URL:  "https://status.multiversx.com/",
+		URL:  "https://status.multiversx.com",
 		Name: "Multiverse",
 	}, {
 		URL:  "https://updownradar.com/status/avito.ru",
 		Name: "Avito",
 	}, {
-		URL:  "https://status.zoominfo.com/",
+		URL:  "https://status.zoominfo.com",
 		Name: "ZoomInfo",
 	}, {
 		URL:  "https://www.isitdownrightnow.com/bloomberg.com.html",
@@ -1765,7 +1765,7 @@ var StatusPages = []api.StatusPage{
 		URL:  "https://connectedfleet.michelin.com/en/status",
 		Name: "MICHELIN Connected Fleet",
 	}, {
-		URL:  "https://status.entrata.com/",
+		URL:  "https://status.entrata.com",
 		Name: "Entrata",
 	}, {
 		URL:  "https://statusgator.com/services/rippling",
@@ -1774,226 +1774,226 @@ var StatusPages = []api.StatusPage{
 		URL:  "https://www.isitdownrightnow.com/youtube.com.html",
 		Name: "YouTube",
 	}, {
-		URL:  "https://status.ucsb.edu/",
+		URL:  "https://status.ucsb.edu",
 		Name: "UC Santa Barbara",
 	}, {
-		URL:  "https://status.harness.io/",
+		URL:  "https://status.harness.io",
 		Name: "Harness",
 	}, {
-		URL:  "https://status.connect.aveva.com/",
+		URL:  "https://status.connect.aveva.com",
 		Name: "AVEVA",
 	}, {
 		URL:  "https://www.collibra.com/us/en/status-dashboard",
 		Name: "Collibra",
 	}, {
-		URL:  "https://status.vmware-services.io/",
+		URL:  "https://status.vmware-services.io",
 		Name: "VMware",
 	}, {
-		URL:  "https://status.neo4j.io/",
+		URL:  "https://status.neo4j.io",
 		Name: "Neo4j",
 	}, {
-		URL:  "https://docaposte.betteruptime.com/",
+		URL:  "https://docaposte.betteruptime.com",
 		Name: "Docaposte",
 	}, {
 		URL:  "https://status.globant.com/login",
 		Name: "Globant",
 	}, {
-		URL:  "https://status.toasttab.com/",
+		URL:  "https://status.toasttab.com",
 		Name: "Toast",
 	}, {
-		URL:  "https://status.astra.datastax.com/",
+		URL:  "https://status.astra.datastax.com",
 		Name: "DataStax",
 	}, {
-		URL:  "https://status.udemy.com/",
+		URL:  "https://status.udemy.com",
 		Name: "Udemy",
 	}, {
-		URL:  "https://status.snyk.io/",
+		URL:  "https://status.snyk.io",
 		Name: "Snyk",
 	}, {
-		URL:  "https://status.twitch.com/",
+		URL:  "https://status.twitch.com",
 		Name: "Twitch",
 	}, {
-		URL:  "https://www.calendlystatus.com/",
+		URL:  "https://www.calendlystatus.com",
 		Name: "Calendly",
 	}, {
-		URL:  "https://status.sse.cisco.com/",
+		URL:  "https://status.sse.cisco.com",
 		Name: "Cisco",
 	}, {
-		URL:  "https://status.postman.com/",
+		URL:  "https://status.postman.com",
 		Name: "Postman",
 	}, {
-		URL:  "https://www.cloudflarestatus.com/",
+		URL:  "https://www.cloudflarestatus.com",
 		Name: "Cloudflare, Inc.",
 	}, {
-		URL:  "https://www.contentfulstatus.com/",
+		URL:  "https://www.contentfulstatus.com",
 		Name: "Contentful",
 	}, {
-		URL:  "https://status.redhat.com/",
+		URL:  "https://status.redhat.com",
 		Name: "Red Hat",
 	}, {
-		URL:  "https://status.kore.com/",
+		URL:  "https://status.kore.com",
 		Name: "Kore.ai",
 	}, {
-		URL:  "https://www.cloudbeesstatus.com/",
+		URL:  "https://www.cloudbeesstatus.com",
 		Name: "CloudBees",
 	}, {
-		URL:  "https://status.quantcast.com/",
+		URL:  "https://status.quantcast.com",
 		Name: "Quantcast",
 	}, {
-		URL:  "https://status.cloudera.com/",
+		URL:  "https://status.cloudera.com",
 		Name: "Cloudera",
 	}, {
-		URL:  "https://status.okta.com/",
+		URL:  "https://status.okta.com",
 		Name: "Okta",
 	}, {
-		URL:  "https://status.fourkites.com/",
+		URL:  "https://status.fourkites.com",
 		Name: "FourKites, Inc.",
 	}, {
-		URL:  "https://status.cint.com/",
+		URL:  "https://status.cint.com",
 		Name: "Cint",
 	}, {
-		URL:  "https://www.ionos-status.com/",
+		URL:  "https://www.ionos-status.com",
 		Name: "IONOS",
 	}, {
-		URL:  "https://status.modeanalytics.com/",
+		URL:  "https://status.modeanalytics.com",
 		Name: "Mode",
 	}, {
-		URL:  "https://status.cashfree.com/",
+		URL:  "https://status.cashfree.com",
 		Name: "Cashfree Payments",
 	}, {
-		URL:  "https://status.one.com/",
+		URL:  "https://status.one.com",
 		Name: "ONE",
 	}, {
-		URL:  "https://status.epicgames.com/",
+		URL:  "https://status.epicgames.com",
 		Name: "Epic Games",
 	}, {
-		URL:  "https://status.whatnot.com/",
+		URL:  "https://status.whatnot.com",
 		Name: "Whatnot",
 	}, {
-		URL:  "https://status.payment.schibsted.io/",
+		URL:  "https://status.payment.schibsted.io",
 		Name: "Schibsted",
 	}, {
-		URL:  "https://status.manomano.com/",
+		URL:  "https://status.manomano.com",
 		Name: "ManoMano",
 	}, {
 		URL:  "https://statusgator.com/services/opentext",
 		Name: "OpenText",
 	}, {
-		URL:  "https://status.cimpress.io/",
+		URL:  "https://status.cimpress.io",
 		Name: "Cimpress",
 	}, {
-		URL:  "https://status.servicetitan.com/",
+		URL:  "https://status.servicetitan.com",
 		Name: "ServiceTitan",
 	}, {
-		URL:  "https://www.google.com/appsstatus/dashboard/",
+		URL:  "https://www.google.com/appsstatus/dashboard",
 		Name: "Google",
 	}, {
-		URL:  "https://discordstatus.com/",
+		URL:  "https://discordstatus.com",
 		Name: "Discord",
 	}, {
-		URL:  "https://status.hashicorp.com/",
+		URL:  "https://status.hashicorp.com",
 		Name: "HashiCorp",
 	}, {
-		URL:  "https://status.zenoti.com/",
+		URL:  "https://status.zenoti.com",
 		Name: "Zenoti",
 	}, {
-		URL:  "https://status.mongodb.com/",
+		URL:  "https://status.mongodb.com",
 		Name: "MongoDB",
 	}, {
-		URL:  "https://status.check24.de/",
+		URL:  "https://status.check24.de",
 		Name: "CHECK24 Vergleichsportal GmbH",
 	}, {
-		URL:  "https://status.edq.com/",
+		URL:  "https://status.edq.com",
 		Name: "Experian",
 	}, {
-		URL:  "https://status.wealthsimple.com/",
+		URL:  "https://status.wealthsimple.com",
 		Name: "Wealthsimple",
 	}, {
-		URL:  "https://status.godaddy.com/",
+		URL:  "https://status.godaddy.com",
 		Name: "GoDaddy",
 	}, {
-		URL:  "https://status.vistage.com/",
+		URL:  "https://status.vistage.com",
 		Name: "Vistage Worldwide, Inc.",
 	}, {
 		URL:  "https://osdatahub.os.uk/serviceStatus",
 		Name: "Ordnance Survey",
 	}, {
-		URL:  "https://status.grammarly.com/",
+		URL:  "https://status.grammarly.com",
 		Name: "Grammarly",
 	}, {
-		URL:  "https://status.dev.pro/",
+		URL:  "https://status.dev.pro",
 		Name: "Dev.Pro",
 	}, {
-		URL:  "https://status.bolt.com/",
+		URL:  "https://status.bolt.com",
 		Name: "Bolt",
 	}, {
-		URL:  "https://status.catonetworks.com/",
+		URL:  "https://status.catonetworks.com",
 		Name: "Cato Networks",
 	}, {
-		URL:  "https://status.payoneer.com/",
+		URL:  "https://status.payoneer.com",
 		Name: "Payoneer",
 	}, {
-		URL:  "https://status.cloud.yandex.com/",
+		URL:  "https://status.cloud.yandex.com",
 		Name: "Yandex",
 	}, {
-		URL:  "https://status.equinix.com/",
+		URL:  "https://status.equinix.com",
 		Name: "Equinix",
 	}, {
-		URL:  "https://trust.emarsys.com/",
+		URL:  "https://trust.emarsys.com",
 		Name: "Emarsys",
 	}, {
-		URL:  "https://status.tokopedia.com/",
+		URL:  "https://status.tokopedia.com",
 		Name: "Tokopedia",
 	}, {
-		URL:  "https://status.box.com/",
+		URL:  "https://status.box.com",
 		Name: "Box",
 	}, {
-		URL:  "https://status.ripple.moe/",
+		URL:  "https://status.ripple.moe",
 		Name: "Ripple",
 	}, {
-		URL:  "https://status.linuxfoundation.org/",
+		URL:  "https://status.linuxfoundation.org",
 		Name: "The Linux Foundation",
 	}, {
-		URL:  "https://status.planview.com/",
+		URL:  "https://status.planview.com",
 		Name: "Planview, Inc.",
 	}, {
-		URL:  "https://status.rubrik.com/",
+		URL:  "https://status.rubrik.com",
 		Name: "Rubrik, Inc.",
 	}, {
-		URL:  "https://www.similarweb.com/website/statuspage.io/",
+		URL:  "https://www.similarweb.com/website/statuspage.io",
 		Name: "Similarweb",
 	}, {
-		URL:  "https://status.boomi.com/",
+		URL:  "https://status.boomi.com",
 		Name: "Boomi",
 	}, {
-		URL:  "https://status.criteo.com/",
+		URL:  "https://status.criteo.com",
 		Name: "Criteo",
 	}, {
-		URL:  "https://status.databricks.com/",
+		URL:  "https://status.databricks.com",
 		Name: "Databricks",
 	}, {
-		URL:  "https://status.bmj.com/",
+		URL:  "https://status.bmj.com",
 		Name: "BMJ",
 	}, {
-		URL:  "https://status.wiz.io/",
+		URL:  "https://status.wiz.io",
 		Name: "Wiz",
 	}, {
-		URL:  "https://status.edg.io/",
+		URL:  "https://status.edg.io",
 		Name: "Edgio",
 	}, {
-		URL:  "https://status.stripe.com/",
+		URL:  "https://status.stripe.com",
 		Name: "Stripe",
 	}, {
-		URL:  "https://www.allegrostatus.pl/",
+		URL:  "https://www.allegrostatus.pl",
 		Name: "Allegro",
 	}, {
-		URL:  "https://status.ifs.com/",
+		URL:  "https://status.ifs.com",
 		Name: "IFS",
 	}, {
-		URL:  "https://status.project44.com/",
+		URL:  "https://status.project44.com",
 		Name: "project44",
 	}, {
-		URL:  "https://status.adobe.com/",
+		URL:  "https://status.adobe.com",
 		Name: "Adobe",
 	},
 }
