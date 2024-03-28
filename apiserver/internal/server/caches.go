@@ -11,7 +11,7 @@ func (s *Server) StartCaches(ctx context.Context) {
 	go s.updateStatusPageCache(ctx)
 }
 
-const statusPageCacheRefreshInterval = 5 * time.Minute
+const statusPageCacheRefreshInterval = 1 * time.Minute
 
 func (s *Server) updateStatusPageCache(ctx context.Context) {
 	ticker := time.NewTicker(statusPageCacheRefreshInterval)
