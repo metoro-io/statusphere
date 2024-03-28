@@ -60,7 +60,7 @@ const config: Config = {
                 50: '50%',
             },
             lineHeight: {
-                tight: 1.2,
+                tight: '1.2',
             },
             fontSize: {
                 '5xl': '2.5rem',
