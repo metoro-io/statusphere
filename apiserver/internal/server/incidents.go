@@ -50,7 +50,7 @@ func (s *Server) incidents(context *gin.Context) {
 		return
 	}
 	if found {
-		context.JSON(http.StatusOK, IncidentsResponse{Incidents: incidents})
+		context.JSON(http.StatusOK, IncidentsResponse{Incidents: incidents, IsIndexed: true})
 		return
 	}
 
@@ -67,7 +67,7 @@ func (s *Server) incidents(context *gin.Context) {
 	}
 
 	s.incidentCache.Set(statusPageUrl, incidents, cache.DefaultExpiration)
-	context.JSON(http.StatusOK, IncidentsResponse{Incidents: incidents})
+	context.JSON(http.StatusOK, IncidentsResponse{Incidents: incidents, IsIndexed: true})
 }
 
 // getIncidentsFromCache attempts to get the incidents from the cache.
