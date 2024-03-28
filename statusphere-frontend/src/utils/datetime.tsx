@@ -46,10 +46,10 @@ export const timeAgo = (dateTimeString: string): string => {
 const printPrettyDuration = (hours: number, minutes: number, seconds: number): string => {
     let durationParts = [];
     if (hours > 0) {
-        durationParts.push(`${hours} hour${isPlural(hours)}`);
+        durationParts.push(`${hours} hr${isPlural(hours)}`);
     }
     if (minutes > 0) {
-        durationParts.push(`${minutes} minute${isPlural(minutes)}`);
+        durationParts.push(`${minutes} min${isPlural(minutes)}`);
     }
     if (seconds > 0 || durationParts.length === 0) {
         durationParts.push(`${seconds} second${isPlural(seconds)}`);

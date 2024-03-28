@@ -20,7 +20,6 @@ function MainContent() {
                     height={500}
                     alt="Picture of the author"
                 />
-
                 <CompanyCount/>
                 <Search/>
             </div>

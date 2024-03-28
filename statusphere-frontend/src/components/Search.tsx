@@ -50,9 +50,8 @@ export function Search() {
                             variant="outline"
                             role="combobox"
                             aria-expanded={open}
-                            className="w-full justify-between bg-white shadow-white text-slate-700 hover:bg-slate-100 hover:text-slate-900"
-                        >
-                            {company}
+                            className="w-full justify-between bg-white shadow-white text-gray-400 hover:bg-slate-100 hover:text-slate-900"
+                        > {company === "" ? "Search company status" : company}
                             <div className={"flex w-full justify-end "}>
                                 <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50"/>
                             </div>
@@ -63,7 +62,7 @@ export function Search() {
                             <CommandInput onValueChange={(a) => {
                                 setPrefix(a)
                             }}
-                                          placeholder="Search company..."/>
+                                          placeholder="Type a company name..."/>
                             <CommandEmpty>No company found.</CommandEmpty>
                             <CommandGroup>
                                 {companyList.map((details) => (
