@@ -6,6 +6,7 @@ import {calculateDuration, convertToSimpleDate} from "@/utils/datetime";
 import {ReadMore} from "@/components/ReadMore";
 import {Card, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
 import {Badge} from "@/components/ui/badge";
+import {cn} from "@/components/ui/lib/utils";
 
 interface OutagesProps {
     statusPageDetails: StatusPage;
@@ -36,6 +37,17 @@ export function Outages(props: OutagesProps) {
                 const response = await axios.get(
                     '/api/v1/incidents?statusPageUrl=' + props.statusPageDetails.url
                 );
+                if (window.innerWidth < 500) {
+                    // If a word in the title is longer than 15 characters then we split it
+                    response.data.incidents.forEach((incident: Incident) => {
+                        incident.title.split(" ").forEach((word: string) => {
+                            if (word.length > 15) {
+                                incident.title = incident.title.replace(word, word.substring(0, 15) + " ")
+                            }
+                        })
+                    });
+                }
+
                 setIncidents(response.data.incidents)
             } catch (err) {
                 console.log(err);
@@ -82,7 +94,7 @@ export function Outages(props: OutagesProps) {
         <TableHeader>
             <TableRow>
                 <TableHead>Start Time (UTC)</TableHead>
-                <TableHead className={"max-w-[300px]"}>Incident Deep Link</TableHead>
+                <TableHead className={cn("max-w-[300px]")}>Incident Deep Link</TableHead>
                 <TableHead>Impact</TableHead>
                 <TableHead className="text-left">Duration</TableHead>
                 {window.innerWidth > 500 && <TableHead>Description</TableHead>}
@@ -92,7 +104,7 @@ export function Outages(props: OutagesProps) {
             {incidents.map((incident) => (
                 <TableRow>
                     <TableCell>{convertToSimpleDate(incident.startTime)}</TableCell>
-                    <TableCell><a href={incident.deepLink}> {incident.title} </a></TableCell>
+                    <TableCell className={"max-w-[300px] break-words"}><a className={"max-w-[300px] break-words"} href={incident.deepLink}> {incident.title} </a></TableCell>
                     <TableCell>
                         <Badge className={getBadgeColour(incident.impact)}>{incident.impact}</Badge>
                     </TableCell>
