@@ -21,6 +21,7 @@ type statusPageRanked struct {
 // statusPageSearch is a handler for the /statusPages/search endpoint.
 // It has a required query parameter of query
 // Entries returned first are the ones with the best match
+// Limited to 25 results
 func (s *Server) statusPageSearch(context *gin.Context) {
 	query := context.Query("query")
 	if query == "" {
@@ -56,6 +57,10 @@ func (s *Server) statusPageSearch(context *gin.Context) {
 	var statusPages []api.StatusPage
 	for _, statusPage := range statusPagesRanked {
 		statusPages = append(statusPages, statusPage.StatusPage)
+	}
+
+	if len(statusPages) > 25 {
+		statusPages = statusPages[:25]
 	}
 
 	context.JSON(http.StatusOK, StatusPageSearchResponse{StatusPages: statusPages})
