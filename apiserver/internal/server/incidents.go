@@ -8,6 +8,7 @@ import (
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 	"net/http"
+	"sort"
 )
 
 type IncidentsResponse struct {
@@ -50,6 +51,7 @@ func (s *Server) incidents(context *gin.Context) {
 		return
 	}
 	if found {
+		sortIncidentsDescending(incidents)
 		context.JSON(http.StatusOK, IncidentsResponse{Incidents: incidents, IsIndexed: true})
 		return
 	}
@@ -66,8 +68,15 @@ func (s *Server) incidents(context *gin.Context) {
 		return
 	}
 
+	sortIncidentsDescending(incidents)
 	s.incidentCache.Set(statusPageUrl, incidents, cache.DefaultExpiration)
 	context.JSON(http.StatusOK, IncidentsResponse{Incidents: incidents, IsIndexed: true})
+}
+
+func sortIncidentsDescending(incidents []api.Incident) {
+	sort.Slice(incidents, func(i, j int) bool {
+		return incidents[i].StartTime.After(incidents[j].StartTime)
+	})
 }
 
 // getIncidentsFromCache attempts to get the incidents from the cache.

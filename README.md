@@ -26,6 +26,16 @@ Read more about the project at the [launch blog post](https://metoro.io/blog/sta
 Statusphere is API first, it has a frontend that consumes the API, but the API is the main focus of the project.
 The api endpoints are here:
 
+```bash
+
+GET /api/v1/statusPage
+GET /api/v1/currentStatus
+GET /api/v1/statusPages
+GET /api/v1/statusPages/count
+GET /api/v1/statusPages/search
+GET /api/v1/incidents
+
+```
 
 ## Usage
 
