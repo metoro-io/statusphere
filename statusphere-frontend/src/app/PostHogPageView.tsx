@@ -13,8 +13,8 @@ export default function PostHogPageView() : null {
     useEffect(() => {
         if (pathname && posthog) {
             let url = window.origin + pathname
-            if (searchParams!.toString()) {
-                url = url + `?${searchParams!.toString()}`
+            if (searchParams != null && searchParams!.toString()) {
+                url = url + `?${searchParams.toString()}`
             }
             posthog.capture(
                 '$pageview',

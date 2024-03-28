@@ -4,6 +4,7 @@ import '@/index.css'
 import {clsx} from "clsx";
 import {PHProvider} from "@/app/providers";
 import PostHogPageView from "@/app/PostHogPageView";
+import {Suspense} from "react";
 
 const inter = Inter({
     subsets: ['latin'],
@@ -38,7 +39,9 @@ export default function RootLayout({
         >
         <PHProvider>
             <body className={"flex h-full flex-col"}>
-            <PostHogPageView/>
+            <Suspense>
+                <PostHogPageView/>
+            </Suspense>
             {children}
             </body>
         </PHProvider>
