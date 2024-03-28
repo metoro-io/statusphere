@@ -4,9 +4,8 @@ import React, {useEffect, useState} from "react";
 import {Button} from "@/components/ui/button";
 import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover";
 import {Command, CommandEmpty, CommandGroup, CommandInput, CommandItem} from "@/components/ui/command";
-import {CaretSortIcon, CheckIcon} from "@radix-ui/react-icons";
+import {CaretSortIcon} from "@radix-ui/react-icons";
 import axios from "@/utils/axios";
-import {cn} from "@/components/ui/lib/utils";
 import {StatusPage} from "@/model/StatusPage";
 import {useRouter} from "next/navigation";
 
