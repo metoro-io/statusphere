@@ -42,6 +42,13 @@ GET /api/v1/incidents?statusPageUrl=XXX
 Warning: This will spin up a local instance of the statusphere stack which will automatically scrape the status pages of
 the services listed in the `status_pages.go` file.
 
+If you want to quickly try the api you can hit the hosted version
+```bash
+curl 'https://statusphere.metoro.io/api/v1/incidents?statusPageUrl=https://www.githubstatus.com' | jq
+```
+
+To run the stack locally:
+
 ```bash
 # From the root of the repository
 docker-compose up
