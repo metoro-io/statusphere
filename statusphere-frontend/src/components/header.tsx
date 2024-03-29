@@ -86,14 +86,7 @@ function MobileNavigation() {
                         as="div"
                         className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5"
                     >
-                        <MobileNavLink href="https://metoro.io#features">Features</MobileNavLink>
-                        <MobileNavLink href="https://metoro.io#use-cases">Use Cases</MobileNavLink>
-                        <MobileNavLink href="https://metoro.io#pricing">Pricing</MobileNavLink>
-                        <MobileNavLink href="https://metoro.io#features">FAQs</MobileNavLink>
-                        {/*<MobileNavLink href="#demo">Live Demo</MobileNavLink>*/}
-                        <MobileNavLink href="https://docs.metoro.io">Docs</MobileNavLink>
-                        <MobileNavLink href="https://metoro.io/blog">Blog</MobileNavLink>
-                        <MobileNavLink href="https://metoro.io/statusphere">Statusphere</MobileNavLink>
+                        <MobileNavLink href="/">Statusphere</MobileNavLink>
                     </Popover.Panel>
                 </Transition.Child>
             </Transition.Root>
@@ -111,27 +104,7 @@ export function Header() {
                             <Image src={icon} alt="Logo" width={40} height={40}/>
                         </Link>
                         <div className="hidden md:flex md:gap-x-6">
-                            <NavLink href="https://metoro.io#features">Features</NavLink>
-                            <NavLink href="https://metoro.io#use-cases">Use Cases</NavLink>
-                            <NavLink href="https://metoro.io#pricing">Pricing</NavLink>
-                            <NavLink href="https://metoro.io#features">FAQs</NavLink>
-                            {/*<NavLink href="#demo">Live Demo</NavLink>*/}
-                            <NavLink href="https://docs.metoro.io">Docs</NavLink>
-                            <NavLink href="https://metoro.io/blog">Blog</NavLink>
-                            <NavLink href="https://metoro.io/statusphere">Statusphere</NavLink>
-                        </div>
-                    </div>
-                    <div className="flex items-center gap-x-5 md:gap-x-8">
-                        <div className="hidden md:block">
-                            <NavLink href="https://app.metoro.io">Sign in</NavLink>
-                        </div>
-                        <Button href="https://app.metoro.io" color="blue">
-              <span>
-                Get started <span className="hidden lg:inline">today</span>
-              </span>
-                        </Button>
-                        <div className="-mr-1 md:hidden">
-                            <MobileNavigation/>
+                            <NavLink href="/">Statusphere</NavLink>
                         </div>
                     </div>
                 </nav>
