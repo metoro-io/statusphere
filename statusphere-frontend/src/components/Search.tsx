@@ -66,7 +66,17 @@ export function Search() {
                                 setPrefix(a)
                             }}
                                           placeholder="Type a company name..."/>
-                            <CommandEmpty>No company found.</CommandEmpty>
+                            <CommandEmpty><div className={"flex justify-center space-x-2 align-middle"}><div className={"align-middle mt-2 h-full"}>No company found.</div>
+                                <Button
+                                    className="bg-white shadow-white border text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+                                    onClick={() => {
+                                        window.location.href = 'https://github.com/metoro-io/statusphere/blob/main/common/status_pages/status_pages.go';
+                                    }}
+                                >
+                                    Add Company
+                                </Button>
+
+                            </div></CommandEmpty>
                             <CommandGroup>
                                 {companyList.map((details) => (
                                     <CommandItem
