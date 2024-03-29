@@ -8,7 +8,6 @@ import (
 	"github.com/metoro-io/statusphere/scraper/internal/scraper/consumers/dbconsumer"
 	"github.com/metoro-io/statusphere/scraper/internal/scraper/poller"
 	"github.com/metoro-io/statusphere/scraper/internal/scraper/providers"
-	"github.com/metoro-io/statusphere/scraper/internal/scraper/providers/statusio"
 	"github.com/metoro-io/statusphere/scraper/internal/scraper/urlgetter/dburlgetter"
 	"go.uber.org/zap"
 	"net/http"
@@ -21,7 +20,7 @@ func main() {
 	}
 
 	scraper := scraper.NewScraper(logger, http.DefaultClient, []providers.Provider{
-		statusio.NewStatusioProvider(logger, http.DefaultClient),
+		atlassian.NewAtlassianProvider(logger, http.DefaultClient),
 	})
 
 	dbClient, err := db.NewDbClientFromEnvironment(logger)

@@ -4,7 +4,7 @@ import (
 	"context"
 	"github.com/metoro-io/statusphere/scraper/internal/scraper"
 	"github.com/metoro-io/statusphere/scraper/internal/scraper/providers"
-	"github.com/metoro-io/statusphere/scraper/internal/scraper/providers/statusio"
+	"github.com/metoro-io/statusphere/scraper/internal/scraper/providers/atlassian"
 	"go.uber.org/zap"
 	"net/http"
 	"testing"
@@ -28,7 +28,7 @@ func TestE2eDropboxHistorical(t *testing.T) {
 	if err != nil {
 		t.Errorf("Failed to create logger")
 	}
-	scraper := scraper.NewScraper(dev, http.DefaultClient, []providers.Provider{statusio.NewStatusioProvider(dev, http.DefaultClient)})
+	scraper := scraper.NewScraper(dev, http.DefaultClient, []providers.Provider{atlassian.NewAtlassianProvider(dev, http.DefaultClient)})
 	incidents, err := scraper.ScrapeStatusPageHistorical(context.Background(), "https://status.dropbox.com")
 	if err != nil {
 		t.Errorf("Failed to scrape status page: %s", "https://status.dropbox.com")
@@ -41,7 +41,7 @@ func TestE2eCloudflareCurrent(t *testing.T) {
 	if err != nil {
 		t.Errorf("Failed to create logger")
 	}
-	scraper := scraper.NewScraper(dev, http.DefaultClient, []providers.Provider{statusio.NewStatusioProvider(dev, http.DefaultClient)})
+	scraper := scraper.NewScraper(dev, http.DefaultClient, []providers.Provider{atlassian.NewAtlassianProvider(dev, http.DefaultClient)})
 	incident, err := scraper.ScrapeStatusPageCurrent(context.Background(), "https://www.cloudflarestatus.com")
 	if err != nil {
 		t.Errorf("Failed to scrape status page: %s", "https://www.cloudflarestatus.com")
@@ -54,7 +54,7 @@ func TestE2eManyCurrent(t *testing.T) {
 	if err != nil {
 		t.Errorf("Failed to create logger")
 	}
-	scraper := scraper.NewScraper(dev, http.DefaultClient, []providers.Provider{statusio.NewStatusioProvider(dev, http.DefaultClient)})
+	scraper := scraper.NewScraper(dev, http.DefaultClient, []providers.Provider{atlassian.NewAtlassianProvider(dev, http.DefaultClient)})
 	for _, statusPage := range statusPages {
 		incidents, err := scraper.ScrapeStatusPageCurrent(context.Background(), statusPage)
 		if err != nil {
