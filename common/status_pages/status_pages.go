@@ -1330,233 +1330,221 @@ var StatusPages = []api.StatusPage{
 		URL:  "https://status.zerohash.com",
 		Name: "Zero Hash",
 	}, {
-		URL:  "https://status.appwrite.io",
-		Name: "appwrite",
+		URL:  "https://status.8base.com",
+		Name: "8base",
 	}, {
-		URL:  "https://anchorhost.statuspage.io",
-		Name: "anchor-host",
+		URL:  "https://status.ably.com",
+		Name: "Ably",
 	}, {
-		URL:  "https://automatticstatus.com",
-		Name: "automattic",
+		URL:  "https://status.airbrake.io",
+		Name: "Airbrake",
 	}, {
-		URL:  "http://status.binarylane.com.au",
-		Name: "binary-lane",
+		URL:  "http://status.mws.amazon.com",
+		Name: "Amazon Marketplace Web Service",
 	}, {
-		URL:  "http://stats.pingdom.com/tdmmfmbt03rn",
-		Name: "campuspress",
+		URL:  "https://status.useanvil.com",
+		Name: "Anvil",
 	}, {
-		URL:  "https://status.catalystcloud.nz",
-		Name: "catalyst-cloud",
+		URL:  "https://status.apify.com",
+		Name: "Apify",
 	}, {
-		URL:  "https://status.cloudsigma.com",
-		Name: "cloudsigma",
+		URL:  "https://developer.apple.com/system-status",
+		Name: "Apple Developer",
 	}, {
-		URL:  "https://status.convertapi.com",
-		Name: "convertapi",
+		URL:  "https://status.appsignal.com",
+		Name: "AppSignal",
 	}, {
-		URL:  "https://status.courier.com",
-		Name: "courier",
+		URL:  "https://apwide.statuspage.io",
+		Name: "Apwide",
 	}, {
-		URL:  "https://status.crucial.com.au",
-		Name: "crucial-hosting",
+		URL:  "https://status.array.com",
+		Name: "Array",
 	}, {
-		URL:  "http://www.dediservestatus.com",
-		Name: "dediserve",
+		URL:  "https://status.ashbyhq.com",
+		Name: "Ashby",
 	}, {
-		URL:  "https://dhostingstatus.com",
-		Name: "dhosting",
+		URL:  "https://status.assembla.com",
+		Name: "Assembla",
 	}, {
-		URL:  "https://www.dpstatus.com",
-		Name: "digital-pacific",
+		URL:  "https://status.atlassian.com",
+		Name: "Atlassian",
 	}, {
-		URL:  "https://status.dogado.de",
-		Name: "dogado",
+		URL:  "https://compass.status.atlassian.com",
+		Name: "Atlassian Compass",
 	}, {
-		URL:  "https://status.dongee.com",
-		Name: "dongee",
+		URL:  "https://developer.status.atlassian.com",
+		Name: "Atlassian Developer",
 	}, {
-		URL:  "https://www.dreamhoststatus.com",
-		Name: "dreamhost",
+		URL:  "https://bitbucket.status.atlassian.com",
+		Name: "Bitbucket",
 	}, {
-		URL:  "https://www.dynstatus.com",
-		Name: "dyn",
+		URL:  "https://status.bitrise.io",
+		Name: "Bitrise",
 	}, {
-		URL:  "https://status.theendlessweb.com",
-		Name: "endless-group",
+		URL:  "https://status.blazemeter.com",
+		Name: "BlazeMeter",
 	}, {
-		URL:  "https://status.expo.io",
-		Name: "expo",
+		URL:  "http://status.appneta.com",
+		Name: "Broadcom AppNeta",
 	}, {
-		URL:  "https://fluccs.status.io",
-		Name: "fluccs",
+		URL:  "https://status.bugsnag.com",
+		Name: "Bugsnag",
 	}, {
-		URL:  "https://status.getflywheel.com",
-		Name: "flywheel",
+		URL:  "https://status.canonical.com",
+		Name: "Canonical",
 	}, {
-		URL:  "https://status.formassembly.com",
-		Name: "formassembly",
+		URL:  "https://status.circleci.com",
+		Name: "Circle CI",
 	}, {
-		URL:  "https://status.fragnet.net",
-		Name: "fragnet-networks",
+		URL:  "https://www.clevercloudstatus.com",
+		Name: "CleverCloud",
 	}, {
-		URL:  "https://status.freistilbox.com",
-		Name: "freistilbox",
+		URL:  "http://status.clojars.org",
+		Name: "Clojars",
 	}, {
-		URL:  "https://status.gandi.net",
-		Name: "gandi",
+		URL:  "http://status.cloudamqp.com",
+		Name: "CloudAMPQ",
 	}, {
-		URL:  "https://status.getresponse.com",
-		Name: "getresponse",
+		URL:  "https://www.cloudbeesstatus.com",
+		Name: "CloudBees",
 	}, {
-		URL:  "https://status.gitlabhost.com",
-		Name: "gitlabhost",
+		URL:  "https://status.cloudnovi.com",
+		Name: "Cloudnovi",
 	}, {
-		URL:  "https://www.godaddy.com/system-status",
-		Name: "godaddy",
+		URL:  "https://status.cloudrepo.io",
+		Name: "CloudRepo",
 	}, {
-		URL:  "https://status.happyfox.com",
-		Name: "happyfox",
+		URL:  "https://status.cocoapods.org",
+		Name: "CocoaPods",
 	}, {
-		URL:  "https://hawkhoststatus.com",
-		Name: "hawk-host",
+		URL:  "http://status.codefresh.io",
+		Name: "Codefresh",
 	}, {
-		URL:  "https://status.hostedgraphite.com",
-		Name: "hosted-graphite",
+		URL:  "https://confluence.status.atlassian.com",
+		Name: "Confluence",
 	}, {
-		URL:  "https://status.hostpress.de",
-		Name: "HostPress",
+		URL:  "https://status.coveralls.io",
+		Name: "Coveralls",
 	}, {
-		URL:  "https://status.hostry.com",
-		Name: "Hostry",
+		URL:  "https://status.crates.io",
+		Name: "crates.io",
 	}, {
-		URL:  "https://status.inmotionhosting.com",
-		Name: "InMotion Hosting",
+		URL:  "https://status.cubecloud.dev",
+		Name: "Cube Cloud",
 	}, {
-		URL:  "https://www.ionos-status.de",
-		Name: "IONOS",
+		URL:  "https://status.cypress.io",
+		Name: "Cypress",
 	}, {
-		URL:  "http://status.joomag.com",
-		Name: "Joomag",
+		URL:  "https://datacake-status.com",
+		Name: "Datacake",
 	}, {
-		URL:  "https://jostleap.statuspage.io",
-		Name: "Jostle AP",
+		URL:  "https://status.datadoghq.com",
+		Name: "Datadog",
 	}, {
-		URL:  "https://status.kinsta.com",
-		Name: "Kinsta",
+		URL:  "https://status.deadmanssnitch.com",
+		Name: "Dead Man's Snitch",
 	}, {
-		URL:  "https://status.kualo.com",
-		Name: "Kualo",
+		URL:  "https://status.deepsource.io",
+		Name: "DeepSource",
 	}, {
-		URL:  "https://status.liquidweb.com",
-		Name: "Liquid Web",
+		URL:  "https://denostatus.com",
+		Name: "Deno Deploy",
 	}, {
-		URL:  "https://status.lumaserv.com",
-		Name: "LUMASERV",
+		URL:  "https://status.docebo.com",
+		Name: "Docebo",
 	}, {
-		URL:  "https://status.magemojo.com",
-		Name: "MageMojo",
+		URL:  "https://status.esa.io",
+		Name: "esa",
 	}, {
-		URL:  "https://status.moodle.com",
-		Name: "Moodle",
+		URL:  "https://status.esa.io",
+		Name: "esa.io",
 	}, {
-		URL:  "https://www.namecheap.com/status-updates",
-		Name: "Namecheap",
+		URL:  "https://flagsmith.statuspage.io",
+		Name: "FlagSmith",
 	}, {
-		URL:  "https://status.nexcess.net",
-		Name: "Nexcess",
+		URL:  "https://status.formspree.io",
+		Name: "Formspree",
 	}, {
-		URL:  "https://status.one.com",
-		Name: "One",
+		URL:  "https://status.frigade.com",
+		Name: "Frigade",
 	}, {
-		URL:  "https://status.panoply.io",
-		Name: "Panoply",
+		URL:  "https://status.gatsbyjs.com",
+		Name: "Gastby",
 	}, {
-		URL:  "https://status.pantheon.io",
-		Name: "Pantheon",
+		URL:  "https://status.fury.co",
+		Name: "Gemfury",
 	}, {
-		URL:  "https://status.plox.host",
-		Name: "PloxHost",
+		URL:  "https://status.ggnetwork.com",
+		Name: "GGNetwork",
 	}, {
-		URL:  "https://status.plusserver.com",
-		Name: "PlusServer",
+		URL:  "https://ghostinspector.statuspage.io",
+		Name: "Ghost Inspector",
 	}, {
-		URL:  "https://status.presslabs.com",
-		Name: "Presslabs",
+		URL:  "https://www.gitbookstatus.com",
+		Name: "GitBook",
 	}, {
-		URL:  "https://status.prismic.io",
-		Name: "Prismic",
+		URL:  "https://status.glideapps.com",
+		Name: "Glide apps",
 	}, {
-		URL:  "https://status.publit.io",
-		Name: "Publitio",
+		URL:  "https://status.glitch.com",
+		Name: "Glitch",
 	}, {
-		URL:  "https://status.quadranet.com",
-		Name: "QuadraNet",
+		URL:  "http://stats.pingdom.com/xf7vwkfqygcb",
+		Name: "Gremlin",
 	}, {
-		URL:  "https://qualifio.status.io",
-		Name: "Qualifio",
+		URL:  "https://status.harness.io",
+		Name: "Harness",
 	}, {
-		URL:  "https://status.apps.rackspace.com",
-		Name: "Rackspace Cloud Office",
+		URL:  "https://status.hashnode.com",
+		Name: "Hashnode",
 	}, {
-		URL:  "https://status.rackspeed.de",
-		Name: "rackSPEED",
+		URL:  "https://status.hasura.io",
+		Name: "Hasura",
 	}, {
-		URL:  "https://status.rechargepayments.com",
-		Name: "ReCharge",
+		URL:  "https://height.statuspage.io",
+		Name: "Height",
 	}, {
-		URL:  "https://status.register.it",
-		Name: "Register.it",
+		URL:  "https://status.helpdocs.io",
+		Name: "HelpDocs",
 	}, {
-		URL:  "https://status.rocket.net",
-		Name: "Rocket.net",
+		URL:  "https://status.herocoders.com",
+		Name: "HeroCoders",
 	}, {
-		URL:  "https://status.rosehosting.com",
-		Name: "RoseHosting",
+		URL:  "http://status.infusionsoft.com",
+		Name: "Infusionsoft by Keap",
 	}, {
-		URL:  "https://status.section.io",
-		Name: "Section",
+		URL:  "https://status.inlinemanual.com",
+		Name: "Inline Manual",
 	}, {
-		URL:  "https://serveboltstatus.com",
-		Name: "Servebolt",
+		URL:  "http://status.goinnovo.com",
+		Name: "Innovo",
 	}, {
-		URL:  "https://status.goshippo.com",
-		Name: "Shippo",
+		URL:  "https://status.inspectar.com",
+		Name: "inspectAR",
 	}, {
-		URL:  "https://status.shockbyte.com",
-		Name: "Shockbyte",
+		URL:  "https://intuitdevelopergroup.statuspage.io",
+		Name: "Intuit Developer",
 	}, {
-		URL:  "https://status.shockhosting.net",
-		Name: "Shock Hosting",
+		URL:  "https://status.ionicframework.com",
+		Name: "Ionic Framework",
 	}, {
-		URL:  "https://www.shopifystatus.com",
-		Name: "Shopify",
+		URL:  "https://status.ipapi.com",
+		Name: "Ipapi",
 	}, {
-		URL:  "https://status.simplyhosting.com",
-		Name: "Simply Hosting & Servers",
+		URL:  "https://status.jellyfish.co",
+		Name: "Jellyfish",
 	}, {
-		URL:  "https://status.squarespace.com",
-		Name: "Squarespace",
+		URL:  "https://status.jetbrains.com",
+		Name: "JetBrains",
 	}, {
-		URL:  "https://summithosting.statuskeeper.io",
-		Name: "Summit Hosting",
+		URL:  "https://jexo.statuspage.io",
+		Name: "Jexo",
 	}, {
-		URL:  "https://status.umbrellar.com",
-		Name: "Umbrellar",
+		URL:  "https://jira-align.status.atlassian.com",
+		Name: "Jira Align",
 	}, {
-		URL:  "https://status.velocityhost.com.au",
-		Name: "Velocity Host",
-	}, {
-		URL:  "https://status.vultr.com",
-		Name: "Vultr",
-	}, {
-		URL:  "https://status.webcentral.au",
-		Name: "Webcentral",
-	}, {
-		URL:  "https://status.webscrapingapi.com",
-		Name: "WebScrapingAPI",
-	}, {
-		URL:  "https://wpenginestatus.com",
-		Name: "WP Engine",
+		URL:  "https://jira-product-discovery.status.atlassian.com",
+		Name: "Jira Product Discovery",
 	}, {
 		URL:  "https://status.docebo.com",
 		Name: "Docebo",
