@@ -93,6 +93,7 @@ function MobileNavigation() {
                         {/*<MobileNavLink href="#demo">Live Demo</MobileNavLink>*/}
                         <MobileNavLink href="https://docs.metoro.io">Docs</MobileNavLink>
                         <MobileNavLink href="https://metoro.io/blog">Blog</MobileNavLink>
+                        <MobileNavLink href="https://metoro.io/statusphere">Statusphere</MobileNavLink>
                     </Popover.Panel>
                 </Transition.Child>
             </Transition.Root>
@@ -117,6 +118,7 @@ export function Header() {
                             {/*<NavLink href="#demo">Live Demo</NavLink>*/}
                             <NavLink href="https://docs.metoro.io">Docs</NavLink>
                             <NavLink href="https://metoro.io/blog">Blog</NavLink>
+                            <NavLink href="https://metoro.io/statusphere">Statusphere</NavLink>
                         </div>
                     </div>
                     <div className="flex items-center gap-x-5 md:gap-x-8">
