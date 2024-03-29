@@ -28,12 +28,12 @@ The api endpoints are here:
 
 ```bash
 
-GET /api/v1/statusPage
-GET /api/v1/currentStatus
+GET /api/v1/statusPage?statusPageUrl=XXX||statusPageName=XXX
+GET /api/v1/currentStatus?statusPageUrl=XXX
 GET /api/v1/statusPages
 GET /api/v1/statusPages/count
-GET /api/v1/statusPages/search
-GET /api/v1/incidents
+GET /api/v1/statusPages/search?query=XXX
+GET /api/v1/incidents?statusPageUrl=XXX
 
 ```
 
