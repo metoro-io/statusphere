@@ -8,6 +8,7 @@ import {CaretSortIcon} from "@radix-ui/react-icons";
 import axios from "@/utils/axios";
 import {StatusPage} from "@/model/StatusPage";
 import {useRouter} from "next/navigation";
+import { VscGithub } from "react-icons/vsc";
 
 
 export function Search() {
@@ -107,6 +108,7 @@ export function Search() {
                     </Button>
                 </div>
             </div>
+
         </>
     );
 }

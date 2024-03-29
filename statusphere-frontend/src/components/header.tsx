@@ -9,7 +9,10 @@ import icon from '../../public/static/images/logos/icon.png'
 import Image from "next/image";
 import {NavLink} from "./mainsite/NavLink";
 import {Container} from "./mainsite/Container";
-import { Button } from './mainsite/Button'
+import {Button} from './mainsite/Button'
+import {VscGithub} from "react-icons/vsc";
+import {FaGithub} from "react-icons/fa";
+
 
 function MobileNavLink({
                            href,
@@ -106,6 +109,9 @@ export function Header() {
                         <div className="hidden md:flex md:gap-x-6">
                             <NavLink href="/">Statusphere</NavLink>
                         </div>
+                    </div>
+                    <div className="flex items-center gap-x-5 md:gap-x-8">
+                        <a target="_blank" href={"https://github.com/metoro-io/statusphere"}><FaGithub className={"text-black"} size={40}/></a>
                     </div>
                 </nav>
             </Container>
