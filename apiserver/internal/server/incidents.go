@@ -9,6 +9,7 @@ import (
 	"go.uber.org/zap"
 	"net/http"
 	"sort"
+	"strconv"
 )
 
 type IncidentsResponse struct {
@@ -24,6 +25,16 @@ func (s *Server) incidents(context *gin.Context) {
 	if statusPageUrl == "" {
 		context.JSON(http.StatusBadRequest, gin.H{"error": "statusPageUrl is required"})
 		return
+	}
+
+	var limit *int = nil
+	if limitStr := context.Query("limit"); limitStr != "" {
+		limitInt, err := strconv.Atoi(limitStr)
+		if err != nil {
+			context.JSON(http.StatusBadRequest, gin.H{"error": "limit must be an integer"})
+			return
+		}
+		limit = &limitInt
 	}
 
 	// Check to see that the status page is known to statusphere and is indexed
@@ -53,6 +64,9 @@ func (s *Server) incidents(context *gin.Context) {
 	}
 	if found {
 		sortIncidentsDescending(incidents)
+		if limit != nil && len(incidents) > *limit {
+			incidents = incidents[:*limit]
+		}
 		context.JSON(http.StatusOK, IncidentsResponse{Incidents: incidents, IsIndexed: true})
 		return
 	}
@@ -71,6 +85,9 @@ func (s *Server) incidents(context *gin.Context) {
 
 	sortIncidentsDescending(incidents)
 	s.incidentCache.Set(statusPageUrl, incidents, cache.DefaultExpiration)
+	if limit != nil && len(incidents) > *limit {
+		incidents = incidents[:*limit]
+	}
 	context.JSON(http.StatusOK, IncidentsResponse{Incidents: incidents, IsIndexed: true})
 }
 

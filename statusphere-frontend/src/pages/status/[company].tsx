@@ -24,7 +24,7 @@ export async function getServerSideProps(context: any) {
             '/api/v1/currentStatus?statusPageUrl=' + statusPageDetails.url
         );
         const outagesResp = axios.get(
-            '/api/v1/incidents?statusPageUrl=' + statusPageDetails.url
+            '/api/v1/incidents?limit=50&statusPageUrl=' + statusPageDetails.url
         );
 
         const currStatus: Status = (await currStatusResp).data.status
