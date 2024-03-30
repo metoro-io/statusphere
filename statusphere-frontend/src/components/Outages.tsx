@@ -1,16 +1,17 @@
 import {Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
-import {useEffect, useState} from "react";
-import axios from "@/utils/axios";
 import {StatusPage} from "@/model/StatusPage";
 import {calculateDuration, convertToSimpleDate} from "@/utils/datetime";
 import {ReadMore} from "@/components/ReadMore";
 import {Card, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
 import {Badge} from "@/components/ui/badge";
 import {cn} from "@/components/ui/lib/utils";
+import {useEffect, useState} from "react";
 
 interface OutagesProps {
     statusPageDetails: StatusPage;
+    incidents: Incident[];
 }
+
 function getBadgeColour(impact: string) {
     switch (impact) {
         case "none":
@@ -28,35 +29,13 @@ function getBadgeColour(impact: string) {
     }
 
 }
+
 export function Outages(props: OutagesProps) {
-    const [incidents, setIncidents] = useState<Incident[]>([]);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-        const getIncidents = async () => {
-            try {
-                const response = await axios.get(
-                    '/api/v1/incidents?statusPageUrl=' + props.statusPageDetails.url
-                );
-                if (window.innerWidth < 500) {
-                    // If a word in the title is longer than 15 characters then we split it
-                    response.data.incidents.forEach((incident: Incident) => {
-                        incident.title.split(" ").forEach((word: string) => {
-                            if (word.length > 15) {
-                                incident.title = incident.title.replace(word, word.substring(0, 15) + " ")
-                            }
-                        })
-                    });
-                }
-
-                setIncidents(response.data.incidents)
-            } catch (err) {
-                console.log(err);
-            }
-        };
-        if (props.statusPageDetails.isIndexed) {
-            getIncidents();
-        }
-    }, [props.statusPageDetails]);
+        setIsMobile(window.innerWidth <= 640);
+    }, []);
 
     if (!props.statusPageDetails.isIndexed) {
         return <div>
@@ -79,7 +58,7 @@ export function Outages(props: OutagesProps) {
         </div>
     }
 
-    if (incidents === undefined || incidents.length === 0) {
+    if (props.incidents === undefined || props.incidents.length === 0) {
         return <div>No incidents found</div>
     }
 
@@ -87,36 +66,37 @@ export function Outages(props: OutagesProps) {
         <h2 className="scroll-m-20 border-b pb-2 text-2xl font-semibold first:mt-0">
             Past {props.statusPageDetails.name} Incidents
         </h2>
-    <Table className={"bg-white"}>
-        <TableCaption> Source:
-            <a href={props.statusPageDetails.url}> Official {props.statusPageDetails.name} status page</a>
-        </TableCaption>
-        <TableHeader>
-            <TableRow>
-                <TableHead>Start Time (UTC)</TableHead>
-                <TableHead className={cn("max-w-[300px]")}>Incident Deep Link</TableHead>
-                <TableHead>Impact</TableHead>
-                <TableHead className="text-left">Duration</TableHead>
-                {window.innerWidth > 500 && <TableHead>Description</TableHead>}
-            </TableRow>
-        </TableHeader>
-        <TableBody>
-            {incidents.map((incident) => (
+        <Table className={"bg-white"}>
+            <TableCaption> Source:
+                <a href={props.statusPageDetails.url}> Official {props.statusPageDetails.name} status page</a>
+            </TableCaption>
+            <TableHeader>
                 <TableRow>
-                    <TableCell>{convertToSimpleDate(incident.startTime)}</TableCell>
-                    <TableCell className={"max-w-[300px] break-words"}><a className={"max-w-[300px] break-words"} href={incident.deepLink}> {incident.title} </a></TableCell>
-                    <TableCell>
-                        <Badge className={getBadgeColour(incident.impact)}>{incident.impact}</Badge>
-                    </TableCell>
-                    <TableCell>{calculateDuration(incident.startTime, incident.endTime)}</TableCell>
-                    {window.innerWidth > 500 && <TableCell className="text-left">
-                        <ReadMore text={incident.description}/>
-                    </TableCell>}
+                    <TableHead>Start Time (UTC)</TableHead>
+                    <TableHead className={cn("max-w-[300px]")}>Incident Deep Link</TableHead>
+                    <TableHead>Impact</TableHead>
+                    <TableHead className="text-left">Duration</TableHead>
+                    {!isMobile && <TableHead>Description</TableHead>}
                 </TableRow>
-            ))}
-        </TableBody>
-    </Table>
-        </div>;
+            </TableHeader>
+            <TableBody>
+                {props.incidents.map((incident) => (
+                    <TableRow>
+                        <TableCell>{convertToSimpleDate(incident.startTime)}</TableCell>
+                        <TableCell className={"max-w-[300px] break-words"}><a className={"max-w-[300px] break-words"}
+                                                                              href={incident.deepLink}> {incident.title} </a></TableCell>
+                        <TableCell>
+                            <Badge className={getBadgeColour(incident.impact)}>{incident.impact}</Badge>
+                        </TableCell>
+                        <TableCell>{calculateDuration(incident.startTime, incident.endTime)}</TableCell>
+                        {!isMobile && <TableCell className="text-left">
+                            <ReadMore text={incident.description}/>
+                        </TableCell>}
+                    </TableRow>
+                ))}
+            </TableBody>
+        </Table>
+    </div>;
 }
 
 

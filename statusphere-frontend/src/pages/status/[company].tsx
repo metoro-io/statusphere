@@ -1,65 +1,76 @@
-import {useRouter} from 'next/router'
-import {useEffect, useState} from "react";
 import axios from "@/utils/axios";
 import {StatusPage} from "@/model/StatusPage";
 import {Status} from "@/model/Status";
 import {CurrentStatus} from "@/components/CurrentStatus";
-import {Separator} from "@/components/ui/separator";
 import {Outages} from "@/components/Outages";
 import {RecommendCompany} from "@/components/RecommendCompany";
 
-export default function CompanyStatusPage() {
-    const [isLoading, setIsLoading] = useState(true);
-    const [isError, setIsError] = useState(false)
-    const [currStatus, setCurrStatus] = useState(Status.UNKNOWN)
-    const [statusPageDetails, setStatusPageDetails] = useState<StatusPage>({} as StatusPage);
-    const [companyName, setCompanyName] = useState<string>("");
-    const router = useRouter()
+interface CompanyStatusPageProps {
+    statusPageDetails: StatusPage
+    currStatus: Status
+    companyName: string
+    outages: Incident[]
+    isError?: boolean
+}
 
-    useEffect(() => {
-        const getStatusPageInfo = async () => {
-            try {
-                const statusPageResp = await axios.get(
-                    '/api/v1/statusPage?statusPageName=' + router.query.company
-                );
-                const statusPageDetails: StatusPage = statusPageResp.data.statusPage
-                setStatusPageDetails(statusPageDetails)
-                const currStatusResp = await axios.get(
-                    '/api/v1/currentStatus?statusPageUrl=' + statusPageDetails.url
-                );
-                setCurrStatus(currStatusResp.data.status)
-            } catch (err) {
-                setIsError(true)
-                console.log(err);
+export async function getServerSideProps(context: any) {
+    const companyName = context.params.company
+    try {
+        const statusPageResp = await axios.get(
+            '/api/v1/statusPage?statusPageName=' + companyName
+        );
+        const statusPageDetails: StatusPage = statusPageResp.data.statusPage
+        const currStatusResp = axios.get(
+            '/api/v1/currentStatus?statusPageUrl=' + statusPageDetails.url
+        );
+        const outagesResp = axios.get(
+            '/api/v1/incidents?statusPageUrl=' + statusPageDetails.url
+        );
+
+        const currStatus: Status = (await currStatusResp).data.status
+        const outages = (await outagesResp).data.incidents
+        return {
+            props: {
+                statusPageDetails: statusPageDetails,
+                currStatus: currStatus,
+                companyName: companyName,
+                outages: outages
             }
-        };
-        if (router.query.company != undefined) {
-            setCompanyName(router.query.company as string)
-            getStatusPageInfo().then(() => setIsLoading(false));
         }
-    }, [router.query.company]);
-
-    if (isLoading) {
-        return <div> Loading... </div>
+    } catch (e) {
+        return {
+            props: {
+                isError: true,
+                companyName: companyName
+            }
+        }
     }
+}
 
+export default function CompanyStatusPage({
+                                              statusPageDetails,
+                                              currStatus,
+                                              companyName,
+                                              outages,
+                                              isError,
+                                          }: CompanyStatusPageProps) {
     return (
         <div className={"flex justify-center w-full z-10"}>
             <div className={"w-[90vw] lg:w-[80vw] space-y-8 flex justify-center"}>
                 <div>
-                {isError ?
-                    <RecommendCompany input={companyName}/>
-                    :
-                    <>
-                        <CurrentStatus
-                            displayName={statusPageDetails.name}
-                            status={currStatus}
-                            lastCurrentlyScraped={statusPageDetails.lastCurrentlyScraped}
-                            statusPageUrl={statusPageDetails.url}
-                        />
-                        <Outages statusPageDetails={statusPageDetails}/>
-                    </>
-                }
+                    {isError ?
+                        <RecommendCompany input={companyName}/>
+                        :
+                        <>
+                            <CurrentStatus
+                                displayName={statusPageDetails.name}
+                                status={currStatus}
+                                lastCurrentlyScraped={statusPageDetails.lastCurrentlyScraped}
+                                statusPageUrl={statusPageDetails.url}
+                            />
+                            <Outages statusPageDetails={statusPageDetails} incidents={outages}/>
+                        </>
+                    }
                 </div>
             </div>
         </div>)

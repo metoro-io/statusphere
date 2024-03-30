@@ -1,14 +1,14 @@
-import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
+import {Card, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
 import {Status} from "@/model/Status";
 import {timeAgo} from "@/utils/datetime";
-import {PartyPopper} from "lucide-react";
 
-interface  CurrentStatusProps {
+interface CurrentStatusProps {
     displayName: string;
     status: string;
     lastCurrentlyScraped: string;
     statusPageUrl: string;
 }
+
 export function CurrentStatus(props: CurrentStatusProps) {
 
     if (props.status === Status.UNKNOWN) {
@@ -16,21 +16,17 @@ export function CurrentStatus(props: CurrentStatusProps) {
     }
 
     return <Card className={getStatusColor(props.status)}>
-            <CardHeader className={"items-left"}>
-                <CardTitle>
-                    <h3 className="scroll-m-20 text-xl font-semibold tracking-tight">
-                        Is {props.displayName} down?
-                    </h3>
-                </CardTitle>
-                <CardDescription className={""}>
-                    <h2 className="scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0">
-                        Current Status: {props.displayName} is {props.status}
-                    </h2>
-                </CardDescription>
-            </CardHeader>
+        <CardHeader className={"items-left"}>
+            <CardTitle className={"scroll-m-20 text-xl font-semibold tracking-tight"}>
+                Is {props.displayName} down?
+            </CardTitle>
+            <CardDescription className={"scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0"}>
+                    Current Status: {props.displayName} is {props.status}
+            </CardDescription>
+        </CardHeader>
         <CardFooter>
             <p className="leading-7 [&:not(:first-child)]:mt-6">
-              We checked the <a href={props.statusPageUrl}> official {props.displayName} status page </a>
+                We checked the <a href={props.statusPageUrl}> official {props.displayName} status page </a>
                 for updates {timeAgo(props.lastCurrentlyScraped)}.
             </p>
         </CardFooter>
