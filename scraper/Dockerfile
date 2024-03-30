@@ -5,7 +5,6 @@ FROM golang:1.22 as builder
 # Set the Current Working Directory inside the container
 WORKDIR /app
 
-# Copy everything
 COPY . .
 
 RUN go build -C scraper -o scraper .
