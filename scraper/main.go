@@ -8,6 +8,7 @@ import (
 	"github.com/metoro-io/statusphere/scraper/internal/scraper/consumers/dbconsumer"
 	"github.com/metoro-io/statusphere/scraper/internal/scraper/poller"
 	"github.com/metoro-io/statusphere/scraper/internal/scraper/providers"
+	"github.com/metoro-io/statusphere/scraper/internal/scraper/providers/atlassian"
 	"github.com/metoro-io/statusphere/scraper/internal/scraper/urlgetter/dburlgetter"
 	"go.uber.org/zap"
 	"net/http"
