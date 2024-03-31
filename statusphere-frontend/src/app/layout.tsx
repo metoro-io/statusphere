@@ -24,7 +24,6 @@ export default function RootLayout({children,}: Readonly<{
 }>) {
     return (
         <html
-            lang="en"
             className={clsx(
                 'h-full scroll-smooth bg-white antialiased',
                 inter.variable,
