@@ -5,6 +5,7 @@ import posthog from "posthog-js";
 import {useRouter} from "next/router";
 import {useEffect} from "react";
 import {PostHogProvider} from "posthog-js/react";
+import Head from "next/head";
 
 
 // Check that PostHog is client-side (used to handle Next.js SSR)
@@ -32,6 +33,9 @@ export default function MyApp({Component, pageProps}: AppProps) {
     }, [])
 
     return <PostHogProvider>
+        <Head>
+            <meta property="og:locale" content="en"/>
+        </Head>
         <Layout>
             <Component {...pageProps} />
         </Layout>
