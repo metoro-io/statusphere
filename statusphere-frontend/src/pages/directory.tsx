@@ -12,6 +12,11 @@ interface DirectoryProps {
 
 export async function getServerSideProps() {
     const response = await axios.get('/api/v1/statusPages')
+    let companyList: StatusPage[] = response.data.statusPages
+    companyList.forEach((company) => {
+        // Capitalize first letter of company name
+        company.name = company.name.charAt(0).toUpperCase() + company.name.slice(1)
+    })
     return {
         props: {
             companyList: response.data.statusPages
