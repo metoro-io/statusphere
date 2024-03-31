@@ -5,6 +5,7 @@ import (
 	"github.com/metoro-io/statusphere/common/api"
 	"net/http"
 	"sort"
+	"strings"
 )
 
 type StatusPagesResponse struct {
@@ -19,7 +20,7 @@ func (s *Server) statusPages(context *gin.Context) {
 
 	// Sort the status pages by name alphabetically a to z
 	sort.Slice(statusPages, func(i, j int) bool {
-		return statusPages[i].Name < statusPages[j].Name
+		return strings.ToLower(statusPages[i].Name) < strings.ToLower(statusPages[j].Name)
 	})
 
 	context.JSON(http.StatusOK, StatusPagesResponse{StatusPages: statusPages})
