@@ -7,6 +7,12 @@ import statusphere from "../../public/static/images/statusphere.png";
 import axios from "@/utils/axios";
 
 
+export function generateMetadata() {
+    return {
+        title: `Statusphere`,
+    }
+}
+
 async function MainContent() {
     const count = await axios.get('/api/v1/statusPages/count')
         .then((response) => {

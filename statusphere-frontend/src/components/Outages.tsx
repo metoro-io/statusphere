@@ -41,16 +41,12 @@ export function Outages(props: OutagesProps) {
         return <div>
             <Card className={"bg-white"}>
                 <CardHeader className={"items-left"}>
-                    <CardTitle>
-                        <h3 className="scroll-m-20 text-xl font-semibold tracking-tight">
+                    <CardTitle className={"scroll-m-20 text-xl font-semibold tracking-tight"}>
                             Incidents are not currently indexed for {props.statusPageDetails.name}
-                        </h3>
-
                     </CardTitle>
-                    <CardDescription>
-                        <p className="leading-7 [&:not(:first-child)]:mt-6">
+                    <CardDescription className={"leading-7 [&:not(:first-child)]:mt-6"}>
                             You can view the official status page at: <a
-                            href={props.statusPageDetails.url}> {props.statusPageDetails.name} status page</a></p>
+                            href={props.statusPageDetails.url}> {props.statusPageDetails.name} status page</a>
                     </CardDescription>
                 </CardHeader>
             </Card>

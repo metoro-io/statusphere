@@ -4,6 +4,9 @@ import {Status} from "@/model/Status";
 import {CurrentStatus} from "@/components/CurrentStatus";
 import {Outages} from "@/components/Outages";
 import {RecommendCompany} from "@/components/RecommendCompany";
+import {Props} from "next/script";
+import {Metadata, ResolvingMetadata} from "next";
+import Head from "next/head";
 
 interface CompanyStatusPageProps {
     statusPageDetails: StatusPage
@@ -47,6 +50,7 @@ export async function getServerSideProps(context: any) {
     }
 }
 
+
 export default function CompanyStatusPage({
                                               statusPageDetails,
                                               currStatus,
@@ -56,6 +60,13 @@ export default function CompanyStatusPage({
                                           }: CompanyStatusPageProps) {
     return (
         <div className={"flex justify-center w-full z-10"}>
+            <Head>
+                <title>{statusPageDetails.name} Status - Statusphere</title>
+                <meta name="description"
+                      content={`Current status of ${statusPageDetails.name}. Is ${statusPageDetails.name} down?`}/>
+                <meta name="keywords"
+                        content={`status, statusphere, statuspage, up, down, ${statusPageDetails.name}`}/>
+            </Head>
             <div className={"w-[90vw] lg:w-[80vw] space-y-8 flex justify-center"}>
                 <div>
                     {isError ?

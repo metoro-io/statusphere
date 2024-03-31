@@ -18,10 +18,6 @@ const lexend = Lexend({
     variable: '--font-lexend',
 })
 
-export const metadata: Metadata = {
-    title: "Statusphere",
-    description: "An status page aggregator",
-};
 
 export default function RootLayout({children,}: Readonly<{
     children: React.ReactNode;
