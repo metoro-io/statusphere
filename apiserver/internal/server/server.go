@@ -51,20 +51,7 @@ func (s *Server) Serve() error {
 		apiV1.GET("/statusPages/search", s.statusPageSearch)
 		apiV1.GET("/statusPages/count", s.statusPageCount)
 	}
-
-	s.addFrontendRoutes(r)
-
 	return errors.Wrap(r.Run(":80"), "Failed to start server")
-}
-
-func (s *Server) addFrontendRoutes(r *gin.Engine) {
-	r.Static("/static", "/etc/frontend/static")
-	r.StaticFile("/asset-manifest.json", "/etc/frontend/asset-manifest.json")
-	r.StaticFile("/favicon.ico", "/etc/frontend/favicon.ico")
-	r.StaticFile("robots.txt", "/etc/frontend/robots.txt")
-	r.NoRoute(func(c *gin.Context) {
-		c.File("/etc/frontend/index.html")
-	})
 }
 
 func handleCors() gin.HandlerFunc {
