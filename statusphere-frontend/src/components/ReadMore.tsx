@@ -1,11 +1,15 @@
 import {useState} from "react";
 
 interface ReadMoreProps {
-    text: string;
+    text: string | undefined | null;
 }
 
 const CHAR_LIMIT = 113
 export const ReadMore = ({text}: ReadMoreProps) => {
+    if (!text) {
+        return <p>No description</p>
+    }
+
     const [isExpanded, setIsExpanded] = useState(false)
     const subText = text.substring(0, CHAR_LIMIT)
     const shouldShowReadMore = text.length > CHAR_LIMIT
