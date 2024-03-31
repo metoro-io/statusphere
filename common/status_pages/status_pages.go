@@ -175,7 +175,7 @@ var StatusPages = []api.StatusPage{
 		URL:  "https://status.axcient.com",
 		Name: "axcient",
 	}, {
-		URL:  "https://status.axiom.co/#",
+		URL:  "https://status.axiom.co",
 		Name: "axiom",
 	}, {
 		URL:  "https://azure.microsoft.com/en-us/status",
@@ -2211,5 +2211,9 @@ var StatusPages = []api.StatusPage{
 	}, {
 		URL:  "https://wpenginestatus.com",
 		Name: "WP Engine",
+	},
+	{
+		URL:  "https://status.edg.io/",
+		Name: "Edg.io",
 	},
 }
