@@ -8,9 +8,9 @@ interface LayoutProps {
 const Layout = (props: LayoutProps) => {
     return (
         <div className={"w-[100vw]"}>
-            <Head>
-                <html lang={"en"}/>
-            </Head>
+            {/*<Head>*/}
+            {/*    <html lang={"en"}/>*/}
+            {/*</Head>*/}
             <Header/>
             <div className={"z-10"}>
                 {props.children}
