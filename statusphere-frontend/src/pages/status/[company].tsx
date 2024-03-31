@@ -4,8 +4,6 @@ import {Status} from "@/model/Status";
 import {CurrentStatus} from "@/components/CurrentStatus";
 import {Outages} from "@/components/Outages";
 import {RecommendCompany} from "@/components/RecommendCompany";
-import {Props} from "next/script";
-import {Metadata, ResolvingMetadata} from "next";
 import Head from "next/head";
 
 interface CompanyStatusPageProps {
@@ -59,29 +57,38 @@ export default function CompanyStatusPage({
                                               isError,
                                           }: CompanyStatusPageProps) {
     return (
-        <div className={"flex justify-center w-full z-10"}>
-            <Head>
-                <title>{statusPageDetails.name} Status - Statusphere</title>
-                <meta name="description"
-                      content={`Current status of ${statusPageDetails.name}. Is ${statusPageDetails.name} down?`}/>
-                <meta name="keywords"
-                        content={`status, statusphere, statuspage, up, down, ${statusPageDetails.name}`}/>
-            </Head>
-            <div className={"w-[90vw] lg:w-[80vw] space-y-8 flex justify-center"}>
-                <div>
-                    {isError ?
-                        <RecommendCompany input={companyName}/>
-                        :
-                        <>
-                            <CurrentStatus
-                                displayName={statusPageDetails.name}
-                                status={currStatus}
-                                lastCurrentlyScraped={statusPageDetails.lastCurrentlyScraped}
-                                statusPageUrl={statusPageDetails.url}
-                            />
-                            <Outages statusPageDetails={statusPageDetails} incidents={outages}/>
-                        </>
-                    }
+        <div>
+            <div className={"flex justify-center w-full"}>
+                <h1 className={"text-2xl"}>
+                    {companyName} Status
+                </h1>
+            </div>
+            <div className={"mt-4 flex justify-center w-full z-10"}>
+                <Head>
+                    <title>{statusPageDetails.name} Status - Statusphere</title>
+                    <meta name="description"
+                          content={`Current status of ${statusPageDetails.name}. Is ${statusPageDetails.name} down?`}/>
+                    <meta name="keywords"
+                          content={`status, statusphere, statuspage, up, down, ${statusPageDetails.name}`}/>
+                </Head>
+
+
+                <div className={"w-[90vw] lg:w-[80vw] space-y-8 flex justify-center"}>
+                    <div>
+                        {isError ?
+                            <RecommendCompany input={companyName}/>
+                            :
+                            <>
+                                <CurrentStatus
+                                    displayName={statusPageDetails.name}
+                                    status={currStatus}
+                                    lastCurrentlyScraped={statusPageDetails.lastCurrentlyScraped}
+                                    statusPageUrl={statusPageDetails.url}
+                                />
+                                <Outages statusPageDetails={statusPageDetails} incidents={outages}/>
+                            </>
+                        }
+                    </div>
                 </div>
             </div>
         </div>)
