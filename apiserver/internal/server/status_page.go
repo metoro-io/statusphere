@@ -18,12 +18,12 @@ func (s *Server) statusPage(context *gin.Context) {
 	statusPageName := strings.ToLower(context.Query("statusPageName"))
 
 	if statusPageUrl == "" && statusPageName == "" {
-		context.JSON(http.StatusBadRequest, gin.H{"error": "statusPageUrl or statusPageId is required"})
+		context.JSON(http.StatusBadRequest, gin.H{"error": "statusPageUrl or statusPageName is required"})
 		return
 	}
 
 	if statusPageUrl != "" && statusPageName != "" {
-		context.JSON(http.StatusBadRequest, gin.H{"error": "statusPageUrl and statusPageId are mutually exclusive"})
+		context.JSON(http.StatusBadRequest, gin.H{"error": "statusPageUrl and statusPageName are mutually exclusive"})
 		return
 	}
 
