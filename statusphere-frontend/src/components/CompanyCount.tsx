@@ -27,10 +27,7 @@ export function CompanyCount(props: CompanyCountProps) {
 
     return <div className="flex justify-center">
         <div className="text-2xl tracking-tight">
-            Service status for
-            <Button className={"shadow-white text-xl p-1"} onClick={() => {
-                window.location.href = "/statusphere/directory";
-            }}><b className="text-[#00243c]">{currentCount.current}</b></Button>companies!
+            Service status for <a href={"/statusphere/directory"}><b className="text-[#00243c]">{currentCount.current}</b></a> companies!
         </div>
     </div>
 
