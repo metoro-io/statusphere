@@ -87,3 +87,5 @@ If a provider is unable to parse the status page it will return an error, and th
 ## Contributing
 
 We're actively welcoming contributions to Statusphere! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) file for more information on how to get started.
+
+If you want to add a status page, it's as simple as adding an entry [here](https://github.com/metoro-io/statusphere/blob/main/common/status_pages/status_pages.go)
