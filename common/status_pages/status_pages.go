@@ -2217,7 +2217,7 @@ var StatusPages = []api.StatusPage{
 		Name: "Edg.io",
 	},
 	{
-		URL:  "https://status.victoriametrics.com/",
+		URL:  "https://status.victoriametrics.com",
 		Name: "Managed VictoriaMetrics",
 	},
 }
