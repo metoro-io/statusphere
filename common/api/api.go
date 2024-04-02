@@ -47,7 +47,7 @@ type Incident struct {
 	Events                  IncidentEventArray `gorm:"column:events;type:jsonb" json:"events"`
 	StartTime               time.Time          `gorm:"column:start_time;secondarykey" json:"startTime"`
 	EndTime                 *time.Time         `gorm:"column:end_time;secondarykey" json:"endTime"`
-	Description             *string            `json:"column:description;description"`
+	Description             *string            `json:"column:description" json:"description"`
 	DeepLink                string             `gorm:"column:deep_link;primarykey" json:"deepLink"`
 	Impact                  Impact             `gorm:"column:impact;secondarykey" json:"impact"`
 	StatusPageUrl           string             `gorm:"column:status_page_url;secondarykey" json:"statusPageUrl"`
