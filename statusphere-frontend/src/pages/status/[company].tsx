@@ -22,6 +22,8 @@ interface CompanyStatusPageProps {
     companyName: string
     outages: Incident[]
     isError?: boolean
+    apiCallCurrentStatus: string
+    apiCallIncidents: string
 }
 
 export async function getServerSideProps(context: any) {
@@ -40,12 +42,18 @@ export async function getServerSideProps(context: any) {
 
         const currStatus: Status = (await currStatusResp).data.status
         const outages = (await outagesResp).data.incidents
+
+        const apiCallCurrentStatus = `curl -X GET "https://statusphere.metoro.io/api/v1/currentStatus?statusPageUrl=${statusPageDetails.url}"`
+        const apiCallIncidents = `curl -X GET "https://statusphere.metoro.io/api/v1/incidents?statusPageUrl=${statusPageDetails.url}"`
+
         return {
             props: {
                 statusPageDetails: statusPageDetails,
                 currStatus: currStatus,
                 companyName: companyName,
-                outages: outages
+                outages: outages,
+                apiCallCurrentStatus: apiCallCurrentStatus,
+                apiCallIncidents: apiCallIncidents
             }
         }
     } catch (e) {
@@ -65,11 +73,9 @@ export default function CompanyStatusPage({
                                               companyName,
                                               outages,
                                               isError,
+                                              apiCallCurrentStatus,
+                                              apiCallIncidents
                                           }: CompanyStatusPageProps) {
-
-    const apiCallCurrentStatus = `curl -X GET "https://statusphere.metoro.io/api/v1/currentStatus?statusPageUrl=${statusPageDetails.url}"`
-    const apiCallIncidents = `curl -X GET "https://statusphere.metoro.io/api/v1/incidents?statusPageUrl=${statusPageDetails.url}"`
-
 
     return (
         <div>
