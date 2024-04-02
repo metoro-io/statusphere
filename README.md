@@ -24,7 +24,7 @@ Read more about the project at the [launch blog post](https://metoro.io/blog/sta
 ## Features
 
 - Polls status pages of over 1000 popular services
-- API first
+- Provides a unified api to query the status of services
 - Webhook notifications of incidents
 - Bundled with a frontend. Batteries included.
 
