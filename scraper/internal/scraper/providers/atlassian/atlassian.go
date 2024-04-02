@@ -182,6 +182,8 @@ func (s *AtlassianProvider) parseIncidents(url string, html string) ([]api.Incid
 					Impact:        api.Impact(inc.Impact),
 					DeepLink:      link,
 					StatusPageUrl: url,
+					// For historical jobs we don't want to send notifications
+					NotificationJobsStarted: true,
 				}
 				incidents = append(incidents, incident)
 			}

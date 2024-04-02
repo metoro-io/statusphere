@@ -42,15 +42,16 @@ func NewIncidentEvent(title string, description string, time time.Time) Incident
 }
 
 type Incident struct {
-	Title         string             `json:"title"`
-	Components    []string           `gorm:"column:components;type:jsonb" json:"components"`
-	Events        IncidentEventArray `gorm:"column:events;type:jsonb" json:"events"`
-	StartTime     time.Time          `gorm:"secondarykey" json:"startTime"`
-	EndTime       *time.Time         `gorm:"secondarykey" json:"endTime"`
-	Description   *string            `json:"description"`
-	DeepLink      string             `gorm:"primarykey" json:"deepLink"`
-	Impact        Impact             `gorm:"secondarykey" json:"impact"`
-	StatusPageUrl string             `gorm:"secondarykey" json:"statusPageUrl"`
+	Title                   string             `json:"title"`
+	Components              []string           `gorm:"column:components;type:jsonb" json:"components"`
+	Events                  IncidentEventArray `gorm:"column:events;type:jsonb" json:"events"`
+	StartTime               time.Time          `gorm:"column:start_time;secondarykey" json:"startTime"`
+	EndTime                 *time.Time         `gorm:"column:end_time;secondarykey" json:"endTime"`
+	Description             *string            `json:"column:description;description"`
+	DeepLink                string             `gorm:"column:deep_link;primarykey" json:"deepLink"`
+	Impact                  Impact             `gorm:"column:impact;secondarykey" json:"impact"`
+	StatusPageUrl           string             `gorm:"column:status_page_url;secondarykey" json:"statusPageUrl"`
+	NotificationJobsStarted bool               `gorm:"column:notification_jobs_started;secondarykey" json:"notificationJobsStarted"`
 }
 
 func NewIncident(title string, components []string, events []IncidentEvent, startTime time.Time, endTime *time.Time, description *string, deepLink string, impact Impact, statusPageUrl string) Incident {

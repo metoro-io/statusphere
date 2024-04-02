@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/jackc/pgx/v5/pgconn"
+	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/kelseyhightower/envconfig"
 	"github.com/metoro-io/statusphere/common/api"
 	"github.com/metoro-io/statusphere/common/status_pages"
@@ -35,8 +36,9 @@ func getConfigFromEnvironment() (Config, error) {
 }
 
 type DbClient struct {
-	db     *gorm.DB
-	logger *zap.Logger
+	PgxPool *pgxpool.Pool
+	db      *gorm.DB
+	logger  *zap.Logger
 }
 
 func NewDbClientFromEnvironment(lg *zap.Logger) (*DbClient, error) {
@@ -89,7 +91,12 @@ func NewDbClientFromEnvironment(lg *zap.Logger) (*DbClient, error) {
 		return nil, errors.Wrap(err, "failed to connect to postgres")
 	}
 
-	return &DbClient{db: db, logger: lg}, nil
+	pgxPool, err := pgxpool.New(context.Background(), dsn)
+	if err != nil {
+		return nil, errors.Wrap(err, "failed to create pgx pool")
+	}
+
+	return &DbClient{db: db, logger: lg, PgxPool: pgxPool}, nil
 }
 
 const statusPageTableName = "status_page"
@@ -173,6 +180,32 @@ func (d *DbClient) GetCurrentIncidents(ctx context.Context, statusPageUrl string
 		return nil, result.Error
 	}
 	return incidents, nil
+}
+
+func (d *DbClient) GetIncidentsWithoutJobsStarted(ctx context.Context, limit int) ([]api.Incident, error) {
+	var incidents []api.Incident
+	result := d.db.Table(fmt.Sprintf("%s.%s", schemaName, incidentsTableName)).Where("notification_jobs_started is distinct from true limit ?", limit).Find(&incidents)
+	if result.Error != nil {
+		return nil, result.Error
+	}
+	return incidents, nil
+}
+
+func (d *DbClient) SetIncidentNotificationStartedToTrue(ctx context.Context, incidents []api.Incident) error {
+	for i, _ := range incidents {
+		incidents[i].NotificationJobsStarted = true
+	}
+	result := d.db.Table(fmt.Sprintf("%s.%s", schemaName, incidentsTableName)).Clauses(
+		clause.OnConflict{
+			Columns:   []clause.Column{{Name: "deep_link"}},                            // Primary key
+			DoUpdates: clause.AssignmentColumns([]string{"notification_jobs_started"}), // Update the data column
+		},
+	).Create(&incidents)
+	if result.Error != nil {
+		return result.Error
+	}
+	return nil
+
 }
 
 func (d *DbClient) CreateOrUpdateIncidents(ctx context.Context, incidents []api.Incident) error {
