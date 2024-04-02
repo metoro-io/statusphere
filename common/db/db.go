@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/jackc/pgx/v5/pgconn"
+	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/kelseyhightower/envconfig"
 	"github.com/metoro-io/statusphere/common/api"
 	"github.com/metoro-io/statusphere/common/status_pages"
@@ -35,8 +36,9 @@ func getConfigFromEnvironment() (Config, error) {
 }
 
 type DbClient struct {
-	db     *gorm.DB
-	logger *zap.Logger
+	PgxPool *pgxpool.Pool
+	db      *gorm.DB
+	logger  *zap.Logger
 }
 
 func NewDbClientFromEnvironment(lg *zap.Logger) (*DbClient, error) {
@@ -89,7 +91,12 @@ func NewDbClientFromEnvironment(lg *zap.Logger) (*DbClient, error) {
 		return nil, errors.Wrap(err, "failed to connect to postgres")
 	}
 
-	return &DbClient{db: db, logger: lg}, nil
+	pgxPool, err := pgxpool.New(context.Background(), dsn)
+	if err != nil {
+		return nil, errors.Wrap(err, "failed to create pgx pool")
+	}
+
+	return &DbClient{db: db, logger: lg, PgxPool: pgxPool}, nil
 }
 
 const statusPageTableName = "status_page"
