@@ -265,6 +265,7 @@ func (s *AtlassianProvider) parseCurrentIncidents(url string, html string) ([]ap
 			incident.Events = append(incident.Events, event)
 		})
 		incident.StartTime = *minTime
+		incident.NotificationJobsStarted = false
 		// Append the extracted incident to the slice
 		incidents = append(incidents, incident)
 	})
