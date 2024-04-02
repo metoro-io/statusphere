@@ -37,3 +37,16 @@ services:
       STATUSPHERE_POSTGRES_DATABASE: statusphere_db
     depends_on:
       - postgres
+
+  jobrunner:
+    build:
+      context: ./
+      dockerfile: ./jobrunner/Dockerfile
+    environment:
+      STATUSPHERE_POSTGRES_HOST: postgres
+      STATUSPHERE_POSTGRES_PORT: 5432
+      STATUSPHERE_POSTGRES_USER: statusphere_user
+      STATUSPHERE_POSTGRES_PASSWORD: statusphere_password
+      STATUSPHERE_POSTGRES_DATABASE: statusphere_db
+    depends_on:
+      - postgres
