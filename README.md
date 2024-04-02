@@ -26,6 +26,7 @@ Read more about the project at the [launch blog post](https://metoro.io/blog/sta
 - Polls status pages of over 1000 popular services
 - API first
 - Webhook notifications of incidents
+- Bundled with a frontend. Batteries included.
 
 ## API
 
