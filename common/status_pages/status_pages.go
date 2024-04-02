@@ -175,7 +175,7 @@ var StatusPages = []api.StatusPage{
 		URL:  "https://status.axcient.com",
 		Name: "axcient",
 	}, {
-		URL:  "https://status.axiom.co/#",
+		URL:  "https://status.axiom.co",
 		Name: "axiom",
 	}, {
 		URL:  "https://azure.microsoft.com/en-us/status",
@@ -3151,7 +3151,7 @@ var StatusPages = []api.StatusPage{
 		URL:  "https://status.hornetsecurity.com",
 		Name: "Hornetsecurity",
 	}, {
-		URL:  "https://huntressstatus.statuspage.io/?utm_source=zendesk&utm_medium=integrations&utm_campaign=guide",
+		URL:  "https://huntressstatus.statuspage.io",
 		Name: "Huntress",
 	}, {
 		URL:  "https://status.hyonix.com",
@@ -3313,7 +3313,7 @@ var StatusPages = []api.StatusPage{
 		URL:  "https://status.securew2.com",
 		Name: "SecureW2",
 	}, {
-		URL:  "https://status.ctpx.secureworks.com/#",
+		URL:  "https://status.ctpx.secureworks.com",
 		Name: "Secureworks",
 	}, {
 		URL:  "https://status.securityscorecard.com",
@@ -3325,7 +3325,7 @@ var StatusPages = []api.StatusPage{
 		URL:  "http://status.securly.com",
 		Name: "Securly",
 	}, {
-		URL:  "https://status.semgrep.dev/?utm_source=embed",
+		URL:  "https://status.semgrep.dev",
 		Name: "Semgrep",
 	}, {
 		URL:  "https://status.seon.io",
@@ -3394,7 +3394,7 @@ var StatusPages = []api.StatusPage{
 		URL:  "https://status.transcend.io",
 		Name: "Transcend",
 	}, {
-		URL:  "https://status.trendmicro.com/s",
+		URL:  "https://status.trendmicro.com/s/en-US/",
 		Name: "Trend Micro",
 	}, {
 		URL:  "https://www.trugrid.com/status",
