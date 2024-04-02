@@ -22,7 +22,7 @@ export function CompanyCount(props: CompanyCountProps) {
             } else {
                 clearInterval(interval);
             }
-        }, 5);
+        }, 2);
     }, []);
 
     return <div className="flex justify-center">
