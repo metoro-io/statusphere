@@ -43,7 +43,9 @@ func (p *IncidentPoller) Poll() error {
 		select {
 		case <-ticker.C:
 			err := p.pollInner()
-			p.logger.Error("failed to poll", zap.Error(err))
+			if err != nil {
+				p.logger.Error("failed to poll", zap.Error(err))
+			}
 		}
 	}
 }
