@@ -59,7 +59,7 @@ func (s *AtlassianProvider) scrapeAtlassianPageCurrent(ctx context.Context, url 
 	}
 
 	// Get the most recent historical incidentsHistoricalRecent
-	incidentsHistoricalRecent, err := s.getHistoricalPageOfIncidents(url, 1)
+	incidentsHistoricalRecent, err := s.getHistoricalPageOfIncidents(url, 1, false)
 	if err != nil {
 		return nil, errors.Wrap(err, "failed to get the most recent historical incidentsHistoricalRecent")
 	}
@@ -94,9 +94,9 @@ func (s *AtlassianProvider) scrapeAtlassianPageHistorical(ctx context.Context, u
 
 	// Get the last 40 quarters of incidents == 10 years
 	i := 40
-	for page := 1; page <= i; page++ {
+	for page := 2; page <= i; page++ {
 		// Get the html of the status page
-		incidentPage, err := s.getHistoricalPageOfIncidents(url, page)
+		incidentPage, err := s.getHistoricalPageOfIncidents(url, page, true)
 		if err != nil {
 			return nil, errors.Wrap(err, "failed to get the historical incidents")
 		}
@@ -122,21 +122,21 @@ func (s *AtlassianProvider) scrapeStatusIoHistoryPage(url string, page int) (str
 	return string(historyHtml), nil
 }
 
-func (s *AtlassianProvider) getHistoricalPageOfIncidents(url string, page int) ([]api.Incident, error) {
+func (s *AtlassianProvider) getHistoricalPageOfIncidents(url string, page int, shouldSkipJobProcessing bool) ([]api.Incident, error) {
 	historyPageHtml, err := s.scrapeStatusIoHistoryPage(url, page)
 	if err != nil {
 		return nil, errors.Wrap(err, "failed to scrape the status page history")
 	}
 
 	// Parse the incidents from the history page
-	incidentPage, err := s.parseIncidents(url, historyPageHtml)
+	incidentPage, err := s.parseIncidents(url, historyPageHtml, shouldSkipJobProcessing)
 	if err != nil {
 		return nil, errors.Wrap(err, "failed to parse the incidents from the history page")
 	}
 	return incidentPage, nil
 }
 
-func (s *AtlassianProvider) parseIncidents(url string, html string) ([]api.Incident, error) {
+func (s *AtlassianProvider) parseIncidents(url string, html string, shouldSkipJobProcessing bool) ([]api.Incident, error) {
 	doc, err := goquery.NewDocumentFromReader(strings.NewReader(html))
 	if err != nil {
 		return nil, errors.Wrap(err, "failed to parse the history page html")
@@ -183,7 +183,7 @@ func (s *AtlassianProvider) parseIncidents(url string, html string) ([]api.Incid
 					DeepLink:      link,
 					StatusPageUrl: url,
 					// For historical jobs we don't want to send notifications
-					NotificationJobsStarted: true,
+					NotificationJobsStarted: shouldSkipJobProcessing,
 				}
 				incidents = append(incidents, incident)
 			}
