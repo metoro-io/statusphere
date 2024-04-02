@@ -19,6 +19,6 @@ WORKDIR /root/
 
 COPY --from=builder /app/jobrunner/jobrunner /bin/jobrunner
 
-RUN chmod +x /bin/apiserver
+RUN chmod +x /bin/jobrunner
 
-ENTRYPOINT ["/bin/apiserver"]
+ENTRYPOINT ["/bin/jobrunner"]
