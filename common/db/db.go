@@ -182,6 +182,32 @@ func (d *DbClient) GetCurrentIncidents(ctx context.Context, statusPageUrl string
 	return incidents, nil
 }
 
+func (d *DbClient) GetIncidentsWithoutJobsStarted(ctx context.Context, limit int) ([]api.Incident, error) {
+	var incidents []api.Incident
+	result := d.db.Table(fmt.Sprintf("%s.%s", schemaName, incidentsTableName)).Where("notification_jobs_started is distinct from true limit ?", limit).Find(&incidents)
+	if result.Error != nil {
+		return nil, result.Error
+	}
+	return incidents, nil
+}
+
+func (d *DbClient) SetIncidentNotificationStartedToTrue(ctx context.Context, incidents []api.Incident) error {
+	for i, _ := range incidents {
+		incidents[i].NotificationJobsStarted = true
+	}
+	result := d.db.Table(fmt.Sprintf("%s.%s", schemaName, incidentsTableName)).Clauses(
+		clause.OnConflict{
+			Columns:   []clause.Column{{Name: "deep_link"}},                            // Primary key
+			DoUpdates: clause.AssignmentColumns([]string{"notification_jobs_started"}), // Update the data column
+		},
+	).Create(&incidents)
+	if result.Error != nil {
+		return result.Error
+	}
+	return nil
+
+}
+
 func (d *DbClient) CreateOrUpdateIncidents(ctx context.Context, incidents []api.Incident) error {
 	result := d.db.Table(fmt.Sprintf("%s.%s", schemaName, incidentsTableName)).Clauses(
 		clause.OnConflict{

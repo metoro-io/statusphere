@@ -3,10 +3,9 @@ package main
 import (
 	"context"
 	"github.com/jackc/pgx/v5"
-	"github.com/metoro-io/statusphere/common/api"
 	"github.com/metoro-io/statusphere/common/db"
 	"github.com/metoro-io/statusphere/common/jobs/riverclient"
-	"github.com/metoro-io/statusphere/common/jobs/slack_webhook"
+	"github.com/metoro-io/statusphere/jobrunner/internal/incidentpoller"
 	"github.com/riverqueue/river"
 	"go.uber.org/zap"
 	"net/http"
@@ -40,13 +39,8 @@ func main() {
 		_ = client.Stop(ctx)
 	}(client, ctx)
 
-	_, err = client.Insert(ctx, &slack_webhook.SlackWebhookArgs{
-		WebhookUrl: "",
-		Incident:   api.Incident{},
-	}, nil)
-	if err != nil {
-		panic(err)
-	}
+	incidentPoller := incidentpoller.NewIncidentPoller(db, logger, client, "")
+	incidentPoller.Start()
 
 	// Work forever
 	<-ctx.Done()
