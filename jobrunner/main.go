@@ -5,6 +5,7 @@ import (
 	"github.com/jackc/pgx/v5"
 	"github.com/metoro-io/statusphere/common/db"
 	"github.com/metoro-io/statusphere/common/jobs/riverclient"
+	config2 "github.com/metoro-io/statusphere/jobrunner/internal/config"
 	"github.com/metoro-io/statusphere/jobrunner/internal/incidentpoller"
 	"github.com/riverqueue/river"
 	"go.uber.org/zap"
@@ -39,7 +40,12 @@ func main() {
 		_ = client.Stop(ctx)
 	}(client, ctx)
 
-	incidentPoller := incidentpoller.NewIncidentPoller(db, logger, client, "")
+	config, err := config2.GetConfigFromEnvironment()
+	if err != nil {
+		panic(err)
+	}
+
+	incidentPoller := incidentpoller.NewIncidentPoller(db, logger, client, config.SlackWebhookUrl)
 	incidentPoller.Start()
 
 	// Work forever
