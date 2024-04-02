@@ -17,7 +17,7 @@ RUN update-ca-certificates
 
 WORKDIR /root/
 
-COPY --from=builder /app/apiserver/jobrunner /bin/jobrunner
+COPY --from=builder /app/jobrunner/jobrunner /bin/jobrunner
 
 RUN chmod +x /bin/apiserver
 
