@@ -1,7 +1,11 @@
 package slack_webhook
 
 import (
+	"bytes"
 	"context"
+	"encoding/json"
+	"fmt"
+	"github.com/pkg/errors"
 	"github.com/riverqueue/river"
 	"go.uber.org/zap"
 	"math"
@@ -26,6 +30,23 @@ func NewSlackWebhookWorker(logger *zap.Logger, httpClient *http.Client) *SlackWe
 
 func (w *SlackWebhookWorker) Work(ctx context.Context, job *river.Job[SlackWebhookArgs]) error {
 	w.logger.Info("Sending slack webhook", zap.Any("incident", job.Args.Incident))
+	marshal, err := json.Marshal(job.Args.Incident)
+	if err != nil {
+		return errors.Wrap(err, "failed to marshal incident")
+	}
+	postBody := fmt.Sprintf(`{'text': '%s'}`, string(marshal))
+	req, err := http.NewRequest("POST", job.Args.WebhookUrl, bytes.NewBuffer([]byte(postBody)))
+	if err != nil {
+		return errors.Wrap(err, "failed to create request")
+	}
+	req.Header.Set("Content-Type", "application/json")
+	resp, err := w.httpClient.Do(req)
+	if err != nil {
+		return errors.Wrap(err, "failed to send request")
+	}
+	if resp.StatusCode != http.StatusOK {
+		return errors.Errorf("expected status code 200, got %d", resp.StatusCode)
+	}
 	return nil
 }
 

@@ -21,6 +21,12 @@ If you're looking for the official hosted version, head [here](https://metoro.io
 
 Read more about the project at the [launch blog post](https://metoro.io/blog/statusphere).
 
+## Features
+
+- Polls status pages of over 1000 popular services
+- API first
+- Webhook notifications of incidents
+
 ## API
 
 Statusphere is API first, it has a frontend that consumes the API, but the API is the main focus of the project.
@@ -83,6 +89,11 @@ When a scraper scrapes a status page, it attempts to parse the page using `provi
 Each provider is responsible for parsing a specific type of status page. For example, the status.io provider is responsible for parsing status pages that are built using the status.io platform.
 If a provider is unable to parse the status page it will return an error, and the next provider in the list will be attempted.
 
+## Webhooks
+
+Statusphere supports webhooks for incident notifications. You can set the slack webhook url in the environment variable `STATUSPHERE_SLACK_WEBHOOK_URL` in the job_poller container.
+
+When an incident is created for the status page you subscribed to, a POST request will be sent to the webhook url with the incident payload.
 
 ## Contributing
 

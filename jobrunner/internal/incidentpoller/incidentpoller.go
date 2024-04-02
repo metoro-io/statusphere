@@ -55,6 +55,10 @@ func (p *IncidentPoller) pollInner() error {
 	if err != nil {
 		return errors.Wrap(err, "failed to get incidents without jobs started")
 	}
+	if len(incidents) == 0 {
+		p.logger.Info("no incidents without jobs started")
+		return nil
+	}
 	p.logger.Info("found incidents without jobs started", zap.Int("count", len(incidents)))
 
 	jobArgs := make([]river.InsertManyParams, 0)
