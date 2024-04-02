@@ -66,6 +66,9 @@ func (p *IncidentPoller) pollInner() error {
 		if p.slackWebhookUrl == "" {
 			continue
 		}
+		if incident.Impact == "maintenance" {
+			continue
+		}
 		jobArgs = append(jobArgs, river.InsertManyParams{Args: slack_webhook.SlackWebhookArgs{
 			Incident:   incident,
 			WebhookUrl: p.slackWebhookUrl,
