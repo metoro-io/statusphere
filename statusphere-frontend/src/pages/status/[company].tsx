@@ -79,7 +79,7 @@ export default function CompanyStatusPage({
 
     return (
         <div>
-            <div className={"flex justify-center px-[10vw]"}>
+            <div className={"flex justify-center xl:px-[20vw] px-[10vw] lg:px"}>
                 <div className={"flex justify-start w-full"}>
                     <h1 className={"text-2xl"}>
                         {companyName} Status
