@@ -54,7 +54,7 @@ func (s *Server) statusPageSearch(context *gin.Context) {
 
 	// Sort the status pages by score
 	sort.Slice(statusPagesRanked, func(i, j int) bool {
-		return statusPagesRanked[i].Score > statusPagesRanked[j].Score
+		return statusPagesRanked[i].Score < statusPagesRanked[j].Score
 	})
 
 	var statusPages []api.StatusPage
