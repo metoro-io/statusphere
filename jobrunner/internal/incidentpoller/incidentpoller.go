@@ -71,10 +71,6 @@ func (p *IncidentPoller) pollInner() error {
 
 	var incidentsToProcess = make([]api.Incident, 0)
 	for _, incident := range incidents {
-		if p.slackWebhookUrl == "" {
-			continue
-		}
-
 		// We only want to notify about incidents that have started in the last hour
 		// Otherwise, we will be sending notifications for incidents that have already been resolved
 		if incident.StartTime.Before(time.Now().Add(-1 * time.Hour)) {
@@ -89,7 +85,10 @@ func (p *IncidentPoller) pollInner() error {
 	}
 
 	// Slack webhook notifications
-	for _, incident := range incidentsToProcess {
+	for _, incident := range incidentsToProcess {\
+		if p.slackWebhookUrl == "" {
+			continue
+		}
 		jobArgs = append(jobArgs, river.InsertManyParams{Args: slack_webhook.SlackWebhookArgs{
 			Incident:   incident,
 			WebhookUrl: p.slackWebhookUrl,
@@ -98,6 +97,9 @@ func (p *IncidentPoller) pollInner() error {
 
 	// Twitter post notifications
 	for _, incident := range incidentsToProcess {
+		if p.twitterWebhookUrl == "" {
+			continue
+		}
 		jobArgs = append(jobArgs, river.InsertManyParams{Args: twitter_post.TwitterPostArgs{
 			WebhookUrl: p.twitterWebhookUrl,
 			Incident:   incident,
