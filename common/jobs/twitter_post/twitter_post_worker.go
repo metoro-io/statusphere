@@ -9,6 +9,7 @@ import (
 	"github.com/pkg/errors"
 	"github.com/riverqueue/river"
 	"go.uber.org/zap"
+	"io/ioutil"
 	"math"
 	"net/http"
 	"time"
@@ -41,7 +42,7 @@ func (w *TwitterPostWorker) Work(ctx context.Context, job *river.Job[TwitterPost
 	if err != nil {
 		return errors.Wrap(err, "failed to generate tweet")
 	}
-	postBody := fmt.Sprintf(`{'tweet': '%s'}`, string(tweet))
+	postBody := fmt.Sprintf(`{"tweet": "%s"}`, string(tweet))
 	req, err := http.NewRequest("POST", job.Args.WebhookUrl, bytes.NewBuffer([]byte(postBody)))
 	if err != nil {
 		return errors.Wrap(err, "failed to create request")
@@ -52,6 +53,8 @@ func (w *TwitterPostWorker) Work(ctx context.Context, job *river.Job[TwitterPost
 		return errors.Wrap(err, "failed to send request")
 	}
 	if resp.StatusCode != http.StatusOK {
+		all, _ := ioutil.ReadAll(resp.Body)
+		w.logger.Error("body", zap.Any("body", all))
 		return errors.Errorf("expected status code 200, got %d", resp.StatusCode)
 	}
 	return nil
@@ -70,13 +73,17 @@ func generateTweet(db *db.DbClient, incident api.Incident) (string, error) {
 	// {Incident Deep Link}
 	// https://metoro.io/statusphere/status/{statusPageName}
 
-	tweet := fmt.Sprintf("%s Incident\n%s\n%s\n%s\nhttps://metoro.io/statusphere/status/%s", statusPage.Name, incident.Title, incident.Description, incident.DeepLink, statusPage.Name)
+	if incident.Description == nil {
+		incident.Description = new(string)
+	}
+
+	tweet := fmt.Sprintf(`🔥 %s Incident 🔥\r\rTitle: %s\r\rDescription: %s\r\rIncident Deeplink: %s\r\rStatusphere: https://metoro.io/statusphere/status/%s`, statusPage.Name, incident.Title, *incident.Description, incident.DeepLink, statusPage.Name)
 
 	return tweet, nil
 }
 
 func (w *TwitterPostWorker) Timeout(job *river.Job[TwitterPostArgs]) time.Duration {
-	return time.Minute * 5
+	return time.Second * 30
 }
 
 // NextRetry performs exponential backoff with a maximum of 120 seconds.
