@@ -28,7 +28,7 @@ func main() {
 
 	err = riverclient.RunMigration(db.PgxPool)
 
-	client, err := riverclient.NewRiverClient(db.PgxPool, logger, http.DefaultClient, 100)
+	client, err := riverclient.NewRiverClient(db, logger, http.DefaultClient, 100)
 	if err != nil {
 		panic(err)
 	}
@@ -45,7 +45,7 @@ func main() {
 		panic(err)
 	}
 
-	incidentPoller := incidentpoller.NewIncidentPoller(db, logger, client, config.SlackWebhookUrl)
+	incidentPoller := incidentpoller.NewIncidentPoller(db, logger, client, config.SlackWebhookUrl, config.TwitterWebhookUrl)
 	incidentPoller.Start()
 
 	// Work forever

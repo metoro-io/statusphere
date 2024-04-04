@@ -4,7 +4,9 @@ import (
 	"context"
 	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgxpool"
+	"github.com/metoro-io/statusphere/common/db"
 	"github.com/metoro-io/statusphere/common/jobs/slack_webhook"
+	"github.com/metoro-io/statusphere/common/jobs/twitter_post"
 	"github.com/riverqueue/river"
 	"github.com/riverqueue/river/riverdriver/riverpgxv5"
 	"github.com/riverqueue/river/rivermigrate"
@@ -12,20 +14,21 @@ import (
 	"net/http"
 )
 
-func spawnWorkers(logger *zap.Logger, client *http.Client) *river.Workers {
+func spawnWorkers(logger *zap.Logger, client *http.Client, dbClient *db.DbClient) *river.Workers {
 	workers := river.NewWorkers()
 	river.AddWorker(workers, slack_webhook.NewSlackWebhookWorker(logger, client))
+	river.AddWorker(workers, twitter_post.NewTwitterPostWorker(logger, client, dbClient))
 	return workers
 }
 
-func NewRiverClient(pool *pgxpool.Pool, logger *zap.Logger, client *http.Client, numWorkers int) (*river.Client[pgx.Tx], error) {
-	return river.NewClient(riverpgxv5.New(pool), &river.Config{
+func NewRiverClient(dbClient *db.DbClient, logger *zap.Logger, client *http.Client, numWorkers int) (*river.Client[pgx.Tx], error) {
+	return river.NewClient(riverpgxv5.New(dbClient.PgxPool), &river.Config{
 		Queues: map[string]river.QueueConfig{
 			river.QueueDefault: {
 				MaxWorkers: numWorkers,
 			},
 		},
-		Workers: spawnWorkers(logger, client),
+		Workers: spawnWorkers(logger, client, dbClient),
 	})
 }
 
