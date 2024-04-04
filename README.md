@@ -40,7 +40,7 @@ GET /api/v1/currentStatus?statusPageUrl=XXX
 GET /api/v1/statusPages
 GET /api/v1/statusPages/count
 GET /api/v1/statusPages/search?query=XXX
-GET /api/v1/incidents?statusPageUrl=XXX
+GET /api/v1/incidents?statusPageUrl=XXX&&impact=XXX
 
 ```
 
