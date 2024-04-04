@@ -7,6 +7,7 @@ import (
 	"math"
 	"net/http"
 	"sort"
+	"strings"
 )
 
 type StatusPageSearchResponse struct {
@@ -29,12 +30,14 @@ func (s *Server) statusPageSearch(context *gin.Context) {
 		return
 	}
 
+	query = strings.ToLower(query)
+
 	var statusPagesRanked []statusPageRanked
 
 	for _, statusPage := range s.statusPageCache.Items() {
 		score := math.MaxInt
-		nameMatch := fuzzy.RankMatch(query, statusPage.Object.(api.StatusPage).Name)
-		urlMatch := fuzzy.RankMatch(query, statusPage.Object.(api.StatusPage).URL)
+		nameMatch := fuzzy.RankMatch(query, strings.ToLower(statusPage.Object.(api.StatusPage).Name))
+		urlMatch := fuzzy.RankMatch(query, strings.ToLower(statusPage.Object.(api.StatusPage).URL))
 		if nameMatch != -1 {
 			score = nameMatch
 		}
@@ -51,7 +54,7 @@ func (s *Server) statusPageSearch(context *gin.Context) {
 
 	// Sort the status pages by score
 	sort.Slice(statusPagesRanked, func(i, j int) bool {
-		return statusPagesRanked[i].Score < statusPagesRanked[j].Score
+		return statusPagesRanked[i].Score > statusPagesRanked[j].Score
 	})
 
 	var statusPages []api.StatusPage
@@ -59,8 +62,8 @@ func (s *Server) statusPageSearch(context *gin.Context) {
 		statusPages = append(statusPages, statusPage.StatusPage)
 	}
 
-	if len(statusPages) > 25 {
-		statusPages = statusPages[:25]
+	if len(statusPages) > 10 {
+		statusPages = statusPages[:10]
 	}
 
 	context.JSON(http.StatusOK, StatusPageSearchResponse{StatusPages: statusPages})
