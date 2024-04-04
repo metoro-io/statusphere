@@ -3,7 +3,8 @@ package config
 import "github.com/kelseyhightower/envconfig"
 
 type Config struct {
-	SlackWebhookUrl string `envconfig:"SLACK_WEBHOOK_URL"`
+	SlackWebhookUrl   string `envconfig:"SLACK_WEBHOOK_URL"`
+	TwitterWebhookUrl string `envconfig:"TWITTER_WEBHOOK_URL"`
 }
 
 func GetConfigFromEnvironment() (Config, error) {
