@@ -68,6 +68,13 @@ func (p *IncidentPoller) pollInner() error {
 		if p.slackWebhookUrl == "" {
 			continue
 		}
+
+		// We only want to notify about incidents that have started in the last hour
+		// Otherwise, we will be sending notifications for incidents that have already been resolved
+		if incident.StartTime.Before(time.Now().Add(-1 * time.Hour)) {
+			continue
+		}
+
 		if incident.Impact == "maintenance" {
 			continue
 		}
