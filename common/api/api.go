@@ -3,6 +3,7 @@ package api
 import (
 	"database/sql/driver"
 	"encoding/json"
+	"github.com/pkg/errors"
 	"time"
 )
 
@@ -15,6 +16,25 @@ const (
 	ImpactMaintenance Impact = "maintenance"
 	ImpactNone        Impact = "none"
 )
+
+var ErrInvalidImpact = errors.New("invalid impact")
+
+func ParseImpact(impact string) (Impact, error) {
+	switch impact {
+	case "minor":
+		return ImpactMinor, nil
+	case "major":
+		return ImpactMajor, nil
+	case "critical":
+		return ImpactCritical, nil
+	case "maintenance":
+		return ImpactMaintenance, nil
+	case "none":
+		return ImpactNone, nil
+	default:
+		return "", ErrInvalidImpact
+	}
+}
 
 type IncidentEventArray []IncidentEvent
 

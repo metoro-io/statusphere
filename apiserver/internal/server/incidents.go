@@ -10,6 +10,7 @@ import (
 	"net/http"
 	"sort"
 	"strconv"
+	"strings"
 )
 
 type IncidentsResponse struct {
@@ -19,12 +20,27 @@ type IncidentsResponse struct {
 
 // incidents is a handler for the /incidents endpoint.
 // It has a required query parameter of statusPageUrl
+// It has an optional query parameter of impact (default is all), which is an array of impacts e.g. impact=critical,major,minor,none to exclude maintenance
 func (s *Server) incidents(context *gin.Context) {
 	ctx := context.Request.Context()
 	statusPageUrl := context.Query("statusPageUrl")
 	if statusPageUrl == "" {
 		context.JSON(http.StatusBadRequest, gin.H{"error": "statusPageUrl is required"})
 		return
+	}
+
+	impactQuery := context.Query("impact")
+	var impacts []api.Impact
+	if impactQuery != "" {
+		impactsStr := strings.Split(impactQuery, ",")
+		for _, impactStr := range impactsStr {
+			impact, err := api.ParseImpact(impactStr)
+			if err != nil {
+				context.JSON(http.StatusBadRequest, gin.H{"error": "invalid impact"})
+				return
+			}
+			impacts = append(impacts, impact)
+		}
 	}
 
 	var limit *int = nil
@@ -56,7 +72,7 @@ func (s *Server) incidents(context *gin.Context) {
 	}
 
 	// Attempt to get the incidents from the cache
-	incidents, found, err := s.getIncidentsFromCache(ctx, statusPageUrl)
+	incidents, found, err := s.getIncidentsFromCache(ctx, statusPageUrl, impacts)
 	if err != nil {
 		s.logger.Error("failed to get incidents from cache", zap.Error(err))
 		context.JSON(http.StatusInternalServerError, gin.H{"error": "failed to get incidents from cache"})
@@ -100,7 +116,7 @@ func sortIncidentsDescending(incidents []api.Incident) {
 // getIncidentsFromCache attempts to get the incidents from the cache.
 // If the incidents are found in the cache, it returns them.
 // If the incidents are not found in the cache, it returns false for the second return value.
-func (s *Server) getIncidentsFromCache(ctx context.Context, statusPageUrl string) ([]api.Incident, bool, error) {
+func (s *Server) getIncidentsFromCache(ctx context.Context, statusPageUrl string, impacts []api.Impact) ([]api.Incident, bool, error) {
 	incidents, found := s.incidentCache.Get(statusPageUrl)
 	if !found {
 		return nil, false, nil
@@ -109,6 +125,18 @@ func (s *Server) getIncidentsFromCache(ctx context.Context, statusPageUrl string
 	incidentsCasted, ok := incidents.([]api.Incident)
 	if !ok {
 		return nil, false, errors.New("failed to cast incidents to []api.Incident")
+	}
+
+	if len(impacts) > 0 {
+		var filteredIncidents []api.Incident
+		for _, incident := range incidentsCasted {
+			for _, impact := range impacts {
+				if incident.Impact == impact {
+					filteredIncidents = append(filteredIncidents, incident)
+				}
+			}
+		}
+		incidentsCasted = filteredIncidents
 	}
 
 	return incidentsCasted, true, nil
