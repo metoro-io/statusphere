@@ -85,7 +85,7 @@ func (p *IncidentPoller) pollInner() error {
 	}
 
 	// Slack webhook notifications
-	for _, incident := range incidentsToProcess {\
+	for _, incident := range incidentsToProcess {
 		if p.slackWebhookUrl == "" {
 			continue
 		}
