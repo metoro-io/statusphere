@@ -67,17 +67,11 @@ func generateTweet(db *db.DbClient, incident api.Incident) (string, error) {
 		return "", errors.Wrap(err, "failed to get status page")
 	}
 	// Tweet format
-	// {Status page Name} Incident
-	// {Incident Title}
-	// {Incident Description}
+	// {Status page Name} Incident - Is {Status page Name} down?
 	// {Incident Deep Link}
 	// https://metoro.io/statusphere/status/{statusPageName}
 
-	if incident.Description == nil {
-		incident.Description = new(string)
-	}
-
-	tweet := fmt.Sprintf(`🔥 %s Incident - Is %s down? 🔥\r\rTitle: %s\r\rDescription: %s\r\rIncident Deeplink: %s\r\rStatusphere: https://metoro.io/statusphere/status/%s\r\r#outage #incident`, statusPage.Name, statusPage.Name, incident.Title, *incident.Description, incident.DeepLink, statusPage.Name)
+	tweet := fmt.Sprintf(`🔥 %s Incident - Is %s down? 🔥\r\rTitle: %s\r\rIncident Deeplink: %s\r\rStatusphere: https://metoro.io/statusphere/status/%s\r\r#outage #incident`, statusPage.Name, statusPage.Name, incident.Title, incident.DeepLink, statusPage.Name)
 
 	return tweet, nil
 }
