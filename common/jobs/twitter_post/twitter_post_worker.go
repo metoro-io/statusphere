@@ -77,7 +77,7 @@ func generateTweet(db *db.DbClient, incident api.Incident) (string, error) {
 		incident.Description = new(string)
 	}
 
-	tweet := fmt.Sprintf(`🔥 %s Incident 🔥\r\rTitle: %s\r\rDescription: %s\r\rIncident Deeplink: %s\r\rStatusphere: https://metoro.io/statusphere/status/%s\r\r#outage #incident`, statusPage.Name, incident.Title, *incident.Description, incident.DeepLink, statusPage.Name)
+	tweet := fmt.Sprintf(`🔥 %s Incident - Is %s down? 🔥\r\rTitle: %s\r\rDescription: %s\r\rIncident Deeplink: %s\r\rStatusphere: https://metoro.io/statusphere/status/%s\r\r#outage #incident`, statusPage.Name, statusPage.Name, incident.Title, *incident.Description, incident.DeepLink, statusPage.Name)
 
 	return tweet, nil
 }
