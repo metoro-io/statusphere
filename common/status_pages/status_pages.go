@@ -361,8 +361,8 @@ var StatusPages = []api.StatusPage{
 		URL:  "https://dynatrace.status.io",
 		Name: "dynatrace",
 	}, {
-		URL: "https://www.easypoststatus.com",
-		Name: "easypost"
+		URL:  "https://www.easypoststatus.com",
+		Name: "easypost",
 	}, {
 		URL:  "https://status.ecostruxureit.com",
 		Name: "ecostruxure-it",
