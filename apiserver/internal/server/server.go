@@ -50,6 +50,7 @@ func (s *Server) Serve() error {
 		apiV1.GET("/statusPages", s.statusPages)
 		apiV1.GET("/statusPages/search", s.statusPageSearch)
 		apiV1.GET("/statusPages/count", s.statusPageCount)
+		apiV1.GET("/sitemap.xml", s.siteMap)
 	}
 	return errors.Wrap(r.Run(":80"), "Failed to start server")
 }
