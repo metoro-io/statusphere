@@ -1735,7 +1735,7 @@ var StatusPages = []api.StatusPage{
 		URL:  "http://status.semaphoreci.com",
 		Name: "Semaphore",
 	}, {
-		URL:  "https://status.getsentry.com",
+		URL:  "https://status.sentry.io/",
 		Name: "Sentry",
 	}, {
 		URL:  "https://status.shortcut.com",
@@ -4234,7 +4234,7 @@ var StatusPages = []api.StatusPage{
 		URL:  "https://connectedfleet.michelin.com/en/status",
 		Name: "Michelin",
 	}, {
-		URL:  "https://health.aws.amazon.com/health/status",
+		URL:  "https://status.aws.amazon.com",
 		Name: "Amazon",
 	}, {
 		URL:  "https://status.qualitestgroup.com/Home/Privacy",
