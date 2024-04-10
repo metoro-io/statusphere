@@ -6,6 +6,7 @@ import (
 	"github.com/metoro-io/statusphere/scraper/internal/scraper"
 	"github.com/metoro-io/statusphere/scraper/internal/scraper/consumers"
 	"github.com/metoro-io/statusphere/scraper/internal/scraper/consumers/dbconsumer"
+	"github.com/metoro-io/statusphere/scraper/internal/scraper/dbgroomer"
 	"github.com/metoro-io/statusphere/scraper/internal/scraper/poller"
 	"github.com/metoro-io/statusphere/scraper/internal/scraper/providers"
 	"github.com/metoro-io/statusphere/scraper/internal/scraper/providers/atlassian"
@@ -40,6 +41,8 @@ func main() {
 
 	getter := dburlgetter.NewDBURLGetter(logger, dbClient)
 	getter.Start()
+	dbGroomer := dbgroomer.NewDbGroomer(logger, dbClient)
+	dbGroomer.Groom()
 	poller := poller.NewPoller(getter, scraper, []consumers.Consumer{
 		dbconsumer.NewDbConsumer(logger, dbClient),
 	}, logger)

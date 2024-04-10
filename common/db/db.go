@@ -234,3 +234,14 @@ func (d *DbClient) SeedStatusPages() error {
 	}
 	return nil
 }
+
+func (d *DbClient) DeleteStatusPage(background context.Context, url string) error {
+	if url == "" {
+		return errors.New("url cannot be empty")
+	}
+	result := d.db.Table(fmt.Sprintf("%s.%s", schemaName, statusPageTableName)).Where("url = ?", url).Delete(&api.StatusPage{})
+	if result.Error != nil {
+		return result.Error
+	}
+	return nil
+}
