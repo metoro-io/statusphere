@@ -42,11 +42,11 @@ export function Outages(props: OutagesProps) {
             <Card className={"bg-white"}>
                 <CardHeader className={"items-left"}>
                     <CardTitle className={"scroll-m-20 text-xl font-semibold tracking-tight"}>
-                            Incidents are not currently indexed for {props.statusPageDetails.name}
+                        Incidents are not currently indexed for {props.statusPageDetails.name}
                     </CardTitle>
                     <CardDescription className={"leading-7 [&:not(:first-child)]:mt-6"}>
-                            You can view the official status page at: <a
-                            href={props.statusPageDetails.url}> {props.statusPageDetails.name} status page</a>
+                        You can view the official status page at: <a
+                        href={props.statusPageDetails.url}> {props.statusPageDetails.name} status page</a>
                     </CardDescription>
                 </CardHeader>
             </Card>
@@ -80,7 +80,12 @@ export function Outages(props: OutagesProps) {
                     <TableRow>
                         <TableCell>{convertToSimpleDate(incident.startTime)}</TableCell>
                         <TableCell className={"max-w-[300px] break-words"}><a className={"max-w-[300px] break-words"}
-                                                                              href={incident.deepLink}> {incident.title} </a></TableCell>
+                                                                              href={incident.deepLink}> {(() => {
+                            if (incident.title.length > 50) {
+                                return incident.title.substring(0, 50)
+                            }
+                            return incident.title
+                        })()} </a></TableCell>
                         <TableCell>
                             <Badge className={getBadgeColour(incident.impact)}>{incident.impact}</Badge>
                         </TableCell>
