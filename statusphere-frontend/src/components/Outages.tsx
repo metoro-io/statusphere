@@ -81,8 +81,8 @@ export function Outages(props: OutagesProps) {
                         <TableCell>{convertToSimpleDate(incident.startTime)}</TableCell>
                         <TableCell className={"max-w-[300px] break-words"}><a className={"max-w-[300px] break-words"}
                                                                               href={incident.deepLink}> {(() => {
-                            if (incident.title.length > 50) {
-                                return incident.title.substring(0, 50)
+                            if (incident.title.length > 100) {
+                                return incident.title.substring(0, 100)
                             }
                             return incident.title
                         })()} </a></TableCell>
