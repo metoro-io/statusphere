@@ -82,7 +82,7 @@ export function Outages(props: OutagesProps) {
                         <TableCell className={"max-w-[300px] break-words"}><a className={"max-w-[300px] break-words"}
                                                                               href={incident.deepLink}> {(() => {
                             if (incident.title.length > 100) {
-                                return incident.title.substring(0, 100)
+                                return incident.title.substring(0, 100) + "..."
                             }
                             return incident.title
                         })()} </a></TableCell>
