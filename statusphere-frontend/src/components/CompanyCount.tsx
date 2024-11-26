@@ -27,7 +27,7 @@ export function CompanyCount(props: CompanyCountProps) {
 
     return <div className="flex justify-center">
         <div className="text-2xl tracking-tight">
-            Service status for <a href={"/statusphere/directory"}><b className="text-[#00243c]">{currentCount.current}</b></a> companies!
+            Service status for <a href={"/directory"}><b className="text-[#00243c]">{currentCount.current}</b></a> companies!
         </div>
     </div>
 
