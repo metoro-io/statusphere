@@ -17,7 +17,7 @@
 
 An open-source api-first status page aggregator.
 
-If you're looking for the official hosted version, head [here](https://statushpere.tech).
+If you're looking for the official hosted version, head [here](https://www.statusphere.tech).
 
 
 Read more about the project at the [launch blog post](https://metoro.io/blog/statusphere).
@@ -52,7 +52,7 @@ the services listed in the `status_pages.go` file.
 
 If you want to quickly try the api you can hit the hosted version
 ```bash
-curl 'https://statusphere.metoro.io/api/v1/incidents?statusPageUrl=https://www.githubstatus.com' | jq
+curl 'https://api.statusphere.tech/api/v1/incidents?statusPageUrl=https://www.githubstatus.com' | jq
 ```
 
 To run the stack locally:
