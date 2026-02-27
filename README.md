@@ -17,7 +17,7 @@
 
 An open-source api-first status page aggregator.
 
-If you're looking for the official hosted version, head [here](https://www.statusphere.tech).
+If you're looking for the official hosted version.
 
 
 Read more about the project at the [launch blog post](https://metoro.io/blog/statusphere).
